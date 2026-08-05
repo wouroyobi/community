@@ -1,236 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wouro Yobi | Building a Community for Future Generations</title>
+<meta name="description" content="Official website of Wouro Yobi, Cameroon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <title>Wouro Yobi | Building a Community for Future Generations</title>
-
-    <meta name="description"
-        content="Official website of Wouro Yobi, a community in Mayo-Darlé, Adamawa Region, Cameroon, preserving its heritage while investing in education, agriculture, youth, leadership and sustainable development.">
-
-    <meta name="keywords"
-        content="Wouro Yobi, Cameroon, Mayo-Darlé, Community Development, Education, Agriculture, Traditional Leadership">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Wouro Yobi">
-    <meta property="og:description"
-        content="Building a Community for Future Generations.">
-
-    <meta property="og:type" content="website">
-
-    <!-- Google Fonts -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="css/style.css">
-
+<style>
+:root{
+ --primary:#1B5E20;--secondary:#2E7D32;--accent:#D4AF37;
+ --bg:#F8F7F3;--text:#263238;--muted:#607D8B;
+ --radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{width:min(92%,1200px);margin:auto}
+header{position:fixed;top:0;width:100%;z-index:99;transition:.3s}
+header.scrolled{background:#fff;box-shadow:var(--shadow)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:700 1.6rem Poppins,sans-serif;color:#fff;text-decoration:none}
+header.scrolled .logo{color:var(--primary)}
+.logo span{color:var(--accent)}
+.nav{display:flex;gap:28px;list-style:none}
+.nav a{text-decoration:none;color:#fff;font-weight:600}
+header.scrolled .nav a{color:var(--text)}
+.btn{padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:600;display:inline-block}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-outline{border:2px solid #fff;color:#fff}
+.hero{min-height:100vh;background:linear-gradient(rgba(20,70,35,.75),rgba(20,70,35,.75));display:flex;align-items:center;color:#fff;text-align:center}
+.hero h1{font:800 clamp(2.5rem,6vw,4.5rem) Poppins,sans-serif;margin:20px 0}
+.hero p{max-width:760px;margin:0 auto 35px}
+.badge{display:inline-block;padding:10px 18px;background:rgba(255,255,255,.15);border-radius:999px}
+.actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+section{padding:90px 0}
+.title{text-align:center;margin-bottom:50px}
+.grid{display:grid;gap:24px}
+.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.twocol{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center}
+.placeholder{background:#d8e6d7;border:2px dashed var(--secondary);min-height:280px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
+.pillars{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer{background:#18351f;color:#fff;padding:50px 0;text-align:center}
+.hidden{opacity:0;transform:translateY(40px);transition:.7s}
+.show{opacity:1;transform:none}
+@media(max-width:768px){.nav{display:none}}
+</style>
 </head>
-
 <body>
 
-    <!-- ===========================
-         Navigation
-    ============================ -->
+<header id="header">
+<div class="container">
+<nav>
+<a class="logo" href="#">Wouro<span>Yobi</span></a>
+<ul class="nav">
+<li><a href="#about">About</a></li>
+<li><a href="#development">Development</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#leadership">Leadership</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<span class="badge">COMMUNITY • HERITAGE • DEVELOPMENT</span>
+<h1>Welcome to Wouro Yobi</h1>
+<p>Building a Community for Future Generations through education, agriculture, youth leadership, peace and sustainable development.</p>
+<div class="actions">
+<a class="btn btn-primary" href="#about">Discover Wouro Yobi</a>
+<a class="btn btn-outline" href="#projects">Explore Projects</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="title"><h2>Community Snapshot</h2></div>
+<div class="grid stats">
+<div class="card"><h3>1</h3><p>Education Project</p></div>
+<div class="card"><h3>6</h3><p>Development Initiatives</p></div>
+<div class="card"><h3>5</h3><p>Agricultural Activities</p></div>
+<div class="card"><h3>3</h3><p>Youth Programmes</p></div>
+<div class="card"><h3>1</h3><p>Traditional Leadership</p></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container grid twocol">
+<div class="placeholder">Hero Community Photo</div>
+<div>
+<h2>About Wouro Yobi</h2>
+<p>Wouro Yobi is a community in the Mayo-Darlé municipality of the Adamawa Region of Cameroon. The community is committed to preserving its cultural heritage while investing in education, agriculture, youth development, peace and sustainable development.</p>
+<a class="btn btn-primary" href="#">Learn More</a>
+</div>
+</div>
+</section>
+
+<section id="development">
+<div class="container">
+<div class="title"><h2>Development Pillars</h2></div>
+<div class="grid pillars">
+<div class="card"><h3>Education</h3><p>Learning opportunities for future generations.</p></div>
+<div class="card"><h3>Agriculture</h3><p>Livestock, farming and food security.</p></div>
+<div class="card"><h3>Infrastructure</h3><p>Community facilities and essential services.</p></div>
+<div class="card"><h3>Environment</h3><p>Responsible stewardship of natural resources.</p></div>
+<div class="card"><h3>Youth</h3><p>Leadership, sports and volunteerism.</p></div>
+<div class="card"><h3>Peace</h3><p>Dialogue, inclusion and social cohesion.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container grid twocol">
+<div class="placeholder">Kindergarten Expansion Photo</div>
+<div>
+<h2>Featured Project</h2>
+<h3>Kindergarten Expansion</h3>
+<p>Expanding access to early childhood education through improved learning spaces and community partnership.</p>
+<a class="btn btn-primary" href="#">Project Details</a>
+</div>
+</div>
+</section>
+
+<section id="leadership">
+<div class="container grid twocol">
+<div>
+<h2>Traditional Leadership</h2>
+<h3>His Majesty Maître Aliou Amadou</h3>
+<p>Highlight the community's leadership philosophy, development vision and commitment to preserving heritage while supporting sustainable progress.</p>
+</div>
+<div class="placeholder">Leadership Portrait</div>
+</div>
+</section>
+
+<section id="news">
+<div class="container">
+<div class="title"><h2>Latest News</h2></div>
+<div class="grid pillars">
+<div class="card"><h3>Government Visit</h3><p>Latest development update.</p></div>
+<div class="card"><h3>School Expansion</h3><p>Construction progress.</p></div>
+<div class="card"><h3>Youth Activities</h3><p>Sports and leadership.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="title"><h2>Partner with Wouro Yobi</h2></div>
+<p style="text-align:center">Join us in building opportunities for future generations.</p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p><strong>Wouro Yobi</strong></p>
+<p>Building a Community for Future Generations</p>
+<p>&copy; <span id="year"></span> Wouro Yobi</p>
+</div>
+</footer>
+
+<script>
+const header=document.getElementById("header");
+window.addEventListener("scroll",()=>header.classList.toggle("scrolled",window.scrollY>50));
+document.getElementById("year").textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");});
+},{threshold:.15});
+document.querySelectorAll("section").forEach(s=>{s.classList.add("hidden");observer.observe(s);});
+</script>
 
-    <header class="header">
-
-        <nav class="container navbar">
-
-            <a href="#" class="logo">
-
-                Wouro<span>Yobi</span>
-
-            </a>
-
-            <ul class="nav-links">
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">About</a></li>
-
-                <li><a href="#">Development</a></li>
-
-                <li><a href="#">Projects</a></li>
-
-                <li><a href="#">News</a></li>
-
-                <li><a href="#">Gallery</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-            <a href="#" class="btn btn-primary">
-
-                Partner With Us
-
-            </a>
-
-            <button class="menu-toggle">
-
-                ☰
-
-            </button>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- ===========================
-            HERO
-    ============================ -->
-
-    <section class="hero">
-
-        <div class="hero-overlay"></div>
-
-        <div class="container hero-content">
-
-            <span class="hero-badge">
-
-                COMMUNITY • HERITAGE • DEVELOPMENT
-
-            </span>
-
-            <h1>
-
-                Welcome to Wouro Yobi
-
-            </h1>
-
-            <p>
-
-                A community preserving its heritage while building a sustainable future through education,
-                agriculture, leadership, peace and collective development.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#" class="btn btn-primary">
-
-                    Discover Wouro Yobi
-
-                </a>
-
-                <a href="#" class="btn btn-secondary">
-
-                    Explore Projects
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="scroll-indicator">
-
-            <span></span>
-
-            <p>Scroll</p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ===========================
-        COMMUNITY SNAPSHOT
-    ============================ -->
-
-    <section class="stats">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-
-                    Community Snapshot
-
-                </h2>
-
-                <p>
-
-                    A quick overview of Wouro Yobi's people, initiatives and development priorities.
-
-                </p>
-
-            </div>
-
-            <div class="stats-grid">
-
-                <div class="stat-card">
-
-                    <div class="icon">🎓</div>
-
-                    <h3>1</h3>
-
-                    <p>Education Project</p>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="icon">🏗</div>
-
-                    <h3>6</h3>
-
-                    <p>Development Initiatives</p>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="icon">🌱</div>
-
-                    <h3>5</h3>
-
-                    <p>Agricultural Activities</p>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="icon">⚽</div>
-
-                    <h3>3</h3>
-
-                    <p>Youth Programmes</p>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="icon">👑</div>
-
-                    <h3>1</h3>
-
-                    <p>Traditional Leadership</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-<script src="js/script.js"></script>
 </body>
 </html>
