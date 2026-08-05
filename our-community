@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Community | Wouro Yobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--green:#1B5E20;--green2:#2E7D32;--gold:#D4AF37;--bg:#f8f7f3;--text:#243238;
+--shadow:0 10px 30px rgba(0,0,0,.08);--radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+header{position:sticky;top:0;background:#fff;box-shadow:var(--shadow);z-index:10}
+.container{width:min(92%,1200px);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font:800 1.6rem Poppins,sans-serif;color:var(--green);text-decoration:none}
+.logo span{color:var(--gold)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{text-decoration:none;color:var(--text);font-weight:600}
+.hero{min-height:65vh;background:linear-gradient(rgba(17,70,30,.72),rgba(17,70,30,.72)),linear-gradient(135deg,#3f8d54,#235b32);display:flex;align-items:center;color:#fff;text-align:center}
+.hero h1{font:800 clamp(2.7rem,6vw,4.8rem) Poppins,sans-serif}
+.hero p{max-width:760px;margin:20px auto}
+.btn{display:inline-block;padding:14px 28px;background:var(--gold);border-radius:999px;text-decoration:none;color:#243238;font-weight:700}
+section{padding:80px 0}
+h2{font:700 2.2rem Poppins,sans-serif;margin-bottom:20px;color:var(--green)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.placeholder{height:340px;border:2px dashed var(--green2);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:#dfeee1;font-weight:700;color:var(--green)}
+.timeline{border-left:4px solid var(--gold);padding-left:25px}
+.timeline article{margin-bottom:30px}
+footer{background:#17361f;color:#fff;text-align:center;padding:40px}
+iframe{width:100%;height:420px;border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hidden{opacity:0;transform:translateY(35px);transition:.8s}
+.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a href="index.html" class="logo">Wouro<span>Yobi</span></a>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#location">Location</a></li>
+<li><a href="#story">Story</a></li>
+<li><a href="#future">Future</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Our Community</h1>
+<p>Discover Wouro Yobi—a rural community in the Mayo-Darlé Municipality of Cameroon where heritage, leadership and collective action shape a sustainable future.</p>
+<a class="btn" href="#location">Begin the Journey</a>
+</div>
+</section>
+
+<section id="location">
+<div class="container">
+<h2>Where is Wouro Yobi?</h2>
+<div class="grid2">
+<div>
+<iframe loading="lazy" src="https://www.google.com/maps?q=6.507991,11.462107&z=15&output=embed"></iframe>
+</div>
+<div>
+<h3>Geographic Identity</h3>
+<p>Wouro Yobi is located in the Mayo-Darlé Municipality of the Adamawa Region of Cameroon.</p>
+<ul>
+<li><strong>Coordinates:</strong> 6.507991° N, 11.462107° E</li>
+<li><strong>Setting:</strong> Rural agricultural landscape</li>
+<li><strong>Character:</strong> Farms, forests, community settlements and traditional leadership.</li>
+</ul>
+<p>This location is more than a point on a map—it is the foundation of the community's identity and development story.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="story">
+<div class="container">
+<h2>Our Story</h2>
+<div class="grid2">
+<div class="placeholder">Replace with panoramic aerial photograph</div>
+<div>
+<p>Wouro Yobi has grown through the commitment of its people, guided by traditional leadership and strengthened by a shared vision for education, agriculture, peace and community development.</p>
+<p>Every project documented on this website is part of a larger story: preserving cultural heritage while creating opportunities for future generations.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Community Timeline</h2>
+<div class="timeline">
+<article><h3>Origins</h3><p>Founding of the community and preservation of cultural identity.</p></article>
+<article><h3>Traditional Leadership</h3><p>Leadership guiding social harmony and development.</p></article>
+<article><h3>Education</h3><p>Investment in learning and expansion of the kindergarten.</p></article>
+<article><h3>Community Development</h3><p>Infrastructure, agriculture and partnerships.</p></article>
+<article><h3>Future Vision</h3><p>Building opportunities for future generations.</p></article>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Community Values</h2>
+<div class="cardgrid">
+<div class="card"><h3>Unity</h3><p>Working together for shared progress.</p></div>
+<div class="card"><h3>Respect</h3><p>Honouring people, culture and traditions.</p></div>
+<div class="card"><h3>Hospitality</h3><p>Welcoming visitors and partners.</p></div>
+<div class="card"><h3>Leadership</h3><p>Serving the community with integrity.</p></div>
+<div class="card"><h3>Education</h3><p>Investing in future generations.</p></div>
+<div class="card"><h3>Sustainability</h3><p>Protecting land and natural resources.</p></div>
+</div>
+</div>
+</section>
+
+<section id="future">
+<div class="container">
+<h2>Looking Ahead</h2>
+<p>Wouro Yobi envisions a future where quality education, thriving agriculture, strong community institutions, environmental stewardship and youth leadership continue to shape a resilient and prosperous community.</p>
+</div>
+</section>
+
+<footer>
+<p><strong>Wouro Yobi</strong><br>Building a Community for Future Generations</p>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
+},{threshold:.15});
+document.querySelectorAll('section').forEach(s=>{s.classList.add('hidden');observer.observe(s);});
+</script>
+
+</body>
+</html>
