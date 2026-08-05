@@ -4,191 +4,1100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wouro Yobi | Building a Community for Future Generations</title>
-<meta name="description" content="Official website of Wouro Yobi, Cameroon.">
+<title>Wouro Yobi Living Archive — Building a Community for Future Generations</title>
+<meta name="description" content="The Wouro Yobi Living Archive is a community-led digital heritage and knowledge initiative documenting the history, culture, development and aspirations of Wouro Yobi, a Mbororo community in the Adamawa region of Cameroon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{
- --primary:#1B5E20;--secondary:#2E7D32;--accent:#D4AF37;
- --bg:#F8F7F3;--text:#263238;--muted:#607D8B;
- --radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-.container{width:min(92%,1200px);margin:auto}
-header{position:fixed;top:0;width:100%;z-index:99;transition:.3s}
-header.scrolled{background:#fff;box-shadow:var(--shadow)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-.logo{font:700 1.6rem Poppins,sans-serif;color:#fff;text-decoration:none}
-header.scrolled .logo{color:var(--primary)}
-.logo span{color:var(--accent)}
-.nav{display:flex;gap:28px;list-style:none}
-.nav a{text-decoration:none;color:#fff;font-weight:600}
-header.scrolled .nav a{color:var(--text)}
-.btn{padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:600;display:inline-block}
-.btn-primary{background:var(--primary);color:#fff}
-.btn-outline{border:2px solid #fff;color:#fff}
-.hero{min-height:100vh;background:linear-gradient(rgba(20,70,35,.75),rgba(20,70,35,.75));display:flex;align-items:center;color:#fff;text-align:center}
-.hero h1{font:800 clamp(2.5rem,6vw,4.5rem) Poppins,sans-serif;margin:20px 0}
-.hero p{max-width:760px;margin:0 auto 35px}
-.badge{display:inline-block;padding:10px 18px;background:rgba(255,255,255,.15);border-radius:999px}
-.actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-section{padding:90px 0}
-.title{text-align:center;margin-bottom:50px}
-.grid{display:grid;gap:24px}
-.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-.twocol{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center}
-.placeholder{background:#d8e6d7;border:2px dashed var(--secondary);min-height:280px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
-.pillars{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-footer{background:#18351f;color:#fff;padding:50px 0;text-align:center}
-.hidden{opacity:0;transform:translateY(40px);transition:.7s}
-.show{opacity:1;transform:none}
-@media(max-width:768px){.nav{display:none}}
+  /* ============================================================
+     DESIGN TOKENS
+     Palette: forest, emerald, sage, beige, earth brown, gold
+     Type: Poppins (display) / Inter (body) / Inter Tight (caption+data)
+     Signature: "The Archive Thread" — a gold spine that stitches
+     every section together, echoing the knowledge-graph structure
+     of the archive itself.
+     ============================================================ */
+  :root{
+    --forest: #16332A;
+    --forest-deep: #0E211B;
+    --emerald: #2E6B54;
+    --sage: #A9BBA2;
+    --sage-pale: #E4E8DE;
+    --beige: #F3EEE1;
+    --beige-warm: #ECE3CE;
+    --brown: #6B4A30;
+    --gold: #C79A4B;
+    --gold-soft: #E4C583;
+    --ink: #1E2420;
+    --ink-soft: #4B564E;
+    --white: #FFFFFF;
+
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-caption: 'Inter Tight', sans-serif;
+
+    --max-w: 1280px;
+    --edge: clamp(1.5rem, 5vw, 4.5rem);
+    --radius-lg: 28px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 20px 60px -25px rgba(14,33,27,0.35);
+    --shadow-card: 0 12px 34px -18px rgba(14,33,27,0.28);
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--beige);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--font-display); margin:0; color:var(--forest-deep); font-weight:600; letter-spacing:-0.01em;}
+  p{margin:0;}
+  ul{margin:0; padding:0; list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  :focus-visible{
+    outline:2.5px solid var(--gold);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{max-width:var(--max-w); margin:0 auto; padding-inline:var(--edge);}
+  .eyebrow{
+    font-family:var(--font-caption);
+    font-size:0.75rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--emerald);
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1.5px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity 0.9s var(--ease), transform 0.9s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:none;}
+  .reveal-stagger > *{transition-delay:calc(var(--i,0) * 90ms);}
+
+  /* ============================================================
+     THE ARCHIVE THREAD — signature spine
+     ============================================================ */
+  .thread{
+    position:absolute;
+    left:calc(var(--edge) - 1px);
+    top:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(to bottom, transparent 0%, var(--gold-soft) 6%, var(--gold-soft) 94%, transparent 100%);
+    opacity:0.5;
+    display:none;
+  }
+  @media (min-width:1000px){ .thread{display:block;} }
+  .thread-node{
+    position:absolute;
+    left:calc(var(--edge) - 5px);
+    width:12px; height:12px;
+    border-radius:50%;
+    background:var(--beige);
+    border:2px solid var(--gold);
+    display:none;
+  }
+  @media (min-width:1000px){ .thread-node{display:block;} }
+
+  /* ============================================================
+     SKIP LINK
+     ============================================================ */
+  .skip-link{
+    position:absolute; left:1rem; top:-4rem;
+    background:var(--forest-deep); color:var(--white);
+    padding:0.8rem 1.2rem; border-radius:var(--radius-sm);
+    z-index:200; transition:top 0.25s var(--ease);
+    font-family:var(--font-caption); font-weight:600;
+  }
+  .skip-link:focus{top:1rem;}
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(243,238,225,0.86);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(107,74,48,0.14);
+  }
+  .nav-row{
+    max-width:var(--max-w); margin:0 auto; padding:1.05rem var(--edge);
+    display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  }
+  .brand{display:flex; align-items:center; gap:0.7rem; text-decoration:none;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:conic-gradient(from 210deg, var(--forest), var(--emerald), var(--gold), var(--forest));
+    display:grid; place-items:center; flex-shrink:0;
+    box-shadow:inset 0 0 0 3px var(--beige);
+  }
+  .brand-mark span{width:12px; height:12px; border-radius:50%; background:var(--beige);}
+  .brand-name{font-family:var(--font-display); font-size:1.02rem; font-weight:600; color:var(--forest-deep); line-height:1.1;}
+  .brand-name small{display:block; font-family:var(--font-caption); font-weight:500; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--brown); margin-top:0.2rem;}
+
+  nav.primary-nav ul{display:flex; gap:2.1rem; align-items:center;}
+  nav.primary-nav a{
+    font-family:var(--font-caption); font-size:0.86rem; font-weight:500;
+    text-decoration:none; color:var(--ink-soft);
+    position:relative; padding-bottom:4px;
+  }
+  nav.primary-nav a::after{
+    content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0;
+    background:var(--gold); transition:width 0.3s var(--ease);
+  }
+  nav.primary-nav a:hover::after, nav.primary-nav a:focus-visible::after{width:100%;}
+  .nav-actions{display:flex; align-items:center; gap:0.8rem;}
+  .btn{
+    font-family:var(--font-caption); font-weight:600; font-size:0.85rem;
+    padding:0.75rem 1.5rem; border-radius:999px; border:1.5px solid transparent;
+    text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;
+    transition:transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color .35s var(--ease);
+  }
+  .btn-primary{background:var(--forest-deep); color:var(--beige);}
+  .btn-primary:hover{background:var(--emerald); transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--forest-deep); color:var(--forest-deep);}
+  .btn-ghost:hover{background:var(--forest-deep); color:var(--beige); transform:translateY(-2px);}
+  .btn-gold{background:var(--gold); color:var(--forest-deep);}
+  .btn-gold:hover{background:var(--gold-soft); transform:translateY(-2px);}
+  .nav-toggle{display:none; background:none; border:none; padding:0.4rem;}
+  @media (max-width:920px){
+    nav.primary-nav, .nav-actions .btn-ghost{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ============================================================
+     PLACEHOLDER IMAGE COMPONENT
+     ============================================================ */
+  .ph{
+    position:relative; overflow:hidden;
+    background:
+      linear-gradient(135deg, var(--sage-pale) 0%, var(--beige-warm) 55%, var(--sage-pale) 100%);
+    border-radius:var(--radius-md);
+    display:flex; align-items:flex-end;
+    isolation:isolate;
+    min-height:180px;
+  }
+  .ph::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(107,74,48,0.05) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(25deg, rgba(46,107,84,0.05) 0 2px, transparent 2px 26px);
+    z-index:0;
+  }
+  .ph::after{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(199,154,75,0.18), transparent 45%),
+      radial-gradient(circle at 75% 80%, rgba(22,51,42,0.14), transparent 50%);
+  }
+  .ph-icon{
+    position:absolute; top:1.1rem; right:1.1rem; z-index:1;
+    width:34px; height:34px; border-radius:50%;
+    background:rgba(255,255,255,0.55); backdrop-filter:blur(4px);
+    display:grid; place-items:center;
+  }
+  .ph-icon svg{width:16px; height:16px; stroke:var(--forest-deep);}
+  .ph-caption{
+    position:relative; z-index:1; width:100%;
+    padding:0.9rem 1.1rem; margin:0;
+    background:linear-gradient(to top, rgba(14,33,27,0.72), rgba(14,33,27,0));
+    color:var(--white);
+  }
+  .ph-caption .fname{font-family:var(--font-caption); font-size:0.78rem; font-weight:600; letter-spacing:0.02em;}
+  .ph-caption .fdesc{display:block; font-size:0.72rem; opacity:0.85; margin-top:0.15rem;}
+  .ph-caption .fdim{display:block; font-family:var(--font-caption); font-size:0.66rem; opacity:0.7; margin-top:0.35rem; letter-spacing:0.04em;}
+  .ph-square{aspect-ratio:1/1;}
+  .ph-portrait{aspect-ratio:3/4;}
+  .ph-wide{aspect-ratio:16/9;}
+  .ph-panorama{aspect-ratio:21/9;}
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative;
+    padding-top:clamp(2.5rem, 6vw, 4.5rem);
+    padding-bottom:clamp(3rem, 7vw, 6rem);
+    overflow:hidden;
+  }
+  .hero-bg-shape{
+    position:absolute; top:-15%; right:-12%; width:60vw; height:60vw; max-width:900px; max-height:900px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, rgba(46,107,84,0.14), rgba(46,107,84,0) 65%);
+    z-index:0; pointer-events:none;
+  }
+  .hero-grid{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(2rem,4vw,4rem);
+    align-items:center;
+  }
+  @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero-eyebrow{margin-bottom:1.4rem;}
+  .hero h1{
+    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
+    line-height:1.04;
+    font-weight:600;
+    color:var(--forest-deep);
+  }
+  .hero h1 em{
+    font-style:normal; color:var(--emerald);
+    position:relative;
+  }
+  .hero-sub{
+    margin-top:1.6rem; max-width:44ch;
+    font-size:1.12rem; color:var(--ink-soft);
+  }
+  .hero-actions{margin-top:2.4rem; display:flex; flex-wrap:wrap; gap:1rem;}
+  .hero-meta{
+    margin-top:3rem; display:flex; gap:2.4rem; flex-wrap:wrap;
+  }
+  .hero-meta div{border-left:2px solid var(--gold); padding-left:0.85rem;}
+  .hero-meta strong{display:block; font-family:var(--font-display); font-size:1.5rem; color:var(--forest-deep);}
+  .hero-meta span{font-family:var(--font-caption); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);}
+
+  .hero-visual{position:relative;}
+  .hero-visual .ph{min-height:420px; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);}
+  .hero-visual .ph-float{
+    position:absolute; width:46%; bottom:-8%; left:-12%;
+    border:6px solid var(--beige); border-radius:var(--radius-md); box-shadow:var(--shadow-card);
+    min-height:auto;
+  }
+  @media (max-width:700px){ .hero-visual .ph-float{display:none;} }
+
+  /* ============================================================
+     SECTION SPACING / GENERIC
+     ============================================================ */
+  section{padding-block:clamp(4rem, 8vw, 7.5rem); position:relative;}
+  .section-head{max-width:64ch; margin-bottom:clamp(2.2rem, 5vw, 3.6rem);}
+  .section-head h2{font-size:clamp(2rem, 3.6vw, 3rem); margin-top:0.9rem;}
+  .section-head p{margin-top:1.1rem; font-size:1.06rem; color:var(--ink-soft); max-width:56ch;}
+
+  /* ============================================================
+     EDITORIAL INTRO
+     ============================================================ */
+  .editorial{
+    background:var(--forest-deep); color:var(--sage-pale);
+  }
+  .editorial .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2.5rem,5vw,5rem); align-items:start;}
+  @media (max-width:920px){ .editorial .wrap{grid-template-columns:1fr;} }
+  .editorial .eyebrow{color:var(--gold-soft);}
+  .editorial .eyebrow::before{background:var(--gold-soft);}
+  .editorial h2{color:var(--white); font-size:clamp(1.9rem,3.4vw,2.7rem); margin-top:1rem; line-height:1.18;}
+  .editorial-drop{
+    font-family:var(--font-display); font-size:4.2rem; line-height:0.7; float:left;
+    margin-right:0.6rem; margin-top:0.4rem; color:var(--gold);
+  }
+  .editorial-body p{font-size:1.06rem; color:rgba(228,232,222,0.86); margin-top:1.2rem;}
+  .editorial-body p:first-child{margin-top:0;}
+  .editorial-signoff{
+    margin-top:2.2rem; padding-top:1.6rem; border-top:1px solid rgba(228,232,222,0.2);
+    font-family:var(--font-caption); font-size:0.85rem; letter-spacing:0.04em; color:var(--gold-soft);
+  }
+
+  /* ============================================================
+     FOUR PILLARS
+     ============================================================ */
+  .pillars-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem;
+  }
+  @media (max-width:1080px){ .pillars-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .pillars-grid{grid-template-columns:1fr;} }
+  .pillar-card{
+    background:var(--white); border-radius:var(--radius-lg);
+    padding:2.1rem 1.7rem 2rem; box-shadow:var(--shadow-card);
+    display:flex; flex-direction:column; gap:1.1rem; min-height:390px;
+    text-decoration:none; color:inherit;
+    border:1px solid rgba(107,74,48,0.08);
+    transition:transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  }
+  .pillar-card:hover, .pillar-card:focus-visible{
+    transform:translateY(-8px);
+    box-shadow:0 30px 60px -24px rgba(14,33,27,0.4);
+  }
+  .pillar-num{
+    font-family:var(--font-caption); font-size:0.72rem; font-weight:600;
+    letter-spacing:0.14em; text-transform:uppercase; color:var(--gold);
+  }
+  .pillar-icon{
+    width:52px; height:52px; border-radius:14px;
+    background:var(--sage-pale); display:grid; place-items:center;
+  }
+  .pillar-icon svg{width:26px; height:26px; stroke:var(--forest); fill:none; stroke-width:1.6;}
+  .pillar-card h3{font-size:1.36rem; line-height:1.2;}
+  .pillar-card p{color:var(--ink-soft); font-size:0.92rem;}
+  .pillar-tags{display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:auto;}
+  .pillar-tags li{
+    font-family:var(--font-caption); font-size:0.68rem; letter-spacing:0.02em;
+    padding:0.32rem 0.7rem; border-radius:999px; background:var(--sage-pale); color:var(--forest);
+  }
+  .pillar-enter{
+    display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.4rem;
+    font-family:var(--font-caption); font-size:0.82rem; font-weight:600; color:var(--emerald);
+  }
+  .pillar-enter svg{width:14px; height:14px; transition:transform 0.3s var(--ease);}
+  .pillar-card:hover .pillar-enter svg{transform:translateX(4px);}
+
+  /* ============================================================
+     KNOWLEDGE PANEL (reusable component)
+     ============================================================ */
+  .knowledge-panel{
+    background:var(--beige-warm);
+    border:1px solid rgba(107,74,48,0.18);
+    border-radius:var(--radius-md);
+    padding:1.5rem 1.6rem;
+  }
+  .knowledge-panel h4{
+    font-family:var(--font-caption); font-size:0.72rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--brown); font-weight:600; margin-bottom:0.9rem;
+    display:flex; align-items:center; gap:0.5rem;
+  }
+  .knowledge-panel h4 svg{width:14px; height:14px; stroke:var(--brown);}
+  .knowledge-panel ul{display:flex; flex-direction:column; gap:0.55rem;}
+  .knowledge-panel a{
+    display:flex; justify-content:space-between; align-items:center; gap:0.6rem;
+    text-decoration:none; font-family:var(--font-caption); font-size:0.85rem;
+    color:var(--forest-deep); padding:0.4rem 0; border-bottom:1px dashed rgba(107,74,48,0.22);
+  }
+  .knowledge-panel a:last-child{border-bottom:none;}
+  .knowledge-panel a span.src{color:var(--ink-soft); font-weight:400;}
+  .knowledge-panel a svg{width:12px; height:12px; stroke:var(--emerald); flex-shrink:0;}
+
+  /* ============================================================
+     SPOTLIGHT
+     ============================================================ */
+  .spotlight{background:var(--sage-pale);}
+  .spotlight-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:clamp(2rem,5vw,4rem); align-items:center;}
+  @media (max-width:920px){ .spotlight-grid{grid-template-columns:1fr;} }
+  .spotlight-portrait{position:relative;}
+  .spotlight-portrait .ph{box-shadow:var(--shadow-soft); min-height:440px;}
+  .spotlight-role{
+    position:absolute; bottom:-1.1rem; left:1.4rem; right:1.4rem;
+    background:var(--white); border-radius:var(--radius-sm); padding:0.9rem 1.1rem;
+    box-shadow:var(--shadow-card);
+    font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);
+  }
+  .spotlight-role strong{display:block; font-family:var(--font-display); font-size:1.05rem; color:var(--forest-deep); font-weight:600;}
+  .spotlight-body h3{font-size:clamp(1.8rem,3vw,2.3rem); margin-top:0.9rem;}
+  .spotlight-body p{margin-top:1.1rem; color:var(--ink-soft); font-size:1.02rem;}
+  .spotlight-body .btn{margin-top:1.6rem;}
+  .spotlight-quote{
+    margin-top:2rem; padding-left:1.2rem; border-left:3px solid var(--gold);
+    font-family:var(--font-display); font-weight:400; font-style:normal;
+    font-size:1.12rem; color:var(--forest-deep);
+  }
+
+  /* ============================================================
+     KNOWLEDGE AT A GLANCE
+     ============================================================ */
+  .glance-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:rgba(107,74,48,0.16);
+    border:1px solid rgba(107,74,48,0.16);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+  }
+  @media (max-width:880px){ .glance-grid{grid-template-columns:repeat(2,1fr);} }
+  .glance-cell{
+    background:var(--white); padding:2.1rem 1.6rem;
+    display:flex; flex-direction:column; gap:0.7rem;
+    transition:background 0.4s var(--ease);
+  }
+  .glance-cell:hover{background:var(--sage-pale);}
+  .glance-cell svg{width:24px; height:24px; stroke:var(--emerald); fill:none; stroke-width:1.6;}
+  .glance-count{font-family:var(--font-display); font-size:2.1rem; color:var(--forest-deep); font-weight:600;}
+  .glance-label{font-family:var(--font-caption); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);}
+  .glance-note{font-size:0.82rem; color:var(--ink-soft);}
+
+  /* ============================================================
+     FEATURED JOURNEY
+     ============================================================ */
+  .journey-scroller{
+    display:grid; grid-auto-flow:column; grid-auto-columns:minmax(280px, 1fr);
+    gap:1.4rem; overflow-x:auto; padding-bottom:1rem; scroll-snap-type:x proximity;
+    margin-inline:calc(var(--edge) * -1); padding-inline:var(--edge);
+  }
+  .journey-scroller::-webkit-scrollbar{height:6px;}
+  .journey-scroller::-webkit-scrollbar-thumb{background:var(--sage); border-radius:6px;}
+  .journey-card{
+    scroll-snap-align:start; background:var(--white); border-radius:var(--radius-lg);
+    overflow:hidden; box-shadow:var(--shadow-card); display:flex; flex-direction:column;
+    border:1px solid rgba(107,74,48,0.08);
+  }
+  .journey-card .ph{border-radius:0; min-height:200px;}
+  .journey-body{padding:1.5rem 1.5rem 1.7rem; display:flex; flex-direction:column; gap:0.7rem; flex:1;}
+  .journey-tag{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); font-weight:600;}
+  .journey-card h3{font-size:1.18rem; line-height:1.28;}
+  .journey-card p{font-size:0.88rem; color:var(--ink-soft);}
+  .journey-links{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:auto; padding-top:0.9rem;}
+  .journey-links span{
+    font-family:var(--font-caption); font-size:0.7rem; color:var(--forest);
+    background:var(--sage-pale); padding:0.28rem 0.6rem; border-radius:999px;
+  }
+
+  /* ============================================================
+     EVIDENCE SECTION
+     ============================================================ */
+  .evidence{background:var(--forest-deep); color:var(--sage-pale);}
+  .evidence .eyebrow{color:var(--gold-soft);}
+  .evidence .eyebrow::before{background:var(--gold-soft);}
+  .evidence .section-head h2{color:var(--white);}
+  .evidence .section-head p{color:rgba(228,232,222,0.78);}
+  .evidence-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(228,232,222,0.14); border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(228,232,222,0.14);}
+  @media (max-width:880px){ .evidence-grid{grid-template-columns:repeat(2,1fr);} }
+  .evidence-cell{background:rgba(228,232,222,0.04); padding:1.9rem 1.5rem; display:flex; flex-direction:column; gap:0.6rem;}
+  .evidence-cell svg{width:22px; height:22px; stroke:var(--gold-soft); fill:none; stroke-width:1.6;}
+  .evidence-cell strong{font-family:var(--font-display); font-size:1rem; color:var(--white); font-weight:600;}
+  .evidence-cell span{font-size:0.82rem; color:rgba(228,232,222,0.72);}
+  .evidence-standard{
+    margin-top:2.6rem; padding:1.6rem 1.8rem; border:1px dashed rgba(228,232,222,0.3);
+    border-radius:var(--radius-md); font-family:var(--font-caption); font-size:0.9rem;
+    color:rgba(228,232,222,0.85); display:flex; gap:0.9rem; align-items:flex-start;
+  }
+  .evidence-standard svg{width:20px; height:20px; stroke:var(--gold); flex-shrink:0; margin-top:0.15rem;}
+
+  /* ============================================================
+     EDITORIAL MISSION (pull quote)
+     ============================================================ */
+  .mission{
+    background:var(--beige-warm);
+    text-align:center;
+  }
+  .mission blockquote{
+    max-width:56rem; margin:0 auto; font-family:var(--font-display);
+    font-size:clamp(1.5rem, 3.4vw, 2.35rem); line-height:1.42; color:var(--forest-deep); font-weight:500;
+  }
+  .mission cite{
+    display:block; margin-top:1.8rem; font-family:var(--font-caption); font-style:normal;
+    font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brown);
+  }
+  .mission-mark{font-family:var(--font-display); font-size:3.4rem; color:var(--gold); display:block; margin-bottom:0.6rem; line-height:1;}
+
+  /* ============================================================
+     EXPLORE THE ARCHIVE
+     ============================================================ */
+  .explore-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:1.2rem;}
+  @media (max-width:1080px){ .explore-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .explore-grid{grid-template-columns:1fr;} }
+  .explore-card{
+    position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:280px;
+    display:flex; align-items:flex-end; text-decoration:none; color:var(--white);
+    box-shadow:var(--shadow-card);
+  }
+  .explore-card::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
+    transition:transform 0.6s var(--ease);
+  }
+  .explore-card:nth-child(2)::before{background:linear-gradient(160deg, var(--emerald) 0%, var(--forest) 100%);}
+  .explore-card:nth-child(3)::before{background:linear-gradient(160deg, var(--brown) 0%, #4a3320 100%);}
+  .explore-card:nth-child(4)::before{background:linear-gradient(160deg, #3a5c4c 0%, var(--forest-deep) 100%);}
+  .explore-card:nth-child(5)::before{background:linear-gradient(160deg, var(--gold) 0%, var(--brown) 100%);}
+  .explore-card:hover::before{transform:scale(1.06);}
+  .explore-card::after{
+    content:""; position:absolute; inset:0;
+    background-image:repeating-linear-gradient(120deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 30px);
+  }
+  .explore-content{position:relative; z-index:1; padding:1.6rem 1.4rem;}
+  .explore-content .eyebrow{color:var(--gold-soft); font-size:0.68rem;}
+  .explore-content .eyebrow::before{background:var(--gold-soft);}
+  .explore-content h3{color:var(--white); font-size:1.3rem; margin-top:0.6rem;}
+  .explore-content p{font-size:0.82rem; color:rgba(255,255,255,0.78); margin-top:0.5rem;}
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer.site-footer{background:var(--forest-deep); color:rgba(228,232,222,0.75); padding-top:clamp(3.5rem,6vw,5rem);}
+  .footer-top{
+    display:grid; grid-template-columns:1.3fr 1fr 1fr 1.1fr; gap:2.5rem;
+    padding-bottom:3rem; border-bottom:1px solid rgba(228,232,222,0.14);
+  }
+  @media (max-width:880px){ .footer-top{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .footer-top{grid-template-columns:1fr;} }
+  .footer-brand p{margin-top:1rem; font-size:0.88rem; max-width:32ch; color:rgba(228,232,222,0.65);}
+  .footer-social{display:flex; gap:0.7rem; margin-top:1.4rem;}
+  .footer-social a{
+    width:36px; height:36px; border-radius:50%; border:1px solid rgba(228,232,222,0.3);
+    display:grid; place-items:center; text-decoration:none;
+  }
+  .footer-social a svg{width:15px; height:15px; stroke:var(--sage-pale);}
+  .footer-social a:hover{background:var(--gold); border-color:var(--gold);}
+  .footer-social a:hover svg{stroke:var(--forest-deep);}
+  .footer-col h4{
+    font-family:var(--font-caption); font-size:0.74rem; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--gold-soft); margin-bottom:1.1rem; font-weight:600;
+  }
+  .footer-col ul{display:flex; flex-direction:column; gap:0.6rem;}
+  .footer-col a{text-decoration:none; font-size:0.87rem; color:rgba(228,232,222,0.78);}
+  .footer-col a:hover{color:var(--gold-soft);}
+  .footer-values{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.3rem;}
+  .footer-values li{
+    font-family:var(--font-caption); font-size:0.7rem; padding:0.3rem 0.65rem;
+    border:1px solid rgba(228,232,222,0.25); border-radius:999px; color:rgba(228,232,222,0.8);
+  }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+    padding-block:1.6rem; font-family:var(--font-caption); font-size:0.76rem; color:rgba(228,232,222,0.55);
+  }
+  .footer-bottom a{text-decoration:underline; text-underline-offset:3px;}
+
+  /* utility */
+  .col-span-2{grid-column:span 2;}
+  @media (max-width:600px){ .col-span-2{grid-column:span 1;} }
 </style>
 </head>
 <body>
 
-<header id="header">
-<div class="container">
-<nav>
-<a class="logo" href="#">Wouro<span>Yobi</span></a>
-<ul class="nav">
-<li><a href="our-community.html">Our Community</a></li>
-<li><a href="development.html">Development</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#leadership">Leadership</a></li>
-<li><a href="#news">News</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</div>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="brand" href="#top" aria-label="Wouro Yobi Living Archive, home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span class="brand-name">Wouro Yobi<small>Living Archive</small></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#pillars">Our Identity</a></li>
+        <li><a href="#way-of-life">Way of Life</a></li>
+        <li><a href="#memory">Our Memory</a></li>
+        <li><a href="#journey">Featured Journey</a></li>
+        <li><a href="#knowledge-centre">Knowledge Centre</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="#pillars">Explore the Archive</a>
+      <a class="btn btn-primary" href="#spotlight">Begin the Journey</a>
+      <button class="nav-toggle" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16332A" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
-<div class="container">
-<span class="badge">COMMUNITY • HERITAGE • DEVELOPMENT</span>
-<h1>Welcome to Wouro Yobi</h1>
-<p>Building a Community for Future Generations through education, agriculture, youth leadership, peace and sustainable development.</p>
-<div class="actions">
-<a href="our-community.html" class="btn btn-primary">
-    Discover Wouro Yobi
-</a>
-<a class="btn btn-outline" href="#projects">Explore Projects</a>
-</div>
-</div>
-</section>
+<main id="main">
 
-<section>
-<div class="container">
-<div class="title"><h2>Community Snapshot</h2></div>
-<div class="grid stats">
-<div class="card"><h3>1</h3><p>Education Project</p></div>
-<div class="card"><h3>6</h3><p>Development Initiatives</p></div>
-<div class="card"><h3>5</h3><p>Agricultural Activities</p></div>
-<div class="card"><h3>3</h3><p>Youth Programmes</p></div>
-<div class="card"><h3>1</h3><p>Traditional Leadership</p></div>
-</div>
-</div>
-</section>
-<section id="about">
-<div class="container grid twocol">
-<div class="placeholder">Hero Community Photo</div>
-<div>
-<h2>About Wouro Yobi</h2>
-<p>Wouro Yobi is a community in the Mayo-Darlé municipality of the Adamawa Region of Cameroon. The community is committed to preserving its cultural heritage while investing in education, agriculture, youth development, peace and sustainable development.</p>
-<a class="btn btn-primary" href="#">Learn More</a>
-</div>
-</div>
-</section>
-<section id="development">
-<div class="container">
-<div class="title"><h2>Development Pillars</h2></div>
-<div class="grid pillars">
-<div class="card"><h3>Education</h3><p>Learning opportunities for future generations.</p></div>
-<div class="card"><h3>Agriculture</h3><p>Livestock, farming and food security.</p></div>
-<div class="card"><h3>Infrastructure</h3><p>Community facilities and essential services.</p></div>
-<div class="card"><h3>Environment</h3><p>Responsible stewardship of natural resources.</p></div>
-<div class="card"><h3>Youth</h3><p>Leadership, sports and volunteerism.</p></div>
-<div class="card"><h3>Peace</h3><p>Dialogue, inclusion and social cohesion.</p></div>
-</div>
-</div>
-</section>
-
-<section id="projects">
-<div class="container grid twocol">
-<div class="placeholder">Kindergarten Expansion Photo</div>
-<div>
-<h2>Featured Project</h2>
-<h3>Kindergarten Expansion</h3>
-<p>Expanding access to early childhood education through improved learning spaces and community partnership.</p>
-<a class="btn btn-primary" href="#">Project Details</a>
-</div>
-</div>
-</section>
-<section id="leadership">
-<div class="container grid twocol">
-<div>
-<h2>Traditional Leadership</h2>
-<h3>His Majesty Maître Aliou Amadou</h3>
-<p>Highlight the community's leadership philosophy, development vision and commitment to preserving heritage while supporting sustainable progress.</p>
-</div>
-<div class="placeholder">Leadership Portrait</div>
-</div>
-</section>
-<section id="news">
-<div class="container">
-<div class="title"><h2>Latest News</h2></div>
-<div class="grid pillars">
-<div class="card"><h3>Government Visit</h3><p>Latest development update.</p></div>
-<div class="card"><h3>School Expansion</h3><p>Construction progress.</p></div>
-<div class="card"><h3>Youth Activities</h3><p>Sports and leadership.</p></div>
-</div>
- <section class="discover-preview">
-    <div class="container">
-        <h2>Discover Wouro Yobi</h2>
-        <p>
-            Learn about our history, culture, landscape,
-            leadership and vision for the future.
-        </p>
-        <a href="our-community.html" class="btn btn-primary">
-            Explore Our Community
-        </a>
-
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="hero" id="top">
+    <div class="hero-bg-shape" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">A Mbororo Community, Documented by Its Own People</p>
+        <h1>Discover<br><em>Wouro&nbsp;Yobi</em></h1>
+        <p class="hero-sub">A living Mbororo community preserving its heritage while building a sustainable future through education, leadership, agriculture and community development.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#spotlight">Begin the Journey
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#pillars">Explore the Archive</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>4</strong><span>Archive Pillars</span></div>
+          <div><strong>1</strong><span>Traditional Leadership</span></div>
+          <div><strong>∞</strong><span>Stories in Progress</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <figure class="ph ph-panorama" style="min-height:420px;">
+          <div class="ph-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg>
+          </div>
+          <figcaption class="ph-caption">
+            <span class="fname">hero-panorama.jpg</span>
+            <span class="fdesc">Panoramic view of Wouro Yobi at golden hour</span>
+            <span class="fdim">Recommended 1920 × 1080</span>
+          </figcaption>
+        </figure>
+        <figure class="ph ph-square ph-float">
+          <div class="ph-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg>
+          </div>
+          <figcaption class="ph-caption">
+            <span class="fname">village-aerial.jpg</span>
+            <span class="fdim">1600 × 1600</span>
+          </figcaption>
+        </figure>
+      </div>
     </div>
+  </section>
 
-</section>
-</div>
-</section>
+  <!-- ============================================================
+       2. EDITORIAL INTRODUCTION
+       ============================================================ -->
+  <section class="editorial" id="about" aria-labelledby="editorial-heading">
+    <div class="wrap reveal">
+      <div>
+        <p class="eyebrow">Why This Archive Exists</p>
+        <h2 id="editorial-heading">A community that remembers itself, on its own terms</h2>
+      </div>
+      <div class="editorial-body">
+        <p><span class="editorial-drop" aria-hidden="true">M</span>ost accounts of Mbororo life have been written by outsiders — travellers, administrators, researchers passing through. Wouro Yobi is writing its own. This archive is the community's attempt to hold its history, knowledge and daily life in one place, told in its own voice and kept for the people who will need it after us.</p>
+        <p>What you will find here is not a brochure. It is a working record — of the elders who carry oral history, the leaders who carry decisions, the herders and farmers who carry the land, and the children who will carry all of it forward. Every entry is built to connect to another: a person to a project, a project to a place, a place to a story still being written.</p>
+        <p>We preserve what came before so that what comes next is built with memory intact.</p>
+        <div class="editorial-signoff">Wouro Yobi Living Archive — established as a community-led initiative</div>
+      </div>
+    </div>
+  </section>
 
-<section id="contact">
-<div class="container">
-<div class="title"><h2>Partner with Wouro Yobi</h2></div>
-<p style="text-align:center">Join us in building opportunities for future generations.</p>
-</div>
-</section>
+  <!-- ============================================================
+       3. FOUR PILLARS
+       ============================================================ -->
+  <section id="pillars" aria-labelledby="pillars-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Four Entrances Into the Archive</p>
+        <h2 id="pillars-heading">Begin wherever the story calls you</h2>
+        <p>Every record in this archive belongs to one of four rooms. Each is a complete world on its own, and each connects outward to the others.</p>
+      </div>
 
-<footer>
-<div class="container">
-<p><strong>Wouro Yobi</strong></p>
-<p>Building a Community for Future Generations</p>
-<p>&copy; <span id="year"></span> Wouro Yobi</p>
-</div>
+      <div class="pillars-grid reveal reveal-stagger">
+        <a class="pillar-card" href="#" style="--i:0">
+          <p class="pillar-num">Room 01</p>
+          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4 8-4z"/><path d="M4 11v6l8 4 8-4v-6"/></svg></div>
+          <h3>Our Identity</h3>
+          <p>Who we are — the lineage, leadership and language that give Wouro Yobi its name.</p>
+          <ul class="pillar-tags"><li>History</li><li>Leadership</li><li>Language</li><li>Values</li><li>Mbororo Heritage</li></ul>
+          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="pillar-card" href="#way-of-life" style="--i:1">
+          <p class="pillar-num">Room 02</p>
+          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20c2-6 4-9 8-9s6 3 8 9"/><circle cx="12" cy="7" r="3"/></svg></div>
+          <h3>Our Way of Life</h3>
+          <p>Daily rhythm — livestock, agriculture, markets and the seasons that shape the calendar.</p>
+          <ul class="pillar-tags"><li>Livestock</li><li>Agriculture</li><li>Markets</li><li>Children</li><li>Seasons</li></ul>
+          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="pillar-card" href="#" style="--i:2">
+          <p class="pillar-num">Room 03</p>
+          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-8h6v8"/></svg></div>
+          <h3>Our Future</h3>
+          <p>What we are building — schools, roads, partnerships and the youth who will lead them.</p>
+          <ul class="pillar-tags"><li>Education</li><li>Youth</li><li>Infrastructure</li><li>Environment</li><li>Partnerships</li></ul>
+          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="pillar-card" href="#memory" style="--i:3">
+          <p class="pillar-num">Room 04</p>
+          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>Our Memory</h3>
+          <p>What must not be lost — elders' voices, songs, proverbs and the timeline of a community.</p>
+          <ul class="pillar-tags"><li>Oral History</li><li>Elders</li><li>Songs</li><li>Photographs</li><li>Timeline</li></ul>
+          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. COMMUNITY SPOTLIGHT
+       ============================================================ -->
+  <section class="spotlight" id="spotlight" aria-labelledby="spotlight-heading">
+    <div class="wrap">
+      <div class="spotlight-grid reveal">
+        <div class="spotlight-portrait">
+          <figure class="ph ph-portrait">
+            <div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 5-7 8-7s6.5 2 8 7"/></svg></div>
+            <figcaption class="ph-caption">
+              <span class="fname">ardo-abdoulkadi.jpg</span>
+              <span class="fdesc">Portrait, community setting</span>
+              <span class="fdim">1200 × 1600</span>
+            </figcaption>
+          </figure>
+          <div class="spotlight-role"><strong>Ardo Abdoulkadi</strong>President, MBOSCUDA – Mayo-Banyo</div>
+        </div>
+        <div class="spotlight-body">
+          <p class="eyebrow">Community Spotlight</p>
+          <h3 id="spotlight-heading">Ardo Abdoulkadi</h3>
+          <p>Ardo Abdoulkadi leads the Mbororo Social and Cultural Development Association (MBOSCUDA) for the Mayo-Banyo division, representing the interests of Mbororo communities across land rights, education access and pastoral development. His work connects Wouro Yobi to a wider regional network of Mbororo advocacy and self-representation.</p>
+          <p>Within the community, his leadership has shaped decisions on schooling, infrastructure requests to government partners, and the day-to-day mediation that keeps a pastoral community's many interests aligned.</p>
+          <p class="spotlight-quote">"A community that documents itself is a community that cannot be spoken over."</p>
+          <a class="btn btn-primary" href="https://ke.linkedin.com/in/ardo-abdoulkadi" target="_blank" rel="noopener">Read Full Profile
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+          <p style="margin-top:1rem; font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);">This profile is the first of many. Community Spotlight rotates to feature elders, leaders, educators and youth across the archive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. KNOWLEDGE AT A GLANCE
+       ============================================================ -->
+  <section id="knowledge-glance" aria-labelledby="glance-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Archive in Numbers</p>
+        <h2 id="glance-heading">Knowledge at a glance</h2>
+        <p>Every record type below is a doorway. As the archive grows, each figure will link through to a living, searchable index.</p>
+      </div>
+      <div class="glance-grid reveal">
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c1-4 3.5-6 7-6s6 2 7 6"/><circle cx="17" cy="9" r="2.5"/></svg>
+          <span class="glance-count">People</span>
+          <span class="glance-label">Elders, leaders, youth</span>
+          <span class="glance-note">Profiles connecting names to roles, families and stories.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+          <span class="glance-count">Places</span>
+          <span class="glance-label">Land, markets, landmarks</span>
+          <span class="glance-note">The geography that grounds every story in a real location.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
+          <span class="glance-count">Projects</span>
+          <span class="glance-label">Schools, farms, infrastructure</span>
+          <span class="glance-note">Development work tracked from proposal to completion.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>
+          <span class="glance-count">Events</span>
+          <span class="glance-label">Visits, meetings, gatherings</span>
+          <span class="glance-note">Dated moments that mark the community's progress.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 12h8M8 16h5"/></svg>
+          <span class="glance-count">Stories</span>
+          <span class="glance-label">Narratives, oral history</span>
+          <span class="glance-note">First-person and third-person accounts, always sourced.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-11 11"/></svg>
+          <span class="glance-count">Media</span>
+          <span class="glance-label">Photographs, film, audio</span>
+          <span class="glance-note">Visual and spoken evidence, catalogued by subject.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M14 2v5h5"/></svg>
+          <span class="glance-count">Documents</span>
+          <span class="glance-label">Records, correspondence</span>
+          <span class="glance-note">Official and informal papers that support every claim.</span>
+        </div>
+        <div class="glance-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg>
+          <span class="glance-count">Videos</span>
+          <span class="glance-label">Interviews, footage</span>
+          <span class="glance-note">Moving records of people, places and events in motion.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. FEATURED JOURNEY
+       ============================================================ -->
+  <section id="journey" aria-labelledby="journey-heading" style="background:var(--beige-warm);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Featured Journey</p>
+        <h2 id="journey-heading">What the community has been building</h2>
+        <p>Not news in the passing sense — each entry below is a thread the archive will keep pulling on, linked to the people, places and images behind it.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="journey-scroller reveal">
+        <article class="journey-card">
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">kindergarten-expansion.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
+          </figure>
+          <div class="journey-body">
+            <p class="journey-tag">Education</p>
+            <h3>Kindergarten Expansion</h3>
+            <p>New classrooms are extending early education access for the youngest children of Wouro Yobi.</p>
+            <div class="journey-links"><span>Project</span><span>Children</span><span>Gallery</span></div>
+          </div>
+        </article>
+        <article class="journey-card">
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">government-visit-01.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
+          </figure>
+          <div class="journey-body">
+            <p class="journey-tag">Governance</p>
+            <h3>Government Visit</h3>
+            <p>A delegation visit opened dialogue on infrastructure requests and local development priorities.</p>
+            <div class="journey-links"><span>Event</span><span>Leadership</span><span>Documents</span></div>
+          </div>
+        </article>
+        <article class="journey-card">
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">football-01.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
+          </figure>
+          <div class="journey-body">
+            <p class="journey-tag">Youth</p>
+            <h3>Youth Football</h3>
+            <p>A community league is giving young people a shared arena for sport, pride and friendly rivalry.</p>
+            <div class="journey-links"><span>Story</span><span>People</span><span>Media</span></div>
+          </div>
+        </article>
+        <article class="journey-card">
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">agriculture-overview.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
+          </figure>
+          <div class="journey-body">
+            <p class="journey-tag">Livelihood</p>
+            <h3>Agriculture</h3>
+            <p>Seasonal planting and livestock management remain the backbone of daily livelihood.</p>
+            <div class="journey-links"><span>Project</span><span>Places</span><span>Timeline</span></div>
+          </div>
+        </article>
+        <article class="journey-card">
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">community-meeting.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
+          </figure>
+          <div class="journey-body">
+            <p class="journey-tag">Governance</p>
+            <h3>Community Dialogue</h3>
+            <p>Regular gatherings keep decision-making open, transparent and rooted in consensus.</p>
+            <div class="journey-links"><span>Event</span><span>Leadership</span><span>Stories</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WAY OF LIFE + KNOWLEDGE PANEL (contextual reuse)
+       ============================================================ -->
+  <section id="way-of-life" aria-labelledby="wol-heading">
+    <div class="wrap" style="display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:start;">
+      <div class="reveal">
+        <p class="eyebrow">Our Way of Life</p>
+        <h2 id="wol-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">Life measured in seasons, not schedules</h2>
+        <p style="margin-top:1.2rem; color:var(--ink-soft); font-size:1.02rem; max-width:60ch;">Livestock movement, planting cycles and market days shape the community's calendar far more than the Gregorian one. Milk production, tree planting and shared farmland tie households together across generations.</p>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;">
+          <figure class="ph ph-square"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">livestock-01.jpg</span><span class="fdim">1200×1200</span></figcaption></figure>
+          <figure class="ph ph-square"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">milk-production.jpg</span><span class="fdim">1200×1200</span></figcaption></figure>
+          <figure class="ph ph-square"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">women-agriculture.jpg</span><span class="fdim">1200×1200</span></figcaption></figure>
+        </div>
+      </div>
+      <aside class="knowledge-panel reveal" aria-labelledby="kp-1">
+        <h4 id="kp-1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Related Knowledge</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Fula_people" target="_blank" rel="noopener">Fula (Fulani) People <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.fao.org/" target="_blank" rel="noopener">Pastoral Livelihoods <span class="src">FAO</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.ilri.org/" target="_blank" rel="noopener">Livestock Research <span class="src">ILRI</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. KNOWLEDGE PANEL — second contextual placement (Identity / Region)
+       ============================================================ -->
+  <section id="memory" aria-labelledby="memory-heading" style="background:var(--sage-pale);">
+    <div class="wrap" style="display:grid; grid-template-columns:1fr 1.5fr; gap:clamp(2rem,4vw,3.5rem); align-items:start;">
+      <aside class="knowledge-panel reveal" aria-labelledby="kp-2" style="order:2;">
+        <h4 id="kp-2"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Regional Context</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Adamawa_Region" target="_blank" rel="noopener">Adamawa Region <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" rel="noopener">Cameroon <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.google.com/maps?q=6.505889,11.502250" target="_blank" rel="noopener">Wouro Yobi <span class="src">Google Maps</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">Community Boundaries <span class="src">OpenStreetMap</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+        </ul>
+      </aside>
+      <div class="reveal" style="order:1;">
+        <p class="eyebrow">Our Memory</p>
+        <h2 id="memory-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">What the elders carry, we are learning to keep</h2>
+        <p style="margin-top:1.2rem; color:var(--ink-soft); font-size:1.02rem; max-width:60ch;">Songs sung at gatherings, proverbs passed down in everyday speech, and the recollection of elders who watched Wouro Yobi grow — this is the most fragile part of the archive, and the most urgent to record. A community timeline is being built interview by interview.</p>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2rem;">
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">heritage-01.jpg</span><span class="fdim">1400×900</span></figcaption></figure>
+          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">culture-01.jpg</span><span class="fdim">1400×900</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. EVIDENCE SECTION
+       ============================================================ -->
+  <section class="evidence" id="evidence" aria-labelledby="evidence-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Archive Methodology</p>
+        <h2 id="evidence-heading">Nothing here exists without evidence</h2>
+        <p>Every story published to this archive is built to carry the material that proves it — so a claim about the past or present can always be traced back to its source.</p>
+      </div>
+      <div class="evidence-grid reveal">
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-11 11"/></svg><strong>Photographs</strong><span>Dated and attributed to a place and event.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg><strong>Videos</strong><span>Footage of events and everyday life.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M1 12h6M17 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"/></svg><strong>Interviews</strong><span>First-person testimony, recorded and transcribed.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><strong>Maps</strong><span>Locations tied to coordinates and boundaries.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M14 2v5h5"/></svg><strong>Documents</strong><span>Official records and correspondence.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 12h8M8 16h5"/></svg><strong>Reports</strong><span>Findings and progress summaries.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>Timelines</strong><span>Events placed in chronological sequence.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M2 20c1-4 3.5-6 7-6s6 2 7 6"/><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/></svg><strong>Community Voices</strong><span>Testimony gathered directly, in context.</span></div>
+      </div>
+      <div class="evidence-standard reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <p>Every published story links to at least one primary source — a photograph, document, recording or dated event — before it is considered complete. This is the standard the archive holds itself to.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. EDITORIAL MISSION
+       ============================================================ -->
+  <section class="mission" aria-labelledby="mission-heading">
+    <div class="wrap reveal">
+      <span class="mission-mark" aria-hidden="true">"</span>
+      <blockquote id="mission-heading">
+        Our home exists to document the life, heritage and aspirations of Wouro Yobi from the perspective of its people. We preserve our history, celebrate our culture, record our progress and share our vision for the future — so that future generations, researchers, partners and the wider world can understand who we are and what we are building together.
+      </blockquote>
+      <cite>Editorial Mission — Wouro Yobi Living Archive</cite>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10. EXPLORE THE ARCHIVE
+       ============================================================ -->
+  <section id="knowledge-centre" aria-labelledby="explore-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Five Ways Through the Archive</p>
+        <h2 id="explore-heading">Explore the archive</h2>
+      </div>
+      <div class="explore-grid reveal">
+        <a class="explore-card col-span-2" href="#pillars"><div class="explore-content"><p class="eyebrow">Room 01</p><h3>Our Identity</h3><p>Lineage, leadership, language and Mbororo heritage.</p></div></a>
+        <a class="explore-card" href="#way-of-life"><div class="explore-content"><p class="eyebrow">Room 02</p><h3>Our Way of Life</h3><p>Livestock, agriculture and daily rhythm.</p></div></a>
+        <a class="explore-card" href="#pillars"><div class="explore-content"><p class="eyebrow">Room 03</p><h3>Our Future</h3><p>Education, youth and development.</p></div></a>
+        <a class="explore-card col-span-2" href="#memory"><div class="explore-content"><p class="eyebrow">Room 04</p><h3>Our Memory</h3><p>Oral history, elders, songs and the community timeline.</p></div></a>
+      </div>
+      <div style="margin-top:1.2rem;">
+        <a class="explore-card" href="#knowledge-glance" style="display:flex; min-height:180px;"><div class="explore-content"><p class="eyebrow">Reference</p><h3>Knowledge Centre</h3><p>People, places, projects, events, stories, media, documents and video — indexed and cross-linked.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     11. FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Wouro Yobi Living Archive, home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-name" style="color:var(--white);">Wouro Yobi<small style="color:var(--gold-soft);">Living Archive</small></span>
+        </a>
+        <p>Building a community for future generations — a knowledge platform documenting the history, culture and development of Wouro Yobi.</p>
+        <ul class="footer-values">
+          <li>Community-Led</li><li>Evidence-Based</li><li>Open to Partners</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V6h-3a4 4 0 00-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2a1 1 0 011-1z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>The Archive</h4>
+        <ul>
+          <li><a href="#pillars">Our Identity</a></li>
+          <li><a href="#way-of-life">Our Way of Life</a></li>
+          <li><a href="#pillars">Our Future</a></li>
+          <li><a href="#memory">Our Memory</a></li>
+          <li><a href="#knowledge-glance">Knowledge Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#spotlight">Community Spotlight</a></li>
+          <li><a href="#journey">Featured Journey</a></li>
+          <li><a href="#evidence">Archive Methodology</a></li>
+          <li><a href="https://mboscuda.org/" target="_blank" rel="noopener">MBOSCUDA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>References</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Fula_people" target="_blank" rel="noopener">Fula (Fulani) — Wikipedia</a></li>
+          <li><a href="https://minorityrights.org/communities/mbororo-2/" target="_blank" rel="noopener">Minority Rights Group</a></li>
+          <li><a href="https://www.unesco.org/en/culture" target="_blank" rel="noopener">UNESCO Culture</a></li>
+          <li><a href="https://www.unicef.org/education" target="_blank" rel="noopener">UNICEF Education</a></li>
+          <li><a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">UN Sustainable Development Goals</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Wouro Yobi Living Archive. A community-led initiative.</span>
+      <span>Built as a knowledge platform — <a href="#top">back to top</a></span>
+    </div>
+  </div>
 </footer>
 
 <script>
-const header=document.getElementById("header");
-window.addEventListener("scroll",()=>header.classList.toggle("scrolled",window.scrollY>50));
-document.getElementById("year").textContent=new Date().getFullYear();
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");});
-},{threshold:.15});
-document.querySelectorAll("section").forEach(s=>{s.classList.add("hidden");observer.observe(s);});
-</script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Scroll-reveal via Intersection Observer
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Stagger index for grouped children
+  document.querySelectorAll('.reveal-stagger').forEach(group => {
+    Array.from(group.children).forEach((child, i) => {
+      child.style.setProperty('--i', i);
+    });
+  });
+
+  // Mobile nav toggle (simple show/hide of primary nav as a stacked panel)
+  const toggle = document.querySelector('.nav-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const nav = document.querySelector('.primary-nav');
+      const open = nav.style.display === 'flex';
+      nav.style.display = open ? 'none' : 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '100%';
+      nav.style.left = '0';
+      nav.style.right = '0';
+      nav.style.background = 'var(--beige)';
+      nav.style.padding = '1.2rem var(--edge)';
+      nav.style.borderTop = '1px solid rgba(107,74,48,0.14)';
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  }
+</script>
 </body>
 </html>
