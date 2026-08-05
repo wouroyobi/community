@@ -4,594 +4,324 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wouro Yobi Living Archive — Building a Community for Future Generations</title>
-<meta name="description" content="The Wouro Yobi Living Archive is a community-led digital heritage and knowledge initiative documenting the history, culture, development and aspirations of Wouro Yobi, a Mbororo community in the Adamawa region of Cameroon.">
+<title>Wouro Yobi Living Archive — Every Community Has a Story</title>
+<meta name="description" content="Wouro Yobi is a Mbororo community in the Adamawa Region of Cameroon. Discover its place within the wider story of Cameroon, the Adamawa Plateau and the Mbororo people, documented by its own people.">
+<meta property="og:title" content="Wouro Yobi Living Archive">
+<meta property="og:description" content="Every community has a story. This is Wouro Yobi's — situated within the history of Cameroon, the Adamawa Region and the Mbororo people.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Wouro Yobi Living Archive",
+  "description": "A community-led digital heritage and knowledge platform documenting Wouro Yobi, a Mbororo community in the Adamawa Region of Cameroon.",
+  "publisher": { "@type": "Organization", "name": "Wouro Yobi Living Archive" }
+}
+</script>
 <style>
   /* ============================================================
-     DESIGN TOKENS
-     Palette: forest, emerald, sage, beige, earth brown, gold
-     Type: Poppins (display) / Inter (body) / Inter Tight (caption+data)
-     Signature: "The Archive Thread" — a gold spine that stitches
-     every section together, echoing the knowledge-graph structure
-     of the archive itself.
+     DESIGN TOKENS — frozen across the archive.
      ============================================================ */
   :root{
-    --forest: #16332A;
-    --forest-deep: #0E211B;
-    --emerald: #2E6B54;
-    --sage: #A9BBA2;
-    --sage-pale: #E4E8DE;
-    --beige: #F3EEE1;
-    --beige-warm: #ECE3CE;
-    --brown: #6B4A30;
-    --gold: #C79A4B;
-    --gold-soft: #E4C583;
-    --ink: #1E2420;
-    --ink-soft: #4B564E;
-    --white: #FFFFFF;
-
-    --font-display: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-caption: 'Inter Tight', sans-serif;
-
-    --max-w: 1280px;
-    --edge: clamp(1.5rem, 5vw, 4.5rem);
-    --radius-lg: 28px;
-    --radius-md: 16px;
-    --radius-sm: 8px;
+    --forest: #16332A; --forest-deep: #0E211B; --emerald: #2E6B54;
+    --sage: #A9BBA2; --sage-pale: #E4E8DE; --beige: #F3EEE1; --beige-warm: #ECE3CE;
+    --brown: #6B4A30; --gold: #C79A4B; --gold-soft: #E4C583;
+    --ink: #1E2420; --ink-soft: #4B564E; --white: #FFFFFF;
+    --font-display: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif; --font-caption: 'Inter Tight', sans-serif;
+    --max-w: 1280px; --edge: clamp(1.5rem, 5vw, 4.5rem);
+    --radius-lg: 28px; --radius-md: 16px; --radius-sm: 8px;
     --shadow-soft: 0 20px 60px -25px rgba(14,33,27,0.35);
     --shadow-card: 0 12px 34px -18px rgba(14,33,27,0.28);
     --ease: cubic-bezier(.22,1,.36,1);
   }
-
   *,*::before,*::after{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
   }
-  body{
-    margin:0;
-    font-family:var(--font-body);
-    color:var(--ink);
-    background:var(--beige);
-    -webkit-font-smoothing:antialiased;
-    line-height:1.6;
-  }
+  body{margin:0; font-family:var(--font-body); color:var(--ink); background:var(--beige); -webkit-font-smoothing:antialiased; line-height:1.6;}
   img{max-width:100%; display:block;}
   a{color:inherit;}
   h1,h2,h3,h4{font-family:var(--font-display); margin:0; color:var(--forest-deep); font-weight:600; letter-spacing:-0.01em;}
-  p{margin:0;}
-  ul{margin:0; padding:0; list-style:none;}
-  button{font-family:inherit; cursor:pointer;}
-
-  :focus-visible{
-    outline:2.5px solid var(--gold);
-    outline-offset:3px;
-    border-radius:4px;
-  }
-
-  .wrap{max-width:var(--max-w); margin:0 auto; padding-inline:var(--edge);}
-  .eyebrow{
-    font-family:var(--font-caption);
-    font-size:0.75rem;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--emerald);
-    font-weight:600;
-    display:inline-flex;
-    align-items:center;
-    gap:0.6em;
-  }
-  .eyebrow::before{
-    content:"";
-    width:22px; height:1.5px;
-    background:var(--gold);
-    display:inline-block;
-  }
+  p{margin:0;} ul{margin:0; padding:0; list-style:none;} button{font-family:inherit; cursor:pointer;}
+  :focus-visible{outline:2.5px solid var(--gold); outline-offset:3px; border-radius:4px;}
   .visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
-
-  /* ---------- reveal-on-scroll ---------- */
+  .wrap{max-width:var(--max-w); margin:0 auto; padding-inline:var(--edge);}
+  .eyebrow{font-family:var(--font-caption); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--emerald); font-weight:600; display:inline-flex; align-items:center; gap:0.6em;}
+  .eyebrow::before{content:""; width:22px; height:1.5px; background:var(--gold); display:inline-block;}
   .reveal{opacity:0; transform:translateY(28px); transition:opacity 0.9s var(--ease), transform 0.9s var(--ease);}
   .reveal.is-visible{opacity:1; transform:none;}
   .reveal-stagger > *{transition-delay:calc(var(--i,0) * 90ms);}
-
-  /* ============================================================
-     THE ARCHIVE THREAD — signature spine
-     ============================================================ */
-  .thread{
-    position:absolute;
-    left:calc(var(--edge) - 1px);
-    top:0;
-    width:2px;
-    height:100%;
-    background:linear-gradient(to bottom, transparent 0%, var(--gold-soft) 6%, var(--gold-soft) 94%, transparent 100%);
-    opacity:0.5;
-    display:none;
-  }
-  @media (min-width:1000px){ .thread{display:block;} }
-  .thread-node{
-    position:absolute;
-    left:calc(var(--edge) - 5px);
-    width:12px; height:12px;
-    border-radius:50%;
-    background:var(--beige);
-    border:2px solid var(--gold);
-    display:none;
-  }
-  @media (min-width:1000px){ .thread-node{display:block;} }
-
-  /* ============================================================
-     SKIP LINK
-     ============================================================ */
-  .skip-link{
-    position:absolute; left:1rem; top:-4rem;
-    background:var(--forest-deep); color:var(--white);
-    padding:0.8rem 1.2rem; border-radius:var(--radius-sm);
-    z-index:200; transition:top 0.25s var(--ease);
-    font-family:var(--font-caption); font-weight:600;
-  }
+  .skip-link{position:absolute; left:1rem; top:-4rem; background:var(--forest-deep); color:var(--white); padding:0.8rem 1.2rem; border-radius:var(--radius-sm); z-index:300; transition:top 0.25s var(--ease); font-family:var(--font-caption); font-weight:600;}
   .skip-link:focus{top:1rem;}
+  .reading-progress{position:fixed; top:0; left:0; height:3px; width:0%; background:var(--gold); z-index:250; transition:width 0.1s linear;}
 
-  /* ============================================================
-     HEADER / NAV
-     ============================================================ */
-  header.site-header{
-    position:sticky; top:0; z-index:100;
-    background:rgba(243,238,225,0.86);
-    backdrop-filter:blur(14px) saturate(140%);
-    border-bottom:1px solid rgba(107,74,48,0.14);
-  }
-  .nav-row{
-    max-width:var(--max-w); margin:0 auto; padding:1.05rem var(--edge);
-    display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
-  }
+  /* ---------- header / nav — permanent, frozen ---------- */
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(243,238,225,0.86); backdrop-filter:blur(14px) saturate(140%); border-bottom:1px solid rgba(107,74,48,0.14);}
+  .nav-row{max-width:var(--max-w); margin:0 auto; padding:1.05rem var(--edge); display:flex; align-items:center; justify-content:space-between; gap:1.5rem;}
   .brand{display:flex; align-items:center; gap:0.7rem; text-decoration:none;}
-  .brand-mark{
-    width:38px; height:38px; border-radius:50%;
-    background:conic-gradient(from 210deg, var(--forest), var(--emerald), var(--gold), var(--forest));
-    display:grid; place-items:center; flex-shrink:0;
-    box-shadow:inset 0 0 0 3px var(--beige);
-  }
+  .brand-mark{width:38px; height:38px; border-radius:50%; background:conic-gradient(from 210deg, var(--forest), var(--emerald), var(--gold), var(--forest)); display:grid; place-items:center; flex-shrink:0; box-shadow:inset 0 0 0 3px var(--beige);}
   .brand-mark span{width:12px; height:12px; border-radius:50%; background:var(--beige);}
   .brand-name{font-family:var(--font-display); font-size:1.02rem; font-weight:600; color:var(--forest-deep); line-height:1.1;}
   .brand-name small{display:block; font-family:var(--font-caption); font-weight:500; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--brown); margin-top:0.2rem;}
-
-  nav.primary-nav ul{display:flex; gap:2.1rem; align-items:center;}
-  nav.primary-nav a{
-    font-family:var(--font-caption); font-size:0.86rem; font-weight:500;
-    text-decoration:none; color:var(--ink-soft);
-    position:relative; padding-bottom:4px;
-  }
-  nav.primary-nav a::after{
-    content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0;
-    background:var(--gold); transition:width 0.3s var(--ease);
-  }
+  nav.primary-nav ul{display:flex; gap:1.4rem; align-items:center; flex-wrap:wrap;}
+  nav.primary-nav a{font-family:var(--font-caption); font-size:0.83rem; font-weight:500; text-decoration:none; color:var(--ink-soft); position:relative; padding-bottom:4px;}
+  nav.primary-nav a::after{content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0; background:var(--gold); transition:width 0.3s var(--ease);}
   nav.primary-nav a:hover::after, nav.primary-nav a:focus-visible::after{width:100%;}
+  nav.primary-nav a[aria-current="page"]{color:var(--forest-deep);}
+  nav.primary-nav a[aria-current="page"]::after{width:100%;}
   .nav-actions{display:flex; align-items:center; gap:0.8rem;}
-  .btn{
-    font-family:var(--font-caption); font-weight:600; font-size:0.85rem;
-    padding:0.75rem 1.5rem; border-radius:999px; border:1.5px solid transparent;
-    text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;
-    transition:transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color .35s var(--ease);
-  }
+  .btn{font-family:var(--font-caption); font-weight:600; font-size:0.85rem; padding:0.75rem 1.5rem; border-radius:999px; border:1.5px solid transparent; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; transition:transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color .35s var(--ease);}
   .btn-primary{background:var(--forest-deep); color:var(--beige);}
   .btn-primary:hover{background:var(--emerald); transform:translateY(-2px);}
   .btn-ghost{border-color:var(--forest-deep); color:var(--forest-deep);}
   .btn-ghost:hover{background:var(--forest-deep); color:var(--beige); transform:translateY(-2px);}
   .btn-gold{background:var(--gold); color:var(--forest-deep);}
   .btn-gold:hover{background:var(--gold-soft); transform:translateY(-2px);}
+  .btn-sm{padding:0.55rem 1.1rem; font-size:0.78rem;}
   .nav-toggle{display:none; background:none; border:none; padding:0.4rem;}
-  @media (max-width:920px){
-    nav.primary-nav, .nav-actions .btn-ghost{display:none;}
-    .nav-toggle{display:block;}
-  }
+  @media (max-width:1140px){ nav.primary-nav, .nav-actions .btn-ghost{display:none;} .nav-toggle{display:block;} }
 
-  /* ============================================================
-     PLACEHOLDER IMAGE COMPONENT
-     ============================================================ */
-  .ph{
-    position:relative; overflow:hidden;
-    background:
-      linear-gradient(135deg, var(--sage-pale) 0%, var(--beige-warm) 55%, var(--sage-pale) 100%);
-    border-radius:var(--radius-md);
-    display:flex; align-items:flex-end;
-    isolation:isolate;
-    min-height:180px;
-  }
-  .ph::before{
-    content:""; position:absolute; inset:0;
-    background-image:
-      repeating-linear-gradient(115deg, rgba(107,74,48,0.05) 0 2px, transparent 2px 26px),
-      repeating-linear-gradient(25deg, rgba(46,107,84,0.05) 0 2px, transparent 2px 26px);
-    z-index:0;
-  }
-  .ph::after{
-    content:""; position:absolute; inset:0; z-index:0;
-    background:
-      radial-gradient(circle at 30% 20%, rgba(199,154,75,0.18), transparent 45%),
-      radial-gradient(circle at 75% 80%, rgba(22,51,42,0.14), transparent 50%);
-  }
-  .ph-icon{
-    position:absolute; top:1.1rem; right:1.1rem; z-index:1;
-    width:34px; height:34px; border-radius:50%;
-    background:rgba(255,255,255,0.55); backdrop-filter:blur(4px);
-    display:grid; place-items:center;
-  }
+  /* ---------- placeholder / reference image components ---------- */
+  .ph{position:relative; overflow:hidden; background:linear-gradient(135deg, var(--sage-pale) 0%, var(--beige-warm) 55%, var(--sage-pale) 100%); border-radius:var(--radius-md); display:flex; align-items:flex-end; isolation:isolate; min-height:180px;}
+  .ph::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(115deg, rgba(107,74,48,0.05) 0 2px, transparent 2px 26px), repeating-linear-gradient(25deg, rgba(46,107,84,0.05) 0 2px, transparent 2px 26px); z-index:0;}
+  .ph::after{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(circle at 30% 20%, rgba(199,154,75,0.18), transparent 45%), radial-gradient(circle at 75% 80%, rgba(22,51,42,0.14), transparent 50%);}
+  .ph-icon{position:absolute; top:1.1rem; right:1.1rem; z-index:1; width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,0.55); backdrop-filter:blur(4px); display:grid; place-items:center;}
   .ph-icon svg{width:16px; height:16px; stroke:var(--forest-deep);}
-  .ph-caption{
-    position:relative; z-index:1; width:100%;
-    padding:0.9rem 1.1rem; margin:0;
-    background:linear-gradient(to top, rgba(14,33,27,0.72), rgba(14,33,27,0));
-    color:var(--white);
-  }
+  .ph-caption{position:relative; z-index:1; width:100%; padding:0.9rem 1.1rem; margin:0; background:linear-gradient(to top, rgba(14,33,27,0.72), rgba(14,33,27,0)); color:var(--white);}
   .ph-caption .fname{font-family:var(--font-caption); font-size:0.78rem; font-weight:600; letter-spacing:0.02em;}
   .ph-caption .fdesc{display:block; font-size:0.72rem; opacity:0.85; margin-top:0.15rem;}
   .ph-caption .fdim{display:block; font-family:var(--font-caption); font-size:0.66rem; opacity:0.7; margin-top:0.35rem; letter-spacing:0.04em;}
-  .ph-square{aspect-ratio:1/1;}
-  .ph-portrait{aspect-ratio:3/4;}
-  .ph-wide{aspect-ratio:16/9;}
-  .ph-panorama{aspect-ratio:21/9;}
+  .ph-square{aspect-ratio:1/1;} .ph-portrait{aspect-ratio:3/4;} .ph-wide{aspect-ratio:16/9;} .ph-panorama{aspect-ratio:21/9;}
+  .ref{position:relative; overflow:hidden; border-radius:var(--radius-md); background:linear-gradient(150deg, var(--sage) 0%, var(--forest) 100%); display:flex; align-items:flex-end; min-height:180px;}
+  .ref::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(70deg, rgba(255,255,255,0.06) 0 3px, transparent 3px 22px); z-index:0;}
+  .ref-badge{position:absolute; top:1.1rem; left:1.1rem; z-index:1; font-family:var(--font-caption); font-size:0.64rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:rgba(255,255,255,0.9); color:var(--forest-deep); padding:0.32rem 0.7rem; border-radius:999px;}
+  .ref-caption{position:relative; z-index:1; width:100%; padding:0.9rem 1.1rem; background:linear-gradient(to top, rgba(14,33,27,0.78), rgba(14,33,27,0)); color:var(--white);}
+  .ref-caption .fname{font-family:var(--font-caption); font-size:0.78rem; font-weight:600;}
+  .ref-caption .fdesc{display:block; font-size:0.72rem; opacity:0.85; margin-top:0.15rem;}
+  .ref-panorama{aspect-ratio:21/9;} .ref-wide{aspect-ratio:16/9;}
 
-  /* ============================================================
-     HERO
-     ============================================================ */
-  .hero{
-    position:relative;
-    padding-top:clamp(2.5rem, 6vw, 4.5rem);
-    padding-bottom:clamp(3rem, 7vw, 6rem);
-    overflow:hidden;
-  }
-  .hero-bg-shape{
-    position:absolute; top:-15%; right:-12%; width:60vw; height:60vw; max-width:900px; max-height:900px;
-    border-radius:50%;
-    background:radial-gradient(circle at 35% 35%, rgba(46,107,84,0.14), rgba(46,107,84,0) 65%);
-    z-index:0; pointer-events:none;
-  }
-  .hero-grid{
-    position:relative; z-index:1;
-    display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(2rem,4vw,4rem);
-    align-items:center;
-  }
-  @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;} }
-  .hero-eyebrow{margin-bottom:1.4rem;}
-  .hero h1{
-    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
-    line-height:1.04;
-    font-weight:600;
-    color:var(--forest-deep);
-  }
-  .hero h1 em{
-    font-style:normal; color:var(--emerald);
-    position:relative;
-  }
-  .hero-sub{
-    margin-top:1.6rem; max-width:44ch;
-    font-size:1.12rem; color:var(--ink-soft);
-  }
-  .hero-actions{margin-top:2.4rem; display:flex; flex-wrap:wrap; gap:1rem;}
-  .hero-meta{
-    margin-top:3rem; display:flex; gap:2.4rem; flex-wrap:wrap;
-  }
-  .hero-meta div{border-left:2px solid var(--gold); padding-left:0.85rem;}
-  .hero-meta strong{display:block; font-family:var(--font-display); font-size:1.5rem; color:var(--forest-deep);}
-  .hero-meta span{font-family:var(--font-caption); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);}
-
-  .hero-visual{position:relative;}
-  .hero-visual .ph{min-height:420px; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);}
-  .hero-visual .ph-float{
-    position:absolute; width:46%; bottom:-8%; left:-12%;
-    border:6px solid var(--beige); border-radius:var(--radius-md); box-shadow:var(--shadow-card);
-    min-height:auto;
-  }
-  @media (max-width:700px){ .hero-visual .ph-float{display:none;} }
-
-  /* ============================================================
-     SECTION SPACING / GENERIC
-     ============================================================ */
   section{padding-block:clamp(4rem, 8vw, 7.5rem); position:relative;}
   .section-head{max-width:64ch; margin-bottom:clamp(2.2rem, 5vw, 3.6rem);}
   .section-head h2{font-size:clamp(2rem, 3.6vw, 3rem); margin-top:0.9rem;}
   .section-head p{margin-top:1.1rem; font-size:1.06rem; color:var(--ink-soft); max-width:56ch;}
 
-  /* ============================================================
-     EDITORIAL INTRO
-     ============================================================ */
-  .editorial{
-    background:var(--forest-deep); color:var(--sage-pale);
-  }
-  .editorial .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2.5rem,5vw,5rem); align-items:start;}
-  @media (max-width:920px){ .editorial .wrap{grid-template-columns:1fr;} }
-  .editorial .eyebrow{color:var(--gold-soft);}
-  .editorial .eyebrow::before{background:var(--gold-soft);}
-  .editorial h2{color:var(--white); font-size:clamp(1.9rem,3.4vw,2.7rem); margin-top:1rem; line-height:1.18;}
-  .editorial-drop{
-    font-family:var(--font-display); font-size:4.2rem; line-height:0.7; float:left;
-    margin-right:0.6rem; margin-top:0.4rem; color:var(--gold);
-  }
-  .editorial-body p{font-size:1.06rem; color:rgba(228,232,222,0.86); margin-top:1.2rem;}
-  .editorial-body p:first-child{margin-top:0;}
-  .editorial-signoff{
-    margin-top:2.2rem; padding-top:1.6rem; border-top:1px solid rgba(228,232,222,0.2);
-    font-family:var(--font-caption); font-size:0.85rem; letter-spacing:0.04em; color:var(--gold-soft);
-  }
+  /* ---------- hero ---------- */
+  .hero{position:relative; padding-top:clamp(2.5rem, 6vw, 4.5rem); padding-bottom:clamp(3rem, 7vw, 6rem); overflow:hidden;}
+  .hero-bg-shape{position:absolute; top:-15%; right:-12%; width:60vw; height:60vw; max-width:900px; max-height:900px; border-radius:50%; background:radial-gradient(circle at 35% 35%, rgba(46,107,84,0.14), rgba(46,107,84,0) 65%); z-index:0; pointer-events:none;}
+  .hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(2rem,4vw,4rem); align-items:center;}
+  @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero h1{font-size:clamp(2.3rem, 4.6vw, 3.9rem); line-height:1.08; font-weight:600; color:var(--forest-deep);}
+  .hero h1 em{font-style:normal; color:var(--emerald);}
+  .hero-sub{margin-top:1.6rem; max-width:50ch; font-size:1.1rem; color:var(--ink-soft);}
+  .hero-actions{margin-top:2.4rem; display:flex; flex-wrap:wrap; gap:1rem;}
+  .hero-visual{position:relative;}
+  .hero-visual .ref{min-height:440px; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);}
 
-  /* ============================================================
-     FOUR PILLARS
-     ============================================================ */
-  .pillars-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem;
-  }
-  @media (max-width:1080px){ .pillars-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:600px){ .pillars-grid{grid-template-columns:1fr;} }
-  .pillar-card{
-    background:var(--white); border-radius:var(--radius-lg);
-    padding:2.1rem 1.7rem 2rem; box-shadow:var(--shadow-card);
-    display:flex; flex-direction:column; gap:1.1rem; min-height:390px;
-    text-decoration:none; color:inherit;
-    border:1px solid rgba(107,74,48,0.08);
-    transition:transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
-  }
-  .pillar-card:hover, .pillar-card:focus-visible{
-    transform:translateY(-8px);
-    box-shadow:0 30px 60px -24px rgba(14,33,27,0.4);
-  }
-  .pillar-num{
-    font-family:var(--font-caption); font-size:0.72rem; font-weight:600;
-    letter-spacing:0.14em; text-transform:uppercase; color:var(--gold);
-  }
-  .pillar-icon{
-    width:52px; height:52px; border-radius:14px;
-    background:var(--sage-pale); display:grid; place-items:center;
-  }
-  .pillar-icon svg{width:26px; height:26px; stroke:var(--forest); fill:none; stroke-width:1.6;}
-  .pillar-card h3{font-size:1.36rem; line-height:1.2;}
-  .pillar-card p{color:var(--ink-soft); font-size:0.92rem;}
-  .pillar-tags{display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:auto;}
-  .pillar-tags li{
-    font-family:var(--font-caption); font-size:0.68rem; letter-spacing:0.02em;
-    padding:0.32rem 0.7rem; border-radius:999px; background:var(--sage-pale); color:var(--forest);
-  }
-  .pillar-enter{
-    display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.4rem;
-    font-family:var(--font-caption); font-size:0.82rem; font-weight:600; color:var(--emerald);
-  }
-  .pillar-enter svg{width:14px; height:14px; transition:transform 0.3s var(--ease);}
-  .pillar-card:hover .pillar-enter svg{transform:translateX(4px);}
+  /* ---------- knowledge passport (gamification) ---------- */
+  .passport-bar{background:var(--white); border-bottom:1px solid rgba(107,74,48,0.14);}
+  .passport-bar .wrap{padding-block:1.2rem; display:flex; align-items:center; justify-content:space-between; gap:1.2rem; flex-wrap:wrap;}
+  .passport-label{display:flex; align-items:center; gap:0.6rem; font-family:var(--font-caption); font-size:0.8rem; color:var(--ink-soft);}
+  .passport-label svg{width:16px; height:16px; stroke:var(--gold);}
+  .passport-stamps{display:flex; gap:0.4rem;}
+  .passport-stamp{width:26px; height:26px; border-radius:50%; border:1.5px dashed var(--sage); display:grid; place-items:center;}
+  .passport-stamp.is-stamped{border-style:solid; border-color:var(--gold); background:var(--sage-pale);}
+  .passport-stamp svg{width:12px; height:12px; stroke:var(--emerald);}
 
-  /* ============================================================
-     KNOWLEDGE PANEL (reusable component)
-     ============================================================ */
-  .knowledge-panel{
-    background:var(--beige-warm);
-    border:1px solid rgba(107,74,48,0.18);
-    border-radius:var(--radius-md);
-    padding:1.5rem 1.6rem;
-  }
-  .knowledge-panel h4{
-    font-family:var(--font-caption); font-size:0.72rem; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--brown); font-weight:600; margin-bottom:0.9rem;
-    display:flex; align-items:center; gap:0.5rem;
-  }
+  /* ---------- narrative sections: Cameroon / Adamawa / Mbororo ---------- */
+  .narrative{background:var(--white);}
+  .narrative.is-alt{background:var(--sage-pale);}
+  .narrative-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:start;}
+  @media (max-width:920px){ .narrative-grid{grid-template-columns:1fr;} }
+  .narrative-body p{margin-top:1.1rem; color:var(--ink-soft); font-size:1.02rem; max-width:62ch;}
+  .narrative-body p:first-of-type{margin-top:0.9rem;}
+  .narrative-media-grid{display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-top:1.6rem;}
+  .narrative-media-grid .span-2{grid-column:span 2;}
+  .narrative-tags{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.4rem;}
+  .narrative-tags li{font-family:var(--font-caption); font-size:0.72rem; padding:0.32rem 0.75rem; border-radius:999px; background:var(--beige-warm); color:var(--brown);}
+  .narrative-scope{margin-top:1.2rem; padding:0.9rem 1.1rem; border-left:3px solid var(--gold); background:var(--beige-warm); border-radius:var(--radius-sm); font-family:var(--font-caption); font-size:0.82rem; color:var(--brown);}
+
+  /* ---------- knowledge panel ---------- */
+  .knowledge-panel{background:var(--beige-warm); border:1px solid rgba(107,74,48,0.18); border-radius:var(--radius-md); padding:1.5rem 1.6rem;}
+  .knowledge-panel h4{font-family:var(--font-caption); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--brown); font-weight:600; margin-bottom:0.9rem; display:flex; align-items:center; gap:0.5rem;}
   .knowledge-panel h4 svg{width:14px; height:14px; stroke:var(--brown);}
   .knowledge-panel ul{display:flex; flex-direction:column; gap:0.55rem;}
-  .knowledge-panel a{
-    display:flex; justify-content:space-between; align-items:center; gap:0.6rem;
-    text-decoration:none; font-family:var(--font-caption); font-size:0.85rem;
-    color:var(--forest-deep); padding:0.4rem 0; border-bottom:1px dashed rgba(107,74,48,0.22);
-  }
+  .knowledge-panel a{display:flex; justify-content:space-between; align-items:center; gap:0.6rem; text-decoration:none; font-family:var(--font-caption); font-size:0.85rem; color:var(--forest-deep); padding:0.4rem 0; border-bottom:1px dashed rgba(107,74,48,0.22);}
   .knowledge-panel a:last-child{border-bottom:none;}
   .knowledge-panel a span.src{color:var(--ink-soft); font-weight:400;}
   .knowledge-panel a svg{width:12px; height:12px; stroke:var(--emerald); flex-shrink:0;}
 
-  /* ============================================================
-     SPOTLIGHT
-     ============================================================ */
-  .spotlight{background:var(--sage-pale);}
-  .spotlight-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:clamp(2rem,5vw,4rem); align-items:center;}
-  @media (max-width:920px){ .spotlight-grid{grid-template-columns:1fr;} }
-  .spotlight-portrait{position:relative;}
-  .spotlight-portrait .ph{box-shadow:var(--shadow-soft); min-height:440px;}
-  .spotlight-role{
-    position:absolute; bottom:-1.1rem; left:1.4rem; right:1.4rem;
-    background:var(--white); border-radius:var(--radius-sm); padding:0.9rem 1.1rem;
-    box-shadow:var(--shadow-card);
-    font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);
-  }
-  .spotlight-role strong{display:block; font-family:var(--font-display); font-size:1.05rem; color:var(--forest-deep); font-weight:600;}
-  .spotlight-body h3{font-size:clamp(1.8rem,3vw,2.3rem); margin-top:0.9rem;}
-  .spotlight-body p{margin-top:1.1rem; color:var(--ink-soft); font-size:1.02rem;}
-  .spotlight-body .btn{margin-top:1.6rem;}
-  .spotlight-quote{
-    margin-top:2rem; padding-left:1.2rem; border-left:3px solid var(--gold);
-    font-family:var(--font-display); font-weight:400; font-style:normal;
-    font-size:1.12rem; color:var(--forest-deep);
-  }
+  /* ---------- did you know ---------- */
+  .dyk{background:var(--white); border:1px solid rgba(107,74,48,0.16); border-radius:var(--radius-md); overflow:hidden; margin-top:1.4rem;}
+  .dyk summary{list-style:none; cursor:pointer; padding:1.1rem 1.4rem; display:flex; align-items:center; gap:0.8rem; font-family:var(--font-caption); font-weight:600; font-size:0.92rem; color:var(--forest-deep);}
+  .dyk summary::-webkit-details-marker{display:none;}
+  .dyk summary .dyk-icon{width:30px; height:30px; border-radius:50%; background:var(--sage-pale); display:grid; place-items:center; flex-shrink:0;}
+  .dyk summary .dyk-icon svg{width:15px; height:15px; stroke:var(--forest);}
+  .dyk summary .dyk-chevron{margin-left:auto; width:16px; height:16px; stroke:var(--brown); transition:transform 0.3s var(--ease);}
+  .dyk[open] summary .dyk-chevron{transform:rotate(180deg);}
+  .dyk-body{padding:0 1.4rem 1.3rem 4.2rem; font-size:0.9rem; color:var(--ink-soft);}
 
-  /* ============================================================
-     KNOWLEDGE AT A GLANCE
-     ============================================================ */
-  .glance-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-    background:rgba(107,74,48,0.16);
-    border:1px solid rgba(107,74,48,0.16);
-    border-radius:var(--radius-md);
-    overflow:hidden;
-  }
-  @media (max-width:880px){ .glance-grid{grid-template-columns:repeat(2,1fr);} }
-  .glance-cell{
-    background:var(--white); padding:2.1rem 1.6rem;
-    display:flex; flex-direction:column; gap:0.7rem;
-    transition:background 0.4s var(--ease);
-  }
-  .glance-cell:hover{background:var(--sage-pale);}
-  .glance-cell svg{width:24px; height:24px; stroke:var(--emerald); fill:none; stroke-width:1.6;}
-  .glance-count{font-family:var(--font-display); font-size:2.1rem; color:var(--forest-deep); font-weight:600;}
-  .glance-label{font-family:var(--font-caption); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);}
-  .glance-note{font-size:0.82rem; color:var(--ink-soft);}
+  /* ---------- discover wouro yobi + map explorer ---------- */
+  .discover-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3rem); align-items:start;}
+  @media (max-width:920px){ .discover-grid{grid-template-columns:1fr;} }
+  .discover-facts{display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-top:1.6rem;}
+  .discover-fact{background:var(--white); border-radius:var(--radius-sm); padding:1rem 1.1rem; border:1px solid rgba(107,74,48,0.12);}
+  .discover-fact h5{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--brown);}
+  .discover-fact p{margin-top:0.3rem; font-family:var(--font-display); font-size:0.98rem; color:var(--forest-deep); font-weight:600;}
+  .map-frame{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); border:1px solid rgba(107,74,48,0.14); background:var(--sage-pale);}
+  .map-frame iframe{width:100%; height:340px; border:0; display:block; filter:saturate(0.85);}
+  .map-legend{padding:1.1rem 1.4rem; background:var(--white); display:flex; flex-wrap:wrap; gap:0.6rem;}
+  .map-legend span{font-family:var(--font-caption); font-size:0.72rem; color:var(--forest-deep); background:var(--sage-pale); padding:0.3rem 0.7rem; border-radius:999px; display:inline-flex; align-items:center; gap:0.35rem;}
+  .map-legend span::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold);}
+  .map-actions{display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1rem;}
 
-  /* ============================================================
-     FEATURED JOURNEY
-     ============================================================ */
-  .journey-scroller{
-    display:grid; grid-auto-flow:column; grid-auto-columns:minmax(280px, 1fr);
-    gap:1.4rem; overflow-x:auto; padding-bottom:1rem; scroll-snap-type:x proximity;
+  /* ---------- historical timeline ---------- */
+  .timeline-track{
+    display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px,1fr); gap:0;
+    overflow-x:auto; padding-top:2rem; padding-bottom:1rem;
     margin-inline:calc(var(--edge) * -1); padding-inline:var(--edge);
   }
-  .journey-scroller::-webkit-scrollbar{height:6px;}
-  .journey-scroller::-webkit-scrollbar-thumb{background:var(--sage); border-radius:6px;}
-  .journey-card{
-    scroll-snap-align:start; background:var(--white); border-radius:var(--radius-lg);
-    overflow:hidden; box-shadow:var(--shadow-card); display:flex; flex-direction:column;
-    border:1px solid rgba(107,74,48,0.08);
-  }
-  .journey-card .ph{border-radius:0; min-height:200px;}
-  .journey-body{padding:1.5rem 1.5rem 1.7rem; display:flex; flex-direction:column; gap:0.7rem; flex:1;}
-  .journey-tag{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); font-weight:600;}
-  .journey-card h3{font-size:1.18rem; line-height:1.28;}
-  .journey-card p{font-size:0.88rem; color:var(--ink-soft);}
-  .journey-links{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:auto; padding-top:0.9rem;}
-  .journey-links span{
-    font-family:var(--font-caption); font-size:0.7rem; color:var(--forest);
-    background:var(--sage-pale); padding:0.28rem 0.6rem; border-radius:999px;
-  }
+  .timeline-track::-webkit-scrollbar{height:6px;}
+  .timeline-track::-webkit-scrollbar-thumb{background:var(--emerald); border-radius:6px;}
+  .timeline-stop{position:relative; padding:1.8rem 1.4rem 0; scroll-margin-left:var(--edge);}
+  .timeline-stop::before{content:""; position:absolute; top:0; left:0; right:0; height:3px; background:rgba(228,232,222,0.25);}
+  .timeline-stop::after{content:""; position:absolute; top:-7px; left:1.4rem; width:16px; height:16px; border-radius:50%; background:var(--gold); border:3px solid var(--forest-deep);}
+  .timeline-stop.is-community::after{background:var(--white);}
+  .timeline-era{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-soft);}
+  .timeline-stop h4{font-size:1.05rem; color:var(--white); margin-top:0.5rem;}
+  .timeline-stop p{font-size:0.86rem; color:rgba(228,232,222,0.78); margin-top:0.6rem; max-width:25ch;}
+  .timeline-stop a{display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.7rem; font-family:var(--font-caption); font-size:0.76rem; font-weight:600; color:var(--gold-soft); text-decoration:none;}
 
-  /* ============================================================
-     EVIDENCE SECTION
-     ============================================================ */
-  .evidence{background:var(--forest-deep); color:var(--sage-pale);}
-  .evidence .eyebrow{color:var(--gold-soft);}
-  .evidence .eyebrow::before{background:var(--gold-soft);}
-  .evidence .section-head h2{color:var(--white);}
-  .evidence .section-head p{color:rgba(228,232,222,0.78);}
-  .evidence-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(228,232,222,0.14); border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(228,232,222,0.14);}
-  @media (max-width:880px){ .evidence-grid{grid-template-columns:repeat(2,1fr);} }
-  .evidence-cell{background:rgba(228,232,222,0.04); padding:1.9rem 1.5rem; display:flex; flex-direction:column; gap:0.6rem;}
-  .evidence-cell svg{width:22px; height:22px; stroke:var(--gold-soft); fill:none; stroke-width:1.6;}
-  .evidence-cell strong{font-family:var(--font-display); font-size:1rem; color:var(--white); font-weight:600;}
-  .evidence-cell span{font-size:0.82rem; color:rgba(228,232,222,0.72);}
-  .evidence-standard{
-    margin-top:2.6rem; padding:1.6rem 1.8rem; border:1px dashed rgba(228,232,222,0.3);
-    border-radius:var(--radius-md); font-family:var(--font-caption); font-size:0.9rem;
-    color:rgba(228,232,222,0.85); display:flex; gap:0.9rem; align-items:flex-start;
-  }
-  .evidence-standard svg{width:20px; height:20px; stroke:var(--gold); flex-shrink:0; margin-top:0.15rem;}
+  /* ---------- explore the living archive: nine cards ---------- */
+  .explore-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem;}
+  @media (max-width:900px){ .explore-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .explore-grid{grid-template-columns:1fr;} }
+  .explore-card{position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:200px; display:flex; align-items:flex-end; text-decoration:none; color:var(--white); box-shadow:var(--shadow-card);}
+  .explore-card::before{content:""; position:absolute; inset:0; background:linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%); transition:transform 0.6s var(--ease);}
+  .explore-card:nth-child(9n+2)::before{background:linear-gradient(160deg, var(--emerald) 0%, var(--forest) 100%);}
+  .explore-card:nth-child(9n+3)::before{background:linear-gradient(160deg, var(--brown) 0%, #4a3320 100%);}
+  .explore-card:nth-child(9n+4)::before{background:linear-gradient(160deg, #3a5c4c 0%, var(--forest-deep) 100%);}
+  .explore-card:nth-child(9n+5)::before{background:linear-gradient(160deg, var(--gold) 0%, var(--brown) 100%);}
+  .explore-card:nth-child(9n+6)::before{background:linear-gradient(160deg, var(--sage) 0%, var(--forest) 100%);}
+  .explore-card:nth-child(9n+7)::before{background:linear-gradient(160deg, var(--forest) 0%, var(--brown) 100%);}
+  .explore-card:nth-child(9n+8)::before{background:linear-gradient(160deg, var(--emerald) 0%, var(--forest-deep) 100%);}
+  .explore-card:nth-child(9n+9)::before{background:linear-gradient(160deg, var(--brown) 0%, var(--forest) 100%);}
+  .explore-card:hover::before{transform:scale(1.06);}
+  .explore-content{position:relative; z-index:1; padding:1.4rem 1.3rem;}
+  .explore-content .eyebrow{color:var(--gold-soft); font-size:0.66rem;} .explore-content .eyebrow::before{background:var(--gold-soft);}
+  .explore-content h3{color:var(--white); font-size:1.1rem; margin-top:0.5rem;}
+  .explore-content p{font-size:0.78rem; color:rgba(255,255,255,0.78); margin-top:0.45rem;}
 
-  /* ============================================================
-     EDITORIAL MISSION (pull quote)
-     ============================================================ */
-  .mission{
-    background:var(--beige-warm);
-    text-align:center;
-  }
-  .mission blockquote{
-    max-width:56rem; margin:0 auto; font-family:var(--font-display);
-    font-size:clamp(1.5rem, 3.4vw, 2.35rem); line-height:1.42; color:var(--forest-deep); font-weight:500;
-  }
-  .mission cite{
-    display:block; margin-top:1.8rem; font-family:var(--font-caption); font-style:normal;
-    font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brown);
-  }
+  /* ---------- featured story ---------- */
+  .featured-story{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center;}
+  @media (max-width:920px){ .featured-story{grid-template-columns:1fr;} }
+  .featured-story p{margin-top:1.1rem; color:var(--ink-soft); font-size:1.02rem;}
+  .featured-story .btn{margin-top:1.6rem;}
+
+  /* ---------- knowledge journey grid ---------- */
+  .journey-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem;}
+  @media (max-width:880px){ .journey-grid{grid-template-columns:repeat(2,1fr);} }
+  .journey-cell{background:var(--white); border-radius:var(--radius-md); padding:1.5rem 1.3rem; border:1px solid rgba(107,74,48,0.1); display:flex; flex-direction:column; gap:0.6rem; transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease);}
+  .journey-cell:hover{transform:translateY(-5px); box-shadow:var(--shadow-card);}
+  .journey-cell svg{width:22px; height:22px; stroke:var(--emerald); fill:none; stroke-width:1.6;}
+  .journey-cell h4{font-size:0.95rem;}
+  .journey-cell span{font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);}
+
+  /* ---------- community spotlight: two people ---------- */
+  .spotlight-duo{display:grid; grid-template-columns:1fr 1fr; gap:1.6rem;}
+  @media (max-width:820px){ .spotlight-duo{grid-template-columns:1fr;} }
+  .spotlight-card{background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); border:1px solid rgba(107,74,48,0.08);}
+  .spotlight-card .ph{border-radius:0; min-height:300px;}
+  .spotlight-card-body{padding:1.6rem 1.6rem 1.8rem;}
+  .spotlight-card-role{font-family:var(--font-caption); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); font-weight:600;}
+  .spotlight-card h3{font-size:1.25rem; margin-top:0.5rem;}
+  .spotlight-card p{margin-top:0.8rem; font-size:0.92rem; color:var(--ink-soft);}
+  .spotlight-card .btn{margin-top:1.2rem;}
+
+  /* ---------- knowledge graph (illustrative diagram) ---------- */
+  .graph-wrap{background:var(--forest-deep); border-radius:var(--radius-lg); padding:clamp(2rem,4vw,3rem); overflow-x:auto;}
+  .graph-svg{display:block; margin:0 auto; min-width:640px; width:100%; max-width:900px;}
+  .graph-note{margin-top:1.4rem; font-family:var(--font-caption); font-size:0.85rem; color:rgba(228,232,222,0.75); text-align:center;}
+
+  /* ---------- archive statistics ---------- */
+  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(107,74,48,0.16); border:1px solid rgba(107,74,48,0.16); border-radius:var(--radius-md); overflow:hidden;}
+  @media (max-width:880px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+  .stat-cell{background:var(--white); padding:2rem 1.5rem; display:flex; flex-direction:column; gap:0.5rem;}
+  .stat-num{font-family:var(--font-display); font-size:2.2rem; color:var(--forest-deep); font-weight:600;}
+  .stat-label{font-family:var(--font-caption); font-size:0.76rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft);}
+  .stats-note{margin-top:1.2rem; font-family:var(--font-caption); font-size:0.8rem; color:var(--ink-soft);}
+
+  /* ---------- random discovery ---------- */
+  .discovery-box{background:var(--beige-warm); border-radius:var(--radius-lg); padding:clamp(1.8rem,3.5vw,2.4rem); border:1px solid rgba(107,74,48,0.14); display:flex; flex-direction:column; gap:1rem; align-items:flex-start;}
+  .discovery-text{font-family:var(--font-display); font-size:1.1rem; color:var(--forest-deep); min-height:3.2em;}
+  .discovery-tag{font-family:var(--font-caption); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--brown);}
+
+  /* ---------- mission ---------- */
+  .mission{background:var(--beige-warm); text-align:center;}
+  .mission blockquote{max-width:56rem; margin:0 auto; font-family:var(--font-display); font-size:clamp(1.5rem, 3.4vw, 2.35rem); line-height:1.42; color:var(--forest-deep); font-weight:500;}
+  .mission cite{display:block; margin-top:1.8rem; font-family:var(--font-caption); font-style:normal; font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brown);}
   .mission-mark{font-family:var(--font-display); font-size:3.4rem; color:var(--gold); display:block; margin-bottom:0.6rem; line-height:1;}
 
-  /* ============================================================
-     EXPLORE THE ARCHIVE
-     ============================================================ */
-  .explore-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:1.2rem;}
-  @media (max-width:1080px){ .explore-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:600px){ .explore-grid{grid-template-columns:1fr;} }
-  .explore-card{
-    position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:280px;
-    display:flex; align-items:flex-end; text-decoration:none; color:var(--white);
-    box-shadow:var(--shadow-card);
-  }
-  .explore-card::before{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
-    transition:transform 0.6s var(--ease);
-  }
-  .explore-card:nth-child(2)::before{background:linear-gradient(160deg, var(--emerald) 0%, var(--forest) 100%);}
-  .explore-card:nth-child(3)::before{background:linear-gradient(160deg, var(--brown) 0%, #4a3320 100%);}
-  .explore-card:nth-child(4)::before{background:linear-gradient(160deg, #3a5c4c 0%, var(--forest-deep) 100%);}
-  .explore-card:nth-child(5)::before{background:linear-gradient(160deg, var(--gold) 0%, var(--brown) 100%);}
-  .explore-card:hover::before{transform:scale(1.06);}
-  .explore-card::after{
-    content:""; position:absolute; inset:0;
-    background-image:repeating-linear-gradient(120deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 30px);
-  }
-  .explore-content{position:relative; z-index:1; padding:1.6rem 1.4rem;}
-  .explore-content .eyebrow{color:var(--gold-soft); font-size:0.68rem;}
-  .explore-content .eyebrow::before{background:var(--gold-soft);}
-  .explore-content h3{color:var(--white); font-size:1.3rem; margin-top:0.6rem;}
-  .explore-content p{font-size:0.82rem; color:rgba(255,255,255,0.78); margin-top:0.5rem;}
-
-  /* ============================================================
-     FOOTER
-     ============================================================ */
+  /* ---------- footer ---------- */
   footer.site-footer{background:var(--forest-deep); color:rgba(228,232,222,0.75); padding-top:clamp(3.5rem,6vw,5rem);}
-  .footer-top{
-    display:grid; grid-template-columns:1.3fr 1fr 1fr 1.1fr; gap:2.5rem;
-    padding-bottom:3rem; border-bottom:1px solid rgba(228,232,222,0.14);
-  }
+  .footer-top{display:grid; grid-template-columns:1.3fr 1fr 1fr 1.1fr; gap:2.5rem; padding-bottom:3rem; border-bottom:1px solid rgba(228,232,222,0.14);}
   @media (max-width:880px){ .footer-top{grid-template-columns:1fr 1fr;} }
   @media (max-width:560px){ .footer-top{grid-template-columns:1fr;} }
   .footer-brand p{margin-top:1rem; font-size:0.88rem; max-width:32ch; color:rgba(228,232,222,0.65);}
   .footer-social{display:flex; gap:0.7rem; margin-top:1.4rem;}
-  .footer-social a{
-    width:36px; height:36px; border-radius:50%; border:1px solid rgba(228,232,222,0.3);
-    display:grid; place-items:center; text-decoration:none;
-  }
+  .footer-social a{width:36px; height:36px; border-radius:50%; border:1px solid rgba(228,232,222,0.3); display:grid; place-items:center; text-decoration:none;}
   .footer-social a svg{width:15px; height:15px; stroke:var(--sage-pale);}
   .footer-social a:hover{background:var(--gold); border-color:var(--gold);}
   .footer-social a:hover svg{stroke:var(--forest-deep);}
-  .footer-col h4{
-    font-family:var(--font-caption); font-size:0.74rem; text-transform:uppercase;
-    letter-spacing:0.1em; color:var(--gold-soft); margin-bottom:1.1rem; font-weight:600;
-  }
+  .footer-col h4{font-family:var(--font-caption); font-size:0.74rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-soft); margin-bottom:1.1rem; font-weight:600;}
   .footer-col ul{display:flex; flex-direction:column; gap:0.6rem;}
   .footer-col a{text-decoration:none; font-size:0.87rem; color:rgba(228,232,222,0.78);}
   .footer-col a:hover{color:var(--gold-soft);}
   .footer-values{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.3rem;}
-  .footer-values li{
-    font-family:var(--font-caption); font-size:0.7rem; padding:0.3rem 0.65rem;
-    border:1px solid rgba(228,232,222,0.25); border-radius:999px; color:rgba(228,232,222,0.8);
-  }
-  .footer-bottom{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
-    padding-block:1.6rem; font-family:var(--font-caption); font-size:0.76rem; color:rgba(228,232,222,0.55);
-  }
+  .footer-values li{font-family:var(--font-caption); font-size:0.7rem; padding:0.3rem 0.65rem; border:1px solid rgba(228,232,222,0.25); border-radius:999px; color:rgba(228,232,222,0.8);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-block:1.6rem; font-family:var(--font-caption); font-size:0.76rem; color:rgba(228,232,222,0.55);}
   .footer-bottom a{text-decoration:underline; text-underline-offset:3px;}
 
-  /* utility */
-  .col-span-2{grid-column:span 2;}
-  @media (max-width:600px){ .col-span-2{grid-column:span 1;} }
+  .back-to-top{position:fixed; right:1.6rem; bottom:1.6rem; z-index:120; width:46px; height:46px; border-radius:50%; background:var(--forest-deep); border:none; display:grid; place-items:center; box-shadow:var(--shadow-card); opacity:0; pointer-events:none; transform:translateY(10px); transition:opacity 0.35s var(--ease), transform 0.35s var(--ease);}
+  .back-to-top.is-visible{opacity:1; pointer-events:auto; transform:none;}
+  .back-to-top svg{width:18px; height:18px; stroke:var(--beige);}
 </style>
 </head>
 <body>
 
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 <a class="skip-link" href="#main">Skip to main content</a>
 
+<!-- ============================================================
+     PERMANENT NAVIGATION — frozen, per Design Charter v1.0
+     ============================================================ -->
 <header class="site-header">
   <div class="nav-row">
-    <a class="brand" href="#top" aria-label="Wouro Yobi Living Archive, home">
+    <a class="brand" href="index.html" aria-label="Wouro Yobi Living Archive, home">
       <span class="brand-mark" aria-hidden="true"><span></span></span>
       <span class="brand-name">Wouro Yobi<small>Living Archive</small></span>
     </a>
     <nav class="primary-nav" aria-label="Primary">
       <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="identity.html">Our Identity</a></li>
         <li><a href="life.html">Way of Life</a></li>
+        <li><a href="future.html">Our Future</a></li>
         <li><a href="memory.html">Our Memory</a></li>
-        <li><a href="journey.html">Featured Journey</a></li>
-        <li><a href="knowledge.html">Knowledge Centre</a></li>
+        <li><a href="index.html#knowledge-centre">Knowledge Centre</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="visit.html">Visit Us</a></li>
       </ul>
     </nav>
     <div class="nav-actions">
-      <a class="btn btn-ghost" href="identity.html">Explore the Archive</a>
-      <a class="btn btn-primary" href="#spotlight">Begin the Journey</a>
+      <a class="btn btn-ghost" href="about.html">About</a>
+      <a class="btn btn-primary" href="#discover">Begin the Journey</a>
       <button class="nav-toggle" aria-label="Open menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16332A" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
       </button>
@@ -602,45 +332,28 @@
 <main id="main">
 
   <!-- ============================================================
-       1. HERO
+       HERO
        ============================================================ -->
   <section class="hero" id="top">
     <div class="hero-bg-shape" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">A Mbororo Community, Documented by Its Own People</p>
-        <h1>Discover<br><em>Wouro&nbsp;Yobi</em></h1>
-        <p class="hero-sub">A living Mbororo community preserving its heritage while building a sustainable future through education, leadership, agriculture and community development.</p>
+        <p class="eyebrow">A Mbororo Community in the Adamawa Region, Cameroon</p>
+        <h1>Every Community Has a Story.<br><em>This is Wouro Yobi's.</em></h1>
+        <p class="hero-sub">Situated in the Adamawa Region of Cameroon, Wouro Yobi is part of a much larger story — one shaped by centuries of pastoral knowledge, traditional leadership, education, community resilience and the changing history of Cameroon.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#spotlight">Begin the Journey
+          <a class="btn btn-primary" href="#discover">Begin the Journey
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a class="btn btn-ghost" href="identity.html">Explore the Archive</a>
-        </div>
-        <div class="hero-meta">
-          <div><strong>4</strong><span>Archive Pillars</span></div>
-          <div><strong>1</strong><span>Traditional Leadership</span></div>
-          <div><strong>∞</strong><span>Stories in Progress</span></div>
+          <a class="btn btn-ghost" href="#explore">Explore the Archive</a>
         </div>
       </div>
       <div class="hero-visual reveal">
-        <figure class="ph ph-panorama" style="min-height:420px;">
-          <div class="ph-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg>
-          </div>
-          <figcaption class="ph-caption">
+        <figure class="ref ref-panorama" style="min-height:440px;">
+          <span class="ref-badge">Contextual reference · Adamawa Plateau</span>
+          <figcaption class="ref-caption">
             <span class="fname">hero-panorama.jpg</span>
-            <span class="fdesc">Panoramic view of Wouro Yobi at golden hour</span>
-            <span class="fdim">Recommended 1920 × 1080</span>
-          </figcaption>
-        </figure>
-        <figure class="ph ph-square ph-float">
-          <div class="ph-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg>
-          </div>
-          <figcaption class="ph-caption">
-            <span class="fname">village-aerial.jpg</span>
-            <span class="fdim">1600 × 1600</span>
+            <span class="fdesc">To be replaced with an official Wouro Yobi photograph, an MBOSCUDA archive image, or a licensed Wikimedia Commons landscape once selected.</span>
           </figcaption>
         </figure>
       </div>
@@ -648,319 +361,382 @@
   </section>
 
   <!-- ============================================================
-       2. EDITORIAL INTRODUCTION
+       KNOWLEDGE PASSPORT
        ============================================================ -->
-  <section class="editorial" id="about" aria-labelledby="editorial-heading">
-    <div class="wrap reveal">
-      <div>
-        <p class="eyebrow">Why This Archive Exists</p>
-        <h2 id="editorial-heading">A community that remembers itself, on its own terms</h2>
-      </div>
-      <div class="editorial-body">
-        <p><span class="editorial-drop" aria-hidden="true">M</span>ost accounts of Mbororo life have been written by outsiders — travellers, administrators, researchers passing through. Wouro Yobi is writing its own. This archive is the community's attempt to hold its history, knowledge and daily life in one place, told in its own voice and kept for the people who will need it after us.</p>
-        <p>What you will find here is not a brochure. It is a working record — of the elders who carry oral history, the leaders who carry decisions, the herders and farmers who carry the land, and the children who will carry all of it forward. Every entry is built to connect to another: a person to a project, a project to a place, a place to a story still being written.</p>
-        <p>We preserve what came before so that what comes next is built with memory intact.</p>
-        <div class="editorial-signoff">Wouro Yobi Living Archive — established as a community-led initiative</div>
+  <div class="passport-bar">
+    <div class="wrap">
+      <span class="passport-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+        Your Knowledge Passport — stamped automatically as you explore each chapter
+      </span>
+      <div class="passport-stamps" id="passportStamps" aria-label="Chapters explored">
+        <span class="passport-stamp" data-chapter="identity" title="Our Identity"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg></span>
+        <span class="passport-stamp" data-chapter="life" title="Way of Life"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg></span>
+        <span class="passport-stamp" data-chapter="future" title="Our Future"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg></span>
+        <span class="passport-stamp" data-chapter="memory" title="Our Memory"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg></span>
+        <span class="passport-stamp" data-chapter="knowledge-centre" title="Knowledge Centre"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg></span>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ============================================================
-       3. FOUR PILLARS
+       SECTION — CAMEROON
        ============================================================ -->
-  <section id="pillars" aria-labelledby="pillars-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Four Entrances Into the Archive</p>
-        <h2 id="pillars-heading">Begin wherever the story calls you</h2>
-        <p>Every record in this archive belongs to one of four rooms. Each is a complete world on its own, and each connects outward to the others.</p>
+  <section class="narrative" aria-labelledby="cameroon-heading">
+    <div class="wrap narrative-grid">
+      <div class="narrative-body reveal">
+        <p class="eyebrow">Where the Story Begins</p>
+        <h2 id="cameroon-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">Cameroon — often called "Africa in Miniature"</h2>
+        <p>Before Wouro Yobi, there is Cameroon. The country earns its nickname honestly: within its borders sit coastline, rainforest, savanna, highland plateau and near-desert, along with more than 250 living languages. It borders Nigeria, Chad, the Central African Republic, the Republic of the Congo, Gabon and Equatorial Guinea, sitting at the hinge between West and Central Africa.</p>
+        <p>That geographic range matters for this archive, because Wouro Yobi's own landscape — savanna grassland on a highland plateau — is just one part of a much larger and more varied national picture.</p>
+        <div class="narrative-media-grid">
+          <figure class="ref ref-wide"><span class="ref-badge">Reference · Cameroon</span><figcaption class="ref-caption"><span class="fname">cameroon-map.jpg</span><span class="fdesc">Political map context, pending selection</span></figcaption></figure>
+          <figure class="ref ref-wide"><span class="ref-badge">Reference · Cameroon</span><figcaption class="ref-caption"><span class="fname">cameroon-landscape.jpg</span><span class="fdesc">Landscape diversity, pending selection</span></figcaption></figure>
+        </div>
+        <ul class="narrative-tags"><li>Geography</li><li>Climate</li><li>250+ Languages</li><li>Six Neighbouring Countries</li><li>Natural Diversity</li></ul>
+        <details class="dyk">
+          <summary><span class="dyk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span>Did you know?<svg class="dyk-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="dyk-body">Cameroon's nickname "Africa in Miniature" reflects the fact that nearly every major African ecosystem — coast, rainforest, savanna, mountain, semi-desert — can be found somewhere within the country.</div>
+        </details>
       </div>
-
-      <div class="pillars-grid reveal reveal-stagger">
-        <a class="pillar-card" href="#" style="--i:0">
-          <p class="pillar-num">Room 01</p>
-          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4 8-4z"/><path d="M4 11v6l8 4 8-4v-6"/></svg></div>
-          <h3>Our Identity</h3>
-          <p>Who we are — the lineage, leadership and language that give Wouro Yobi its name.</p>
-          <ul class="pillar-tags"><li>History</li><li>Leadership</li><li>Language</li><li>Values</li><li>Mbororo Heritage</li></ul>
-          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="pillar-card" href="#way-of-life" style="--i:1">
-          <p class="pillar-num">Room 02</p>
-          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20c2-6 4-9 8-9s6 3 8 9"/><circle cx="12" cy="7" r="3"/></svg></div>
-          <h3>Our Way of Life</h3>
-          <p>Daily rhythm — livestock, agriculture, markets and the seasons that shape the calendar.</p>
-          <ul class="pillar-tags"><li>Livestock</li><li>Agriculture</li><li>Markets</li><li>Children</li><li>Seasons</li></ul>
-          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="pillar-card" href="#" style="--i:2">
-          <p class="pillar-num">Room 03</p>
-          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-8h6v8"/></svg></div>
-          <h3>Our Future</h3>
-          <p>What we are building — schools, roads, partnerships and the youth who will lead them.</p>
-          <ul class="pillar-tags"><li>Education</li><li>Youth</li><li>Infrastructure</li><li>Environment</li><li>Partnerships</li></ul>
-          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="pillar-card" href="#memory" style="--i:3">
-          <p class="pillar-num">Room 04</p>
-          <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-          <h3>Our Memory</h3>
-          <p>What must not be lost — elders' voices, songs, proverbs and the timeline of a community.</p>
-          <ul class="pillar-tags"><li>Oral History</li><li>Elders</li><li>Songs</li><li>Photographs</li><li>Timeline</li></ul>
-          <span class="pillar-enter">Enter this room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       4. COMMUNITY SPOTLIGHT
-       ============================================================ -->
-  <section class="spotlight" id="spotlight" aria-labelledby="spotlight-heading">
-    <div class="wrap">
-      <div class="spotlight-grid reveal">
-        <div class="spotlight-portrait">
-          <figure class="ph ph-portrait">
-            <div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 5-7 8-7s6.5 2 8 7"/></svg></div>
-            <figcaption class="ph-caption">
-              <span class="fname">ardo-abdoulkadi.jpg</span>
-              <span class="fdesc">Portrait, community setting</span>
-              <span class="fdim">1200 × 1600</span>
-            </figcaption>
-          </figure>
-          <div class="spotlight-role"><strong>Ardo Abdoulkadi</strong>President, MBOSCUDA – Mayo-Banyo</div>
-        </div>
-        <div class="spotlight-body">
-          <p class="eyebrow">Community Spotlight</p>
-          <h3 id="spotlight-heading">Ardo Abdoulkadi</h3>
-          <p>Ardo Abdoulkadi leads the Mbororo Social and Cultural Development Association (MBOSCUDA) for the Mayo-Banyo division, representing the interests of Mbororo communities across land rights, education access and pastoral development. His work connects Wouro Yobi to a wider regional network of Mbororo advocacy and self-representation.</p>
-          <p>Within the community, his leadership has shaped decisions on schooling, infrastructure requests to government partners, and the day-to-day mediation that keeps a pastoral community's many interests aligned.</p>
-          <p class="spotlight-quote">"A community that documents itself is a community that cannot be spoken over."</p>
-          <a class="btn btn-primary" href="https://ke.linkedin.com/in/ardo-abdoulkadi" target="_blank" rel="noopener">Read Full Profile
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-          <p style="margin-top:1rem; font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);">This profile is the first of many. Community Spotlight rotates to feature elders, leaders, educators and youth across the archive.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       5. KNOWLEDGE AT A GLANCE
-       ============================================================ -->
-  <section id="knowledge-glance" aria-labelledby="glance-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">The Archive in Numbers</p>
-        <h2 id="glance-heading">Knowledge at a glance</h2>
-        <p>Every record type below is a doorway. As the archive grows, each figure will link through to a living, searchable index.</p>
-      </div>
-      <div class="glance-grid reveal">
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c1-4 3.5-6 7-6s6 2 7 6"/><circle cx="17" cy="9" r="2.5"/></svg>
-          <span class="glance-count">People</span>
-          <span class="glance-label">Elders, leaders, youth</span>
-          <span class="glance-note">Profiles connecting names to roles, families and stories.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
-          <span class="glance-count">Places</span>
-          <span class="glance-label">Land, markets, landmarks</span>
-          <span class="glance-note">The geography that grounds every story in a real location.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
-          <span class="glance-count">Projects</span>
-          <span class="glance-label">Schools, farms, infrastructure</span>
-          <span class="glance-note">Development work tracked from proposal to completion.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>
-          <span class="glance-count">Events</span>
-          <span class="glance-label">Visits, meetings, gatherings</span>
-          <span class="glance-note">Dated moments that mark the community's progress.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 12h8M8 16h5"/></svg>
-          <span class="glance-count">Stories</span>
-          <span class="glance-label">Narratives, oral history</span>
-          <span class="glance-note">First-person and third-person accounts, always sourced.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-11 11"/></svg>
-          <span class="glance-count">Media</span>
-          <span class="glance-label">Photographs, film, audio</span>
-          <span class="glance-note">Visual and spoken evidence, catalogued by subject.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M14 2v5h5"/></svg>
-          <span class="glance-count">Documents</span>
-          <span class="glance-label">Records, correspondence</span>
-          <span class="glance-note">Official and informal papers that support every claim.</span>
-        </div>
-        <div class="glance-cell">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg>
-          <span class="glance-count">Videos</span>
-          <span class="glance-label">Interviews, footage</span>
-          <span class="glance-note">Moving records of people, places and events in motion.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       6. FEATURED JOURNEY
-       ============================================================ -->
-  <section id="journey" aria-labelledby="journey-heading" style="background:var(--beige-warm);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Featured Journey</p>
-        <h2 id="journey-heading">What the community has been building</h2>
-        <p>Not news in the passing sense — each entry below is a thread the archive will keep pulling on, linked to the people, places and images behind it.</p>
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="journey-scroller reveal">
-        <article class="journey-card">
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
-            <figcaption class="ph-caption"><span class="fname">kindergarten-expansion.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
-          </figure>
-          <div class="journey-body">
-            <p class="journey-tag">Education</p>
-            <h3>Kindergarten Expansion</h3>
-            <p>New classrooms are extending early education access for the youngest children of Wouro Yobi.</p>
-            <div class="journey-links"><span>Project</span><span>Children</span><span>Gallery</span></div>
-          </div>
-        </article>
-        <article class="journey-card">
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
-            <figcaption class="ph-caption"><span class="fname">government-visit-01.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
-          </figure>
-          <div class="journey-body">
-            <p class="journey-tag">Governance</p>
-            <h3>Government Visit</h3>
-            <p>A delegation visit opened dialogue on infrastructure requests and local development priorities.</p>
-            <div class="journey-links"><span>Event</span><span>Leadership</span><span>Documents</span></div>
-          </div>
-        </article>
-        <article class="journey-card">
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
-            <figcaption class="ph-caption"><span class="fname">football-01.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
-          </figure>
-          <div class="journey-body">
-            <p class="journey-tag">Youth</p>
-            <h3>Youth Football</h3>
-            <p>A community league is giving young people a shared arena for sport, pride and friendly rivalry.</p>
-            <div class="journey-links"><span>Story</span><span>People</span><span>Media</span></div>
-          </div>
-        </article>
-        <article class="journey-card">
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
-            <figcaption class="ph-caption"><span class="fname">agriculture-overview.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
-          </figure>
-          <div class="journey-body">
-            <p class="journey-tag">Livelihood</p>
-            <h3>Agriculture</h3>
-            <p>Seasonal planting and livestock management remain the backbone of daily livelihood.</p>
-            <div class="journey-links"><span>Project</span><span>Places</span><span>Timeline</span></div>
-          </div>
-        </article>
-        <article class="journey-card">
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
-            <figcaption class="ph-caption"><span class="fname">community-meeting.jpg</span><span class="fdim">1600 × 1000</span></figcaption>
-          </figure>
-          <div class="journey-body">
-            <p class="journey-tag">Governance</p>
-            <h3>Community Dialogue</h3>
-            <p>Regular gatherings keep decision-making open, transparent and rooted in consensus.</p>
-            <div class="journey-links"><span>Event</span><span>Leadership</span><span>Stories</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       WAY OF LIFE + KNOWLEDGE PANEL (contextual reuse)
-       ============================================================ -->
-  <section id="way-of-life" aria-labelledby="wol-heading">
-    <div class="wrap" style="display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:start;">
-      <div class="reveal">
-        <p class="eyebrow">Our Way of Life</p>
-        <h2 id="wol-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">Life measured in seasons, not schedules</h2>
-        <p style="margin-top:1.2rem; color:var(--ink-soft); font-size:1.02rem; max-width:60ch;">Livestock movement, planting cycles and market days shape the community's calendar far more than the Gregorian one. Milk production, tree planting and shared farmland tie households together across generations.</p>
-        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;">
-          <figure class="ph ph-square"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">livestock-01.jpg</span><span class="fdim">1200×1200</span></figcaption></figure>
-          <figure class="ph ph-square"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">milk-production.jpg</span><span class="fdim">1200×1200</span></figcaption></figure>
-          <figure class="ph ph-square"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">women-agriculture.jpg</span><span class="fdim">1200×1200</span></figcaption></figure>
-        </div>
-      </div>
-      <aside class="knowledge-panel reveal" aria-labelledby="kp-1">
-        <h4 id="kp-1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Related Knowledge</h4>
+      <aside class="knowledge-panel reveal" aria-label="Cameroon references">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Cameroon References</h4>
         <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Fula_people" target="_blank" rel="noopener">Fula (Fulani) People <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
-          <li><a href="https://www.fao.org/" target="_blank" rel="noopener">Pastoral Livelihoods <span class="src">FAO</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
-          <li><a href="https://www.ilri.org/" target="_blank" rel="noopener">Livestock Research <span class="src">ILRI</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" rel="noopener">Cameroon <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.britannica.com/place/Cameroon" target="_blank" rel="noopener">Cameroon <span class="src">Britannica</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.worldbank.org/en/country/cameroon" target="_blank" rel="noopener">Country Overview <span class="src">World Bank</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.unesco.org/en/countries/cm" target="_blank" rel="noopener">Cameroon <span class="src">UNESCO</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
         </ul>
       </aside>
     </div>
   </section>
 
   <!-- ============================================================
-       7. KNOWLEDGE PANEL — second contextual placement (Identity / Region)
+       SECTION — THE ADAMAWA REGION
        ============================================================ -->
-  <section id="memory" aria-labelledby="memory-heading" style="background:var(--sage-pale);">
-    <div class="wrap" style="display:grid; grid-template-columns:1fr 1.5fr; gap:clamp(2rem,4vw,3.5rem); align-items:start;">
-      <aside class="knowledge-panel reveal" aria-labelledby="kp-2" style="order:2;">
-        <h4 id="kp-2"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Regional Context</h4>
+  <section class="narrative is-alt" aria-labelledby="adamawa-heading">
+    <div class="wrap narrative-grid">
+      <div class="narrative-body reveal">
+        <p class="eyebrow">One Region, Many Peoples</p>
+        <h2 id="adamawa-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">The Adamawa Region</h2>
+        <p>The Adamawa Plateau rises across north-central Cameroon, spilling into neighbouring Nigeria and the Central African Republic — a highland band of rolling savanna, cooler air and grassland that divides the country's forested south from its drier north. Cattle-based pastoralism dominates the regional economy, alongside subsistence farming.</p>
+        <p>The region is home to several peoples, not one: the Fulbe (Fulani) form the largest group, but Mbum, Gbaya, Tikar, Mambila, Vute and other communities share the plateau, each with their own history and language. Traditional Muslim rulers known as lamidos hold significant local authority across many Adamawa towns, a structure with roots in the 19th-century Adamawa Emirate.</p>
+        <div class="narrative-media-grid">
+          <figure class="ref span-2 ref-wide"><span class="ref-badge">Reference · Adamawa Plateau</span><figcaption class="ref-caption"><span class="fname">adamawa-plateau.jpg</span><span class="fdesc">Highland savanna landscape, pending selection</span></figcaption></figure>
+        </div>
+        <div class="narrative-scope">This archive documents Wouro Yobi specifically. The Adamawa Region's wider diversity — its many peoples, towns and traditions — is referenced here for context, not as a description of any single community within it.</div>
+      </div>
+      <aside class="knowledge-panel reveal" aria-label="Adamawa references">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Adamawa References</h4>
         <ul>
           <li><a href="https://en.wikipedia.org/wiki/Adamawa_Region" target="_blank" rel="noopener">Adamawa Region <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" rel="noopener">Cameroon <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
-          <li><a href="https://www.google.com/maps?q=6.505889,11.502250" target="_blank" rel="noopener">Wouro Yobi <span class="src">Google Maps</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
-          <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">Community Boundaries <span class="src">OpenStreetMap</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.britannica.com/place/Adamawa-Plateau" target="_blank" rel="noopener">Adamawa Plateau <span class="src">Britannica</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.fao.org/" target="_blank" rel="noopener">Regional Pastoralism <span class="src">FAO</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
         </ul>
       </aside>
-      <div class="reveal" style="order:1;">
-        <p class="eyebrow">Our Memory</p>
-        <h2 id="memory-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">What the elders carry, we are learning to keep</h2>
-        <p style="margin-top:1.2rem; color:var(--ink-soft); font-size:1.02rem; max-width:60ch;">Songs sung at gatherings, proverbs passed down in everyday speech, and the recollection of elders who watched Wouro Yobi grow — this is the most fragile part of the archive, and the most urgent to record. A community timeline is being built interview by interview.</p>
-        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2rem;">
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">heritage-01.jpg</span><span class="fdim">1400×900</span></figcaption></figure>
-          <figure class="ph ph-wide"><div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><figcaption class="ph-caption"><span class="fname">culture-01.jpg</span><span class="fdim">1400×900</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION — THE MBORORO STORY
+       ============================================================ -->
+  <section class="narrative" aria-labelledby="mbororo-heading">
+    <div class="wrap narrative-grid">
+      <div class="narrative-body reveal">
+        <p class="eyebrow">A People, Not a Single Story</p>
+        <h2 id="mbororo-heading" style="font-size:clamp(1.9rem,3.2vw,2.6rem); margin-top:0.8rem;">The Mbororo story</h2>
+        <p>The Mbororo are the historically nomadic, pastoral branch of the wider Fulani (Fulɓe) people — among the largest nomadic pastoral populations in the world, found across the Sahel from Senegal to Sudan. In Cameroon and neighbouring countries, Mbororo herders speak Fulfulde and have traditionally moved cattle across the landscape in search of water and pasture through the seasons.</p>
+        <p>Much of Mbororo life is shaped by <em>pulaaku</em> — a code of conduct emphasising patience, dignity, hospitality and restraint — passed down rather than written, and by deep working knowledge of livestock, land and weather built up over generations. Mbororo communities are not uniform: they differ across regions and countries in dialect, custom and degree of settlement, and organisations such as MBOSCUDA now represent Mbororo interests in advocacy, education and land rights across Cameroon.</p>
+        <div class="narrative-media-grid">
+          <figure class="ref ref-wide"><span class="ref-badge">Reference · Mbororo pastoralism</span><figcaption class="ref-caption"><span class="fname">mbororo-cattle.jpg</span><span class="fdesc">Cattle herding context, pending selection</span></figcaption></figure>
+          <figure class="ref ref-wide"><span class="ref-badge">Reference · Fulfulde region</span><figcaption class="ref-caption"><span class="fname">grasslands-cameroon.jpg</span><span class="fdesc">Grassland context, pending selection</span></figcaption></figure>
+        </div>
+        <div class="narrative-scope">General Mbororo history, above, is drawn from public scholarship and reference sources. Wouro Yobi's own particular history, leadership and traditions are documented separately in Our Identity — the two should not be read as interchangeable.</div>
+      </div>
+      <aside class="knowledge-panel reveal" aria-label="Mbororo references">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mbororo References</h4>
+        <ul>
+          <li><a href="https://mboscuda.org/" target="_blank" rel="noopener">MBOSCUDA <span class="src">mboscuda.org</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://minorityrights.org/communities/mbororo-2/" target="_blank" rel="noopener">Mbororo Communities <span class="src">Minority Rights Group</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Fula_people" target="_blank" rel="noopener">Fula (Fulani) People <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.ilri.org/" target="_blank" rel="noopener">Pastoral Livestock Research <span class="src">ILRI</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION — DISCOVER WOURO YOBI + MAP EXPLORER
+       ============================================================ -->
+  <section id="discover" class="narrative is-alt" aria-labelledby="discover-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Only Now, Wouro Yobi</p>
+        <h2 id="discover-heading">Discover Wouro Yobi</h2>
+        <p>Within this wider story of Cameroon, the Adamawa Region and the Mbororo people sits one specific, living community — the subject of this entire archive.</p>
+      </div>
+      <div class="discover-grid">
+        <div class="reveal">
+          <div class="discover-facts">
+            <div class="discover-fact"><h5>Municipality</h5><p>Mayo-Darlé</p></div>
+            <div class="discover-fact"><h5>Region</h5><p>Adamawa, Cameroon</p></div>
+            <div class="discover-fact"><h5>Coordinates</h5><p>6°30'21.2"N, 11°30'08.1"E</p></div>
+            <div class="discover-fact"><h5>Community Type</h5><p>Mbororo, pastoral</p></div>
+          </div>
+          <p style="margin-top:1.6rem; color:var(--ink-soft); font-size:1rem;">Leadership, education, agriculture, youth and ongoing development are documented in depth across the archive's other chapters. This page is the entrance; each thread continues elsewhere.</p>
+          <div class="hero-actions" style="margin-top:1.6rem;">
+            <a class="btn btn-primary btn-sm" href="identity.html">Our Identity</a>
+            <a class="btn btn-ghost btn-sm" href="future.html">Our Future</a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps?q=6.505889,11.502250&output=embed" title="Map Explorer showing the approximate location of Wouro Yobi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-legend" aria-label="Future map markers">
+              <span>School</span><span>Chief's Camp</span><span>River</span><span>Agricultural Areas</span><span>Meeting Place</span>
+            </div>
+          </div>
+          <div class="map-actions">
+            <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps?q=6.505889,11.502250" target="_blank" rel="noopener">Google Maps</a>
+            <a class="btn btn-ghost btn-sm" href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a>
+          </div>
+          <p style="margin-top:0.9rem; font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);">Markers above are planned additions to the Map Explorer as each location is documented and photographed.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       8. EVIDENCE SECTION
+       HISTORICAL TIMELINE
        ============================================================ -->
-  <section class="evidence" id="evidence" aria-labelledby="evidence-heading">
+  <section style="background:var(--forest-deep); color:var(--sage-pale);" aria-labelledby="timeline-heading">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Archive Methodology</p>
-        <h2 id="evidence-heading">Nothing here exists without evidence</h2>
-        <p>Every story published to this archive is built to carry the material that proves it — so a claim about the past or present can always be traced back to its source.</p>
+        <p class="eyebrow" style="color:var(--gold-soft);"><span style="display:inline-block; width:22px; height:1.5px; background:var(--gold-soft); margin-right:0.6em; vertical-align:middle;"></span>Timeline Journey</p>
+        <h2 id="timeline-heading" style="color:var(--white);">Historical timeline</h2>
+        <p style="color:rgba(228,232,222,0.78);">From the region's deep pastoral past to Wouro Yobi's own documented present. Regional history is drawn from public reference sources; community-specific points are marked and will be expanded as oral history and local records are verified.</p>
       </div>
-      <div class="evidence-grid reveal">
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-11 11"/></svg><strong>Photographs</strong><span>Dated and attributed to a place and event.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg><strong>Videos</strong><span>Footage of events and everyday life.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M1 12h6M17 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"/></svg><strong>Interviews</strong><span>First-person testimony, recorded and transcribed.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><strong>Maps</strong><span>Locations tied to coordinates and boundaries.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M14 2v5h5"/></svg><strong>Documents</strong><span>Official records and correspondence.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 12h8M8 16h5"/></svg><strong>Reports</strong><span>Findings and progress summaries.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>Timelines</strong><span>Events placed in chronological sequence.</span></div>
-        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M2 20c1-4 3.5-6 7-6s6 2 7 6"/><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/></svg><strong>Community Voices</strong><span>Testimony gathered directly, in context.</span></div>
-      </div>
-      <div class="evidence-standard reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        <p>Every published story links to at least one primary source — a photograph, document, recording or dated event — before it is considered complete. This is the standard the archive holds itself to.</p>
+      <div class="timeline-track reveal">
+        <div class="timeline-stop"><span class="timeline-era">Before 1800</span><h4>Pastoral Traditions</h4><p>Fulɓe pastoralist migration into the wider Adamawa region begins, alongside the area's established Sudanic and Bantoid-speaking peoples.</p><a href="https://en.wikipedia.org/wiki/Adamawa_Region" target="_blank" rel="noopener">Wikipedia →</a></div>
+        <div class="timeline-stop"><span class="timeline-era">Early 19th Century</span><h4>The Adamawa Emirate</h4><p>Following a jihad led by Modibbo Adama from 1809, the Adamawa Emirate is formed as part of the Sokoto Caliphate, reshaping regional authority.</p><a href="https://en.wikipedia.org/wiki/Adamawa_Emirate" target="_blank" rel="noopener">Wikipedia →</a></div>
+        <div class="timeline-stop"><span class="timeline-era">1884</span><h4>German Kamerun</h4><p>Germany begins annexing the territory that becomes German Kamerun, reaching the Adamawa Plateau by the turn of the century.</p><a href="https://en.wikipedia.org/wiki/Kamerun" target="_blank" rel="noopener">Wikipedia →</a></div>
+        <div class="timeline-stop"><span class="timeline-era">1916</span><h4>British &amp; French Administration</h4><p>Germany's defeat in West Africa during the First World War leads to the territory's partition between British and French administration.</p><a href="https://en.wikipedia.org/wiki/British_Cameroons" target="_blank" rel="noopener">Wikipedia →</a></div>
+        <div class="timeline-stop"><span class="timeline-era">1 January 1960</span><h4>Independence</h4><p>French Cameroun gains independence, with Ahmadou Ahidjo as the country's first president.</p><a href="https://www.britannica.com/place/Cameroon/Moving-toward-independence" target="_blank" rel="noopener">Britannica →</a></div>
+        <div class="timeline-stop"><span class="timeline-era">1 October 1961</span><h4>Reunification</h4><p>Following a UN-supervised plebiscite, the former British Southern Cameroons unites with French Cameroun to form the Federal Republic of Cameroon.</p><a href="https://en.wikipedia.org/wiki/Unification_Day_(Cameroon)" target="_blank" rel="noopener">Wikipedia →</a></div>
+        <div class="timeline-stop"><span class="timeline-era">20th Century</span><h4>Modern Adamawa</h4><p>The Adamawa becomes one of Cameroon's ten administrative regions, with Ngaoundéré as its capital and tin mining active near Mayo-Darlé.</p><a href="https://en.wikipedia.org/wiki/Adamawa_Region" target="_blank" rel="noopener">Wikipedia →</a></div>
+        <div class="timeline-stop is-community"><span class="timeline-era">Documenting</span><h4>Mayo-Darlé &amp; Wouro Yobi</h4><p>Wouro Yobi's own founding and early history are being traced through elder interviews — see Our Memory.</p><a href="memory.html">Our Memory →</a></div>
+        <div class="timeline-stop is-community"><span class="timeline-era">In Progress</span><h4>Kindergarten Expansion</h4><p>New classrooms extend early education access for the community's youngest children.</p><a href="future.html#initiative">Our Future →</a></div>
+        <div class="timeline-stop is-community"><span class="timeline-era">Today</span><h4>The Living Archive</h4><p>This documentation project begins, gathering and verifying evidence as it becomes available.</p><a href="about.html">About the Archive →</a></div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       9. EDITORIAL MISSION
+       EXPLORE THE LIVING ARCHIVE — nine cards
+       ============================================================ -->
+  <section id="explore" aria-labelledby="explore-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Nine Ways Through the Archive</p>
+        <h2 id="explore-heading">Explore the Living Archive</h2>
+      </div>
+      <div class="explore-grid reveal">
+        <a class="explore-card" href="identity.html"><div class="explore-content"><p class="eyebrow">Chapter</p><h3>Our Identity</h3><p>Who the people of Wouro Yobi are.</p></div></a>
+        <a class="explore-card" href="life.html"><div class="explore-content"><p class="eyebrow">Chapter</p><h3>Way of Life</h3><p>Seasons, livestock and daily rhythm.</p></div></a>
+        <a class="explore-card" href="future.html"><div class="explore-content"><p class="eyebrow">Chapter</p><h3>Our Future</h3><p>Education, youth and development.</p></div></a>
+        <a class="explore-card" href="memory.html"><div class="explore-content"><p class="eyebrow">Chapter</p><h3>Our Memory</h3><p>Oral history, elders and the timeline.</p></div></a>
+        <a class="explore-card" href="index.html#knowledge-centre"><div class="explore-content"><p class="eyebrow">Reference</p><h3>Knowledge Centre</h3><p>People, places, documents and video, indexed.</p></div></a>
+        <a class="explore-card" href="people.html"><div class="explore-content"><p class="eyebrow">Directory</p><h3>People</h3><p>Leaders, elders and community voices.</p></div></a>
+        <a class="explore-card" href="journal.html"><div class="explore-content"><p class="eyebrow">Ongoing</p><h3>Journal</h3><p>Dated stories from across the community.</p></div></a>
+        <a class="explore-card" href="media.html"><div class="explore-content"><p class="eyebrow">Gallery</p><h3>Media</h3><p>Photographs, video and audio.</p></div></a>
+        <a class="explore-card" href="visit.html"><div class="explore-content"><p class="eyebrow">Practical</p><h3>Visit Us</h3><p>How to responsibly plan a visit.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURED STORY
+       ============================================================ -->
+  <section style="background:var(--sage-pale);" aria-labelledby="featured-heading">
+    <div class="wrap featured-story">
+      <div class="reveal">
+        <p class="eyebrow">Not News — An Invitation</p>
+        <h2 id="featured-heading" style="font-size:clamp(1.9rem,3.2vw,2.5rem); margin-top:0.8rem;">The story of Wouro Yobi</h2>
+        <p>This is not a headline and it will not expire. It is the opening chapter of an ongoing record — a community choosing, deliberately, to hold its own history rather than wait for someone else to write it. What follows across this archive is that record: incomplete in places, honest about what remains unverified, and built to grow for years rather than a single news cycle.</p>
+        <a class="btn btn-primary" href="identity.html">Read the Opening Chapter
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <figure class="ph ph-wide reveal" style="min-height:320px;">
+        <div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div>
+        <figcaption class="ph-caption"><span class="fname">featured-story.jpg</span><span class="fdesc">Editorial image representing the community</span><span class="fdim">1600 × 900</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KNOWLEDGE JOURNEY
+       ============================================================ -->
+  <section id="knowledge-centre" aria-labelledby="knowledge-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Everything Connected</p>
+        <h2 id="knowledge-heading">Knowledge journey</h2>
+        <p>Every record in this archive belongs to one of these categories, and every category links outward to the others.</p>
+      </div>
+      <div class="journey-grid reveal reveal-stagger">
+        <div class="journey-cell" style="--i:0"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c1-4 3.5-6 7-6s6 2 7 6"/><circle cx="17" cy="9" r="2.5"/></svg><h4>Community</h4><span>The people, place and everyday life of Wouro Yobi.</span></div>
+        <div class="journey-cell" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 5-7 8-7s6.5 2 8 7"/></svg><h4>People</h4><span>Leaders, elders, families and voices.</span></div>
+        <div class="journey-cell" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><h4>Places</h4><span>Land, landmarks and geography.</span></div>
+        <div class="journey-cell" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg><h4>Projects</h4><span>Development work, tracked over time.</span></div>
+        <div class="journey-cell" style="--i:4"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg><h4>Events</h4><span>Dated moments in the community's progress.</span></div>
+        <div class="journey-cell" style="--i:5"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M14 2v5h5"/></svg><h4>Documents</h4><span>Records, correspondence and reports.</span></div>
+        <div class="journey-cell" style="--i:6"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 12h8M8 16h5"/></svg><h4>Stories</h4><span>Narratives and first-person accounts.</span></div>
+        <div class="journey-cell" style="--i:7"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><h4>Maps</h4><span>Geography tied to real coordinates.</span></div>
+        <div class="journey-cell" style="--i:8"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-11 11"/></svg><h4>Photographs</h4><span>Visual evidence, catalogued by subject.</span></div>
+        <div class="journey-cell" style="--i:9"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg><h4>Videos</h4><span>Footage of people, places and events.</span></div>
+        <div class="journey-cell" style="--i:10"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Timeline</h4><span>Regional and community history in sequence.</span></div>
+        <div class="journey-cell" style="--i:11"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M8 4v16M16 4v16M4 8h16M4 16h16"/></svg><h4>Media &amp; Journal</h4><span>The archive's ongoing, dated coverage.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMMUNITY SPOTLIGHT — two people
+       ============================================================ -->
+  <section style="background:var(--beige-warm);" aria-labelledby="spotlight-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Community Spotlight</p>
+        <h2 id="spotlight-heading">Two people at the centre of this story</h2>
+        <p>Fuller biographies live on the People page — these are brief introductions only.</p>
+      </div>
+      <div class="spotlight-duo reveal reveal-stagger">
+        <article class="spotlight-card" style="--i:0">
+          <figure class="ph ph-portrait" style="min-height:280px;">
+            <div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 5-7 8-7s6.5 2 8 7"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">traditional-leader.jpg</span><span class="fdim">1200 × 1600</span></figcaption>
+          </figure>
+          <div class="spotlight-card-body">
+            <p class="spotlight-card-role">Traditional Leadership</p>
+            <h3>His Majesty Maître Aliou Amadou</h3>
+            <p>Traditional leadership of Wouro Yobi, guiding custom, dialogue and community decision-making.</p>
+            <a class="btn btn-primary btn-sm" href="people.html">Leadership Profile</a>
+          </div>
+        </article>
+        <article class="spotlight-card" style="--i:1">
+          <figure class="ph ph-portrait" style="min-height:280px;">
+            <div class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 5-7 8-7s6.5 2 8 7"/></svg></div>
+            <figcaption class="ph-caption"><span class="fname">ardo-abdoulkadi.jpg</span><span class="fdim">1200 × 1600</span></figcaption>
+          </figure>
+          <div class="spotlight-card-body">
+            <p class="spotlight-card-role">Regional Advocacy</p>
+            <h3>Ardo Abdoulkadi</h3>
+            <p>President, MBOSCUDA – Mayo-Banyo, connecting Wouro Yobi to wider Mbororo advocacy and development networks.</p>
+            <a class="btn btn-primary btn-sm" href="people.html">Full Profile</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KNOWLEDGE GRAPH — illustrative diagram
+       ============================================================ -->
+  <section aria-labelledby="graph-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How the Archive Connects</p>
+        <h2 id="graph-heading">The knowledge graph</h2>
+        <p>Every object in this archive links to another — a person to a project, a project to a place, a place to a story still being written.</p>
+      </div>
+      <div class="graph-wrap reveal">
+        <svg class="graph-svg" viewBox="0 0 900 320" role="img" aria-label="Diagram showing People connected to Projects, Places, Events, Media, Documents and References, all connected back to the central Community node">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0L10 5L0 10z" fill="#C79A4B"></path>
+            </marker>
+          </defs>
+          <g stroke="#C79A4B" stroke-width="1.4" fill="none" opacity="0.75">
+            <line x1="450" y1="160" x2="180" y2="70" marker-end="url(#arrow)"></line>
+            <line x1="450" y1="160" x2="450" y2="55" marker-end="url(#arrow)"></line>
+            <line x1="450" y1="160" x2="720" y2="70" marker-end="url(#arrow)"></line>
+            <line x1="450" y1="160" x2="180" y2="255" marker-end="url(#arrow)"></line>
+            <line x1="450" y1="160" x2="450" y2="270" marker-end="url(#arrow)"></line>
+            <line x1="450" y1="160" x2="720" y2="255" marker-end="url(#arrow)"></line>
+          </g>
+          <g font-family="Inter Tight, sans-serif" font-size="13" fill="#E4E8DE" text-anchor="middle">
+            <circle cx="450" cy="160" r="48" fill="#2E6B54" stroke="#E4C583" stroke-width="2"></circle>
+            <text x="450" y="156" font-weight="600" font-size="15">Community</text>
+            <text x="450" y="174" font-size="11" opacity="0.85">Wouro Yobi</text>
+
+            <circle cx="180" cy="70" r="34" fill="#0E211B" stroke="#C79A4B" stroke-width="1.4"></circle>
+            <text x="180" y="74" font-size="12">People</text>
+
+            <circle cx="450" cy="45" r="34" fill="#0E211B" stroke="#C79A4B" stroke-width="1.4"></circle>
+            <text x="450" y="49" font-size="12">Projects</text>
+
+            <circle cx="720" cy="70" r="34" fill="#0E211B" stroke="#C79A4B" stroke-width="1.4"></circle>
+            <text x="720" y="74" font-size="12">Places</text>
+
+            <circle cx="180" cy="255" r="34" fill="#0E211B" stroke="#C79A4B" stroke-width="1.4"></circle>
+            <text x="180" y="259" font-size="12">Events</text>
+
+            <circle cx="450" cy="280" r="34" fill="#0E211B" stroke="#C79A4B" stroke-width="1.4"></circle>
+            <text x="450" y="284" font-size="12">Media</text>
+
+            <circle cx="720" cy="255" r="34" fill="#0E211B" stroke="#C79A4B" stroke-width="1.4"></circle>
+            <text x="720" y="253" font-size="12">Documents</text>
+            <text x="720" y="267" font-size="10" opacity="0.75">&amp; References</text>
+          </g>
+        </svg>
+        <p class="graph-note">A simplified view. In practice, People also link directly to Events, Projects to Documents, and so on — every object is a doorway to another.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ARCHIVE STATISTICS
+       ============================================================ -->
+  <section style="background:var(--sage-pale);" aria-labelledby="stats-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Where the Archive Stands Today</p>
+        <h2 id="stats-heading">Archive statistics</h2>
+        <p>Meaningful counts, not inflated ones — updated as the archive grows.</p>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-cell"><span class="stat-num">4</span><span class="stat-label">Articles Published</span></div>
+        <div class="stat-cell"><span class="stat-num">6</span><span class="stat-label">Historical Sources Cited</span></div>
+        <div class="stat-cell"><span class="stat-num">0</span><span class="stat-label">Community Photographs</span></div>
+        <div class="stat-cell"><span class="stat-num">0</span><span class="stat-label">Interviews Recorded</span></div>
+        <div class="stat-cell"><span class="stat-num">1</span><span class="stat-label">Projects Documented</span></div>
+        <div class="stat-cell"><span class="stat-num">1</span><span class="stat-label">Maps Embedded</span></div>
+        <div class="stat-cell"><span class="stat-num">0</span><span class="stat-label">Historical Documents</span></div>
+        <div class="stat-cell"><span class="stat-num">0</span><span class="stat-label">Videos</span></div>
+      </div>
+      <p class="stats-note">These figures reflect the archive's honest current state, not a target. They are designed to be updated directly in this section as new material is published.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RANDOM DISCOVERY
+       ============================================================ -->
+  <section aria-labelledby="discovery-heading">
+    <div class="wrap">
+      <h2 id="discovery-heading" class="visually-hidden">Random Discovery</h2>
+      <div class="discovery-box reveal">
+        <span class="discovery-tag">Random Discovery</span>
+        <p class="discovery-text" id="discoveryText">The Adamawa Region takes its name from Modibbo Adama, a 19th-century Fulani leader.</p>
+        <button class="btn btn-ghost btn-sm" id="discoveryBtn">Show Me Another
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDITORIAL MISSION
        ============================================================ -->
   <section class="mission" aria-labelledby="mission-heading">
     <div class="wrap reveal">
@@ -972,44 +748,21 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       10. EXPLORE THE ARCHIVE
-       ============================================================ -->
-  <section id="knowledge-centre" aria-labelledby="explore-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Five Ways Through the Archive</p>
-        <h2 id="explore-heading">Explore the archive</h2>
-      </div>
-      <div class="explore-grid reveal">
-        <a class="explore-card col-span-2" href="identity.html"><div class="explore-content"><p class="eyebrow">Room 01</p><h3>Our Identity</h3><p>Lineage, leadership, language and Mbororo heritage.</p></div></a>
-        <a class="explore-card" href="#way-of-life"><div class="explore-content"><p class="eyebrow">Room 02</p><h3>Our Way of Life</h3><p>Livestock, agriculture and daily rhythm.</p></div></a>
-        <a class="explore-card" href="identity.html"><div class="explore-content"><p class="eyebrow">Room 03</p><h3>Our Future</h3><p>Education, youth and development.</p></div></a>
-        <a class="explore-card col-span-2" href="#memory"><div class="explore-content"><p class="eyebrow">Room 04</p><h3>Our Memory</h3><p>Oral history, elders, songs and the community timeline.</p></div></a>
-      </div>
-      <div style="margin-top:1.2rem;">
-        <a class="explore-card" href="#knowledge-glance" style="display:flex; min-height:180px;"><div class="explore-content"><p class="eyebrow">Reference</p><h3>Knowledge Centre</h3><p>People, places, projects, events, stories, media, documents and video — indexed and cross-linked.</p></div></a>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <!-- ============================================================
-     11. FOOTER
+     FOOTER
      ============================================================ -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="Wouro Yobi Living Archive, home">
+        <a class="brand" href="index.html" aria-label="Wouro Yobi Living Archive, home">
           <span class="brand-mark" aria-hidden="true"><span></span></span>
           <span class="brand-name" style="color:var(--white);">Wouro Yobi<small style="color:var(--gold-soft);">Living Archive</small></span>
         </a>
         <p>Building a community for future generations — a knowledge platform documenting the history, culture and development of Wouro Yobi.</p>
-        <ul class="footer-values">
-          <li>Community-Led</li><li>Evidence-Based</li><li>Open to Partners</li>
-        </ul>
+        <ul class="footer-values"><li>Community-Led</li><li>Evidence-Based</li><li>Open to Partners</li></ul>
         <div class="footer-social">
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V6h-3a4 4 0 00-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2a1 1 0 011-1z"/></svg></a>
           <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg></a>
@@ -1020,29 +773,29 @@
         <h4>The Archive</h4>
         <ul>
           <li><a href="identity.html">Our Identity</a></li>
-          <li><a href="life.html">Our Way of Life</a></li>
+          <li><a href="life.html">Way of Life</a></li>
           <li><a href="future.html">Our Future</a></li>
           <li><a href="memory.html">Our Memory</a></li>
-          <li><a href="knowledge.html">Knowledge Centre</a></li>
+          <li><a href="index.html#knowledge-centre">Knowledge Centre</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Community</h4>
+        <h4>More</h4>
         <ul>
-          <li><a href="spotlight.html">Community Spotlight</a></li>
-          <li><a href="journey.html">Featured Journey</a></li>
-          <li><a href="#evidence">Archive Methodology</a></li>
-          <li><a href="https://mboscuda.org/" target="_blank" rel="noopener">MBOSCUDA</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="visit.html">Visit Us</a></li>
+          <li><a href="about.html">About the Living Archive</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>References</h4>
         <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Fula_people" target="_blank" rel="noopener">Fula (Fulani) — Wikipedia</a></li>
-          <li><a href="https://minorityrights.org/communities/mbororo-2/" target="_blank" rel="noopener">Minority Rights Group</a></li>
-          <li><a href="https://www.unesco.org/en/culture" target="_blank" rel="noopener">UNESCO Culture</a></li>
-          <li><a href="https://www.unicef.org/education" target="_blank" rel="noopener">UNICEF Education</a></li>
-          <li><a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">UN Sustainable Development Goals</a></li>
+          <li><a href="https://mboscuda.org/" target="_blank" rel="noopener">MBOSCUDA</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" rel="noopener">Cameroon — Wikipedia</a></li>
+          <li><a href="https://www.britannica.com/place/Cameroon" target="_blank" rel="noopener">Cameroon — Britannica</a></li>
+          <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a></li>
         </ul>
       </div>
     </div>
@@ -1053,34 +806,26 @@
   </div>
 </footer>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
-  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Scroll-reveal via Intersection Observer
+  /* Scroll reveal */
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); } });
     }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
     revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('is-visible'));
-  }
-
-  // Stagger index for grouped children
+  } else { revealEls.forEach(el => el.classList.add('is-visible')); }
   document.querySelectorAll('.reveal-stagger').forEach(group => {
-    Array.from(group.children).forEach((child, i) => {
-      child.style.setProperty('--i', i);
-    });
+    Array.from(group.children).forEach((child, i) => child.style.setProperty('--i', i));
   });
 
-  // Mobile nav toggle (simple show/hide of primary nav as a stacked panel)
+  /* Mobile nav toggle */
   const toggle = document.querySelector('.nav-toggle');
   if (toggle) {
     toggle.addEventListener('click', () => {
@@ -1096,6 +841,51 @@
       nav.style.padding = '1.2rem var(--edge)';
       nav.style.borderTop = '1px solid rgba(107,74,48,0.14)';
       toggle.setAttribute('aria-expanded', String(!open));
+    });
+  }
+
+  /* Reading progress bar */
+  const progressBar = document.getElementById('readingProgress');
+  function updateReadingProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', updateReadingProgress, { passive: true });
+  updateReadingProgress();
+
+  /* Back to top */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => { backToTop.classList.toggle('is-visible', window.scrollY > 600); }, { passive: true });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* Knowledge Passport — reads chapters explored across the archive, no login */
+  (function renderPassport() {
+    const KEY = 'wouroYobiArchivePassport';
+    let visited = [];
+    try { visited = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { visited = []; }
+    document.querySelectorAll('.passport-stamp').forEach(stamp => {
+      if (visited.includes(stamp.dataset.chapter)) stamp.classList.add('is-stamped');
+    });
+  })();
+
+  /* Random Discovery */
+  const discoveries = [
+    "The Adamawa Region takes its name from Modibbo Adama, a 19th-century Fulani leader.",
+    "Cameroon is nicknamed \"Africa in Miniature\" for its unusual range of landscapes and climates.",
+    "Cameroon reunified on 1 October 1961, when the former British Southern Cameroons joined the Republic of Cameroon.",
+    "Mbororo communities are part of the wider Fulani people, one of the largest nomadic pastoral populations in the world.",
+    "The code of pulaaku — patience, dignity, hospitality and restraint — is shared across many Fulani and Mbororo communities.",
+    "Tin has historically been mined near Mayo-Darlé, the municipality Wouro Yobi belongs to.",
+    "This archive treats unverified oral history as an open question for research, never as settled fact."
+  ];
+  const discoveryText = document.getElementById('discoveryText');
+  const discoveryBtn = document.getElementById('discoveryBtn');
+  if (discoveryBtn) {
+    discoveryBtn.addEventListener('click', () => {
+      let next;
+      do { next = discoveries[Math.floor(Math.random() * discoveries.length)]; } while (next === discoveryText.textContent && discoveries.length > 1);
+      discoveryText.textContent = next;
     });
   }
 </script>
