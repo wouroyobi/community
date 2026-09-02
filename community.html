@@ -3,155 +3,1278 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Our Community | Wouro Yobi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — Wouro Yobi Living Archive</title>
+<meta name="description" content="Where Wouro Yobi sits — Mayo-Darlé, the Adamawa Region and the landscape and neighbouring communities that surround it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
---green:#1B5E20;--green2:#2E7D32;--gold:#D4AF37;--bg:#f8f7f3;--text:#243238;
---shadow:0 10px 30px rgba(0,0,0,.08);--radius:18px;
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Community",
+  "description": "Where Wouro Yobi sits — Mayo-Darlé, the Adamawa Region, and the landscape and neighbouring communities that surround it.",
+  "isPartOf": { "@type": "WebSite", "name": "Wouro Yobi Living Archive" }
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
-header{position:sticky;top:0;background:#fff;box-shadow:var(--shadow);z-index:10}
-.container{width:min(92%,1200px);margin:auto}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font:800 1.6rem Poppins,sans-serif;color:var(--green);text-decoration:none}
-.logo span{color:var(--gold)}
-nav ul{display:flex;gap:22px;list-style:none}
-nav a{text-decoration:none;color:var(--text);font-weight:600}
-.hero{min-height:65vh;background:linear-gradient(rgba(17,70,30,.72),rgba(17,70,30,.72)),linear-gradient(135deg,#3f8d54,#235b32);display:flex;align-items:center;color:#fff;text-align:center}
-.hero h1{font:800 clamp(2.7rem,6vw,4.8rem) Poppins,sans-serif}
-.hero p{max-width:760px;margin:20px auto}
-.btn{display:inline-block;padding:14px 28px;background:var(--gold);border-radius:999px;text-decoration:none;color:#243238;font-weight:700}
-section{padding:80px 0}
-h2{font:700 2.2rem Poppins,sans-serif;margin-bottom:20px;color:var(--green)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center}
-.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
-.placeholder{height:340px;border:2px dashed var(--green2);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:#dfeee1;font-weight:700;color:var(--green)}
-.timeline{border-left:4px solid var(--gold);padding-left:25px}
-.timeline article{margin-bottom:30px}
-footer{background:#17361f;color:#fff;text-align:center;padding:40px}
-iframe{width:100%;height:420px;border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
-.hidden{opacity:0;transform:translateY(35px);transition:.8s}
-.show{opacity:1;transform:none}
+</script>
+<style>
+  /* ============================================================
+     DESIGN TOKENS — identical to the homepage. Do not alter.
+     ============================================================ */
+  :root{
+    --forest: #16332A;
+    --forest-deep: #0E211B;
+    --emerald: #2E6B54;
+    --sage: #A9BBA2;
+    --sage-pale: #E4E8DE;
+    --beige: #F3EEE1;
+    --beige-warm: #ECE3CE;
+    --brown: #6B4A30;
+    --gold: #C79A4B;
+    --gold-soft: #E4C583;
+    --ink: #1E2420;
+    --ink-soft: #4B564E;
+    --white: #FFFFFF;
+
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-caption: 'Inter Tight', sans-serif;
+
+    --max-w: 1280px;
+    --edge: clamp(1.5rem, 5vw, 4.5rem);
+    --radius-lg: 28px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 20px 60px -25px rgba(14,33,27,0.35);
+    --shadow-card: 0 12px 34px -18px rgba(14,33,27,0.28);
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--beige);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--font-display); margin:0; color:var(--forest-deep); font-weight:600; letter-spacing:-0.01em;}
+  p{margin:0;}
+  ul{margin:0; padding:0; list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  :focus-visible{
+    outline:2.5px solid var(--gold);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{max-width:var(--max-w); margin:0 auto; padding-inline:var(--edge);}
+  .eyebrow{
+    font-family:var(--font-caption);
+    font-size:0.75rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--emerald);
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1.5px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity 0.9s var(--ease), transform 0.9s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:none;}
+  .reveal-stagger > *{transition-delay:calc(var(--i,0) * 90ms);}
+
+  .skip-link{
+    position:absolute; left:1rem; top:-4rem;
+    background:var(--forest-deep); color:var(--white);
+    padding:0.8rem 1.2rem; border-radius:var(--radius-sm);
+    z-index:200; transition:top 0.25s var(--ease);
+    font-family:var(--font-caption); font-weight:600;
+  }
+  .skip-link:focus{top:1rem;}
+
+  /* ---------- header / nav (identical to homepage) ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(243,238,225,0.86);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(107,74,48,0.14);
+  }
+  .nav-row{
+    max-width:var(--max-w); margin:0 auto; padding:1.05rem var(--edge);
+    display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  }
+  .brand{display:flex; align-items:center; gap:0.7rem; text-decoration:none;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:conic-gradient(from 210deg, var(--forest), var(--emerald), var(--gold), var(--forest));
+    display:grid; place-items:center; flex-shrink:0;
+    box-shadow:inset 0 0 0 3px var(--beige);
+  }
+  .brand-mark span{width:12px; height:12px; border-radius:50%; background:var(--beige);}
+  .brand-name{font-family:var(--font-display); font-size:1.02rem; font-weight:600; color:var(--forest-deep); line-height:1.1;}
+  .brand-name small{display:block; font-family:var(--font-caption); font-weight:500; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--brown); margin-top:0.2rem;}
+
+  nav.primary-nav ul{display:flex; gap:2.1rem; align-items:center;}
+  nav.primary-nav a{
+    font-family:var(--font-caption); font-size:0.86rem; font-weight:500;
+    text-decoration:none; color:var(--ink-soft);
+    position:relative; padding-bottom:4px;
+  }
+  nav.primary-nav a::after{
+    content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0;
+    background:var(--gold); transition:width 0.3s var(--ease);
+  }
+  nav.primary-nav a:hover::after, nav.primary-nav a:focus-visible::after{width:100%;}
+  nav.primary-nav a[aria-current="page"]{color:var(--forest-deep);}
+  nav.primary-nav a[aria-current="page"]::after{width:100%;}
+  .nav-actions{display:flex; align-items:center; gap:0.8rem;}
+  .btn{
+    font-family:var(--font-caption); font-weight:600; font-size:0.85rem;
+    padding:0.75rem 1.5rem; border-radius:999px; border:1.5px solid transparent;
+    text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;
+    transition:transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color .35s var(--ease);
+  }
+  .btn-primary{background:var(--forest-deep); color:var(--beige);}
+  .btn-primary:hover{background:var(--emerald); transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--forest-deep); color:var(--forest-deep);}
+  .btn-ghost:hover{background:var(--forest-deep); color:var(--beige); transform:translateY(-2px);}
+  .btn-gold{background:var(--gold); color:var(--forest-deep);}
+  .btn-gold:hover{background:var(--gold-soft); transform:translateY(-2px);}
+  .nav-toggle{display:none; background:none; border:none; padding:0.4rem;}
+  @media (max-width:920px){
+    nav.primary-nav, .nav-actions .btn-ghost{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- placeholder image component (identical) ---------- */
+  .ph{
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--sage-pale) 0%, var(--beige-warm) 55%, var(--sage-pale) 100%);
+    border-radius:var(--radius-md);
+    display:flex; align-items:flex-end;
+    isolation:isolate;
+    min-height:180px;
+  }
+  .ph::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(107,74,48,0.05) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(25deg, rgba(46,107,84,0.05) 0 2px, transparent 2px 26px);
+    z-index:0;
+  }
+  .ph::after{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(199,154,75,0.18), transparent 45%),
+      radial-gradient(circle at 75% 80%, rgba(22,51,42,0.14), transparent 50%);
+  }
+  .ph-icon{
+    position:absolute; top:1.1rem; right:1.1rem; z-index:1;
+    width:34px; height:34px; border-radius:50%;
+    background:rgba(255,255,255,0.55); backdrop-filter:blur(4px);
+    display:grid; place-items:center;
+  }
+  .ph-icon svg{width:16px; height:16px; stroke:var(--forest-deep);}
+  .ph-caption{
+    position:relative; z-index:1; width:100%;
+    padding:0.9rem 1.1rem; margin:0;
+    background:linear-gradient(to top, rgba(14,33,27,0.72), rgba(14,33,27,0));
+    color:var(--white);
+  }
+  .ph-caption .fname{font-family:var(--font-caption); font-size:0.78rem; font-weight:600; letter-spacing:0.02em;}
+  .ph-caption .fdesc{display:block; font-size:0.72rem; opacity:0.85; margin-top:0.15rem;}
+  .ph-caption .fdim{display:block; font-family:var(--font-caption); font-size:0.66rem; opacity:0.7; margin-top:0.35rem; letter-spacing:0.04em;}
+  .ph-square{aspect-ratio:1/1;}
+  .ph-portrait{aspect-ratio:3/4;}
+  .ph-wide{aspect-ratio:16/9;}
+  .ph-panorama{aspect-ratio:21/9;}
+
+  /* ---------- context-reference image variant (new, for regional Wikimedia/Unsplash context) ---------- */
+  .ref{
+    position:relative; overflow:hidden; border-radius:var(--radius-md);
+    background:linear-gradient(150deg, var(--sage) 0%, var(--forest) 100%);
+    display:flex; align-items:flex-end; min-height:180px;
+  }
+  .ref::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(70deg, rgba(255,255,255,0.06) 0 3px, transparent 3px 22px);
+    z-index:0;
+  }
+  .ref-badge{
+    position:absolute; top:1.1rem; left:1.1rem; z-index:1;
+    font-family:var(--font-caption); font-size:0.64rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    background:rgba(255,255,255,0.9); color:var(--forest-deep); padding:0.32rem 0.7rem; border-radius:999px;
+  }
+  .ref-caption{
+    position:relative; z-index:1; width:100%; padding:0.9rem 1.1rem;
+    background:linear-gradient(to top, rgba(14,33,27,0.78), rgba(14,33,27,0));
+    color:var(--white);
+  }
+  .ref-caption .fname{font-family:var(--font-caption); font-size:0.78rem; font-weight:600;}
+  .ref-caption .fdesc{display:block; font-size:0.72rem; opacity:0.85; margin-top:0.15rem;}
+  .ref-wide{aspect-ratio:16/9;}
+  .ref-panorama{aspect-ratio:21/9;}
+
+  /* ---------- section rhythm ---------- */
+  section{padding-block:clamp(4rem, 8vw, 7.5rem); position:relative;}
+  .section-head{max-width:64ch; margin-bottom:clamp(2.2rem, 5vw, 3.6rem);}
+  .section-head h2{font-size:clamp(2rem, 3.6vw, 3rem); margin-top:0.9rem;}
+  .section-head p{margin-top:1.1rem; font-size:1.06rem; color:var(--ink-soft); max-width:56ch;}
+
+  /* ---------- breadcrumb (page-local) ---------- */
+  .page-crumb{
+    padding-block:1.1rem; border-bottom:1px solid rgba(107,74,48,0.14);
+    font-family:var(--font-caption); font-size:0.8rem; color:var(--ink-soft);
+  }
+  .page-crumb a{text-decoration:none; color:var(--ink-soft);}
+  .page-crumb a:hover{color:var(--emerald);}
+  .page-crumb span[aria-hidden]{margin-inline:0.5rem; color:var(--gold);}
+  .page-crumb strong{color:var(--forest-deep); font-weight:600;}
+
+  /* ---------- hero (identical structure to homepage) ---------- */
+  .hero{position:relative; padding-top:clamp(2.5rem, 6vw, 4.5rem); padding-bottom:clamp(3rem, 7vw, 6rem); overflow:hidden;}
+  .hero-bg-shape{
+    position:absolute; top:-15%; right:-12%; width:60vw; height:60vw; max-width:900px; max-height:900px;
+    border-radius:50%; background:radial-gradient(circle at 35% 35%, rgba(46,107,84,0.14), rgba(46,107,84,0) 65%);
+    z-index:0; pointer-events:none;
+  }
+  .hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(2rem,4vw,4rem); align-items:center;}
+  @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero-eyebrow{margin-bottom:1.4rem;}
+  .hero h1{font-size:clamp(2.6rem, 5.4vw, 4.4rem); line-height:1.04; font-weight:600; color:var(--forest-deep);}
+  .hero h1 em{font-style:normal; color:var(--emerald); position:relative;}
+  .hero-sub{margin-top:1.6rem; max-width:44ch; font-size:1.12rem; color:var(--ink-soft);}
+  .hero-actions{margin-top:2.4rem; display:flex; flex-wrap:wrap; gap:1rem;}
+  .hero-visual{position:relative;}
+  .hero-visual .ref{min-height:420px; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);}
+  .hero-visual .ph-float{
+    position:absolute; width:44%; bottom:-8%; left:-10%;
+    border:6px solid var(--beige); border-radius:var(--radius-md); box-shadow:var(--shadow-card);
+    min-height:auto;
+  }
+  @media (max-width:700px){ .hero-visual .ph-float{display:none;} }
+
+  /* ---------- editorial intro (dark band, identical treatment) ---------- */
+  .editorial{background:var(--forest-deep); color:var(--sage-pale);}
+  .editorial .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2.5rem,5vw,5rem); align-items:start;}
+  @media (max-width:920px){ .editorial .wrap{grid-template-columns:1fr;} }
+  .editorial .eyebrow{color:var(--gold-soft);}
+  .editorial .eyebrow::before{background:var(--gold-soft);}
+  .editorial h2{color:var(--white); font-size:clamp(1.9rem,3.4vw,2.7rem); margin-top:1rem; line-height:1.18;}
+  .editorial-drop{font-family:var(--font-display); font-size:4.2rem; line-height:0.7; float:left; margin-right:0.6rem; margin-top:0.4rem; color:var(--gold);}
+  .editorial-body p{font-size:1.06rem; color:rgba(228,232,222,0.86); margin-top:1.2rem;}
+  .editorial-body p:first-child{margin-top:0;}
+
+  /* ---------- knowledge panel (identical, reusable) ---------- */
+  .knowledge-panel{
+    background:var(--beige-warm); border:1px solid rgba(107,74,48,0.18); border-radius:var(--radius-md);
+    padding:1.5rem 1.6rem;
+  }
+  .knowledge-panel h4{
+    font-family:var(--font-caption); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--brown); font-weight:600; margin-bottom:0.9rem; display:flex; align-items:center; gap:0.5rem;
+  }
+  .knowledge-panel h4 svg{width:14px; height:14px; stroke:var(--brown);}
+  .knowledge-panel ul{display:flex; flex-direction:column; gap:0.55rem;}
+  .knowledge-panel a{
+    display:flex; justify-content:space-between; align-items:center; gap:0.6rem;
+    text-decoration:none; font-family:var(--font-caption); font-size:0.85rem;
+    color:var(--forest-deep); padding:0.4rem 0; border-bottom:1px dashed rgba(107,74,48,0.22);
+  }
+  .knowledge-panel a:last-child{border-bottom:none;}
+  .knowledge-panel a span.src{color:var(--ink-soft); font-weight:400;}
+  .knowledge-panel a svg{width:12px; height:12px; stroke:var(--emerald); flex-shrink:0;}
+
+  /* ---------- Where We Are: map + hierarchy ---------- */
+  .where-grid{display:grid; grid-template-columns:1.2fr 0.8fr; gap:clamp(2rem,4vw,3.5rem); align-items:start;}
+  @media (max-width:940px){ .where-grid{grid-template-columns:1fr;} }
+  .map-frame{
+    border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card);
+    border:1px solid rgba(107,74,48,0.14); background:var(--sage-pale);
+  }
+  .map-frame iframe{width:100%; height:380px; border:0; display:block; filter:saturate(0.85);}
+  .map-meta{
+    display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
+    padding:1.1rem 1.4rem; background:var(--white); font-family:var(--font-caption); font-size:0.82rem; color:var(--ink-soft);
+  }
+  .map-meta strong{color:var(--forest-deep); font-family:var(--font-display); font-weight:600; font-size:0.95rem;}
+  .hierarchy{margin-top:2rem; display:flex; flex-direction:column; gap:0;}
+  .hierarchy-step{
+    display:flex; align-items:center; gap:1rem; padding:0.9rem 0;
+    border-bottom:1px dashed rgba(107,74,48,0.2);
+  }
+  .hierarchy-step:last-child{border-bottom:none;}
+  .hierarchy-dot{width:10px; height:10px; border-radius:50%; background:var(--sage); flex-shrink:0;}
+  .hierarchy-step.is-final .hierarchy-dot{background:var(--gold); box-shadow:0 0 0 4px rgba(199,154,75,0.18);}
+  .hierarchy-label{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);}
+  .hierarchy-name{font-family:var(--font-display); font-size:1.08rem; color:var(--forest-deep); font-weight:600;}
+  .hierarchy-step.is-final .hierarchy-name{color:var(--emerald);}
+
+  /* ---------- Meaning of the name ---------- */
+  .meaning-box{
+    display:grid; grid-template-columns:auto 1fr; gap:1.4rem; align-items:flex-start;
+    background:var(--white); border:1px solid rgba(107,74,48,0.14); border-radius:var(--radius-lg);
+    padding:clamp(1.8rem,4vw,2.6rem); box-shadow:var(--shadow-card);
+  }
+  @media (max-width:640px){ .meaning-box{grid-template-columns:1fr;} }
+  .meaning-icon{width:52px; height:52px; border-radius:14px; background:var(--sage-pale); display:grid; place-items:center; flex-shrink:0;}
+  .meaning-icon svg{width:26px; height:26px; stroke:var(--forest); fill:none; stroke-width:1.6;}
+  .meaning-box h3{font-size:1.5rem;}
+  .meaning-box p{margin-top:0.9rem; color:var(--ink-soft); font-size:1rem;}
+  .status-badge{
+    display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.3rem;
+    font-family:var(--font-caption); font-size:0.72rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--brown); background:var(--beige-warm); border:1px dashed var(--gold); padding:0.5rem 0.9rem; border-radius:999px;
+  }
+  .status-badge svg{width:13px; height:13px; stroke:var(--brown);}
+  .meaning-invite{
+    margin-top:1.4rem; font-family:var(--font-caption); font-size:0.86rem; color:var(--emerald); font-weight:600;
+  }
+
+  /* ---------- Mbororo community: distinction grid ---------- */
+  .distinction-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.6rem;}
+  @media (max-width:820px){ .distinction-grid{grid-template-columns:1fr;} }
+  .distinction-card{
+    background:var(--white); border-radius:var(--radius-lg); padding:clamp(1.8rem,3.5vw,2.3rem);
+    border:1px solid rgba(107,74,48,0.1); box-shadow:var(--shadow-card);
+  }
+  .distinction-card.is-local{border-top:4px solid var(--gold);}
+  .distinction-card.is-broader{border-top:4px solid var(--sage);}
+  .distinction-card h3{font-size:1.2rem; display:flex; align-items:center; gap:0.6rem;}
+  .distinction-card h3 svg{width:20px; height:20px; stroke:var(--emerald); flex-shrink:0;}
+  .distinction-card p{margin-top:1rem; color:var(--ink-soft); font-size:0.95rem;}
+  .distinction-card ul{margin-top:1.1rem; display:flex; flex-direction:column; gap:0.6rem;}
+  .distinction-card li{font-size:0.9rem; color:var(--ink-soft); padding-left:1.1rem; position:relative;}
+  .distinction-card li::before{content:"—"; position:absolute; left:0; color:var(--gold);}
+
+  /* ---------- values grid ---------- */
+  .values-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem;}
+  @media (max-width:920px){ .values-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .values-grid{grid-template-columns:1fr;} }
+  .value-card{
+    background:var(--white); border-radius:var(--radius-md); padding:1.6rem 1.4rem;
+    border:1px solid rgba(107,74,48,0.1); display:flex; flex-direction:column; gap:0.8rem;
+    transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .value-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-card);}
+  .value-icon{width:44px; height:44px; border-radius:12px; background:var(--sage-pale); display:grid; place-items:center;}
+  .value-icon svg{width:22px; height:22px; stroke:var(--forest); fill:none; stroke-width:1.6;}
+  .value-card h4{font-size:1.02rem;}
+  .value-card p{font-size:0.85rem; color:var(--ink-soft);}
+
+  /* ---------- leadership grid ---------- */
+  .leadership-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem;}
+  @media (max-width:1000px){ .leadership-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .leadership-grid{grid-template-columns:1fr;} }
+  .leader-card{background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); border:1px solid rgba(107,74,48,0.08);}
+  .leader-card .ph{border-radius:0; min-height:260px;}
+  .leader-body{padding:1.3rem 1.2rem 1.5rem;}
+  .leader-role{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); font-weight:600;}
+  .leader-card h4{font-size:1.05rem; margin-top:0.4rem;}
+  .leader-card p{font-size:0.82rem; color:var(--ink-soft); margin-top:0.4rem;}
+
+  /* ---------- community voices (spotlight reuse) ---------- */
+  .spotlight{background:var(--sage-pale);}
+  .spotlight-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:clamp(2rem,5vw,4rem); align-items:center;}
+  @media (max-width:920px){ .spotlight-grid{grid-template-columns:1fr;} }
+  .spotlight-portrait{position:relative;}
+  .spotlight-portrait .ph{box-shadow:var(--shadow-soft); min-height:440px;}
+  .spotlight-role{
+    position:absolute; bottom:-1.1rem; left:1.4rem; right:1.4rem;
+    background:var(--white); border-radius:var(--radius-sm); padding:0.9rem 1.1rem;
+    box-shadow:var(--shadow-card); font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft);
+  }
+  .spotlight-role strong{display:block; font-family:var(--font-display); font-size:1.05rem; color:var(--forest-deep); font-weight:600;}
+  .spotlight-body h3{font-size:clamp(1.8rem,3vw,2.3rem); margin-top:0.9rem;}
+  .spotlight-body p{margin-top:1.1rem; color:var(--ink-soft); font-size:1.02rem;}
+  .spotlight-body .btn{margin-top:1.6rem;}
+
+  /* ---------- timeline ---------- */
+  .timeline-scroller{
+    display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px, 1fr);
+    gap:0; overflow-x:auto; padding-bottom:1.5rem; padding-top:0.5rem;
+    margin-inline:calc(var(--edge) * -1); padding-inline:var(--edge);
+  }
+  .timeline-scroller::-webkit-scrollbar{height:6px;}
+  .timeline-scroller::-webkit-scrollbar-thumb{background:var(--sage); border-radius:6px;}
+  .timeline-item{position:relative; padding:1.6rem 1.4rem 0; border-top:3px solid var(--gold);}
+  .timeline-item.is-unknown{border-top-color:var(--sage);}
+  .timeline-item::before{
+    content:""; position:absolute; top:-8px; left:1.4rem; width:13px; height:13px; border-radius:50%;
+    background:var(--gold); border:3px solid var(--beige);
+  }
+  .timeline-item.is-unknown::before{background:var(--sage);}
+  .timeline-date{font-family:var(--font-caption); font-size:0.72rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--brown);}
+  .timeline-item h4{font-size:1.02rem; margin-top:0.5rem;}
+  .timeline-item p{font-size:0.85rem; color:var(--ink-soft); margin-top:0.5rem; max-width:26ch;}
+
+  /* ---------- evidence (reused) ---------- */
+  .evidence{background:var(--forest-deep); color:var(--sage-pale);}
+  .evidence .eyebrow{color:var(--gold-soft);}
+  .evidence .eyebrow::before{background:var(--gold-soft);}
+  .evidence .section-head h2{color:var(--white);}
+  .evidence .section-head p{color:rgba(228,232,222,0.78);}
+  .evidence-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(228,232,222,0.14); border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(228,232,222,0.14);}
+  @media (max-width:880px){ .evidence-grid{grid-template-columns:repeat(2,1fr);} }
+  .evidence-cell{background:rgba(228,232,222,0.04); padding:1.9rem 1.5rem; display:flex; flex-direction:column; gap:0.6rem;}
+  .evidence-cell svg{width:22px; height:22px; stroke:var(--gold-soft); fill:none; stroke-width:1.6;}
+  .evidence-cell strong{font-family:var(--font-display); font-size:1rem; color:var(--white); font-weight:600;}
+  .evidence-cell span{font-size:0.82rem; color:rgba(228,232,222,0.72);}
+
+  /* ---------- related archive (explore-card reuse) ---------- */
+  .explore-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:1.2rem;}
+  @media (max-width:1080px){ .explore-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .explore-grid{grid-template-columns:1fr;} }
+  .explore-card{
+    position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:220px;
+    display:flex; align-items:flex-end; text-decoration:none; color:var(--white); box-shadow:var(--shadow-card);
+  }
+  .explore-card::before{content:""; position:absolute; inset:0; background:linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%); transition:transform 0.6s var(--ease);}
+  .explore-card:nth-child(2)::before{background:linear-gradient(160deg, var(--emerald) 0%, var(--forest) 100%);}
+  .explore-card:nth-child(3)::before{background:linear-gradient(160deg, var(--brown) 0%, #4a3320 100%);}
+  .explore-card:nth-child(4)::before{background:linear-gradient(160deg, #3a5c4c 0%, var(--forest-deep) 100%);}
+  .explore-card:nth-child(5)::before{background:linear-gradient(160deg, var(--gold) 0%, var(--brown) 100%);}
+  .explore-card:hover::before{transform:scale(1.06);}
+  .explore-content{position:relative; z-index:1; padding:1.5rem 1.3rem;}
+  .explore-content .eyebrow{color:var(--gold-soft); font-size:0.68rem;}
+  .explore-content .eyebrow::before{background:var(--gold-soft);}
+  .explore-content h3{color:var(--white); font-size:1.18rem; margin-top:0.6rem;}
+  .explore-content p{font-size:0.8rem; color:rgba(255,255,255,0.78); margin-top:0.5rem;}
+
+  /* ---------- editorial mission (reused) ---------- */
+  .mission{background:var(--beige-warm); text-align:center;}
+  .mission blockquote{
+    max-width:56rem; margin:0 auto; font-family:var(--font-display);
+    font-size:clamp(1.5rem, 3.4vw, 2.35rem); line-height:1.42; color:var(--forest-deep); font-weight:500;
+  }
+  .mission cite{
+    display:block; margin-top:1.8rem; font-family:var(--font-caption); font-style:normal;
+    font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brown);
+  }
+  .mission-mark{font-family:var(--font-display); font-size:3.4rem; color:var(--gold); display:block; margin-bottom:0.6rem; line-height:1;}
+
+  /* ---------- footer (identical to homepage) ---------- */
+  footer.site-footer{background:var(--forest-deep); color:rgba(228,232,222,0.75); padding-top:clamp(3.5rem,6vw,5rem);}
+  .footer-top{display:grid; grid-template-columns:1.3fr 1fr 1fr 1.1fr; gap:2.5rem; padding-bottom:3rem; border-bottom:1px solid rgba(228,232,222,0.14);}
+  @media (max-width:880px){ .footer-top{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .footer-top{grid-template-columns:1fr;} }
+  .footer-brand p{margin-top:1rem; font-size:0.88rem; max-width:32ch; color:rgba(228,232,222,0.65);}
+  .footer-social{display:flex; gap:0.7rem; margin-top:1.4rem;}
+  .footer-social a{width:36px; height:36px; border-radius:50%; border:1px solid rgba(228,232,222,0.3); display:grid; place-items:center; text-decoration:none;}
+  .footer-social a svg{width:15px; height:15px; stroke:var(--sage-pale);}
+  .footer-social a:hover{background:var(--gold); border-color:var(--gold);}
+  .footer-social a:hover svg{stroke:var(--forest-deep);}
+  .footer-col h4{font-family:var(--font-caption); font-size:0.74rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-soft); margin-bottom:1.1rem; font-weight:600;}
+  .footer-col ul{display:flex; flex-direction:column; gap:0.6rem;}
+  .footer-col a{text-decoration:none; font-size:0.87rem; color:rgba(228,232,222,0.78);}
+  .footer-col a:hover{color:var(--gold-soft);}
+  .footer-values{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.3rem;}
+  .footer-values li{font-family:var(--font-caption); font-size:0.7rem; padding:0.3rem 0.65rem; border:1px solid rgba(228,232,222,0.25); border-radius:999px; color:rgba(228,232,222,0.8);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-block:1.6rem; font-family:var(--font-caption); font-size:0.76rem; color:rgba(228,232,222,0.55);}
+  .footer-bottom a{text-decoration:underline; text-underline-offset:3px;}
+
+  .col-span-2{grid-column:span 2;}
+  @media (max-width:600px){ .col-span-2{grid-column:span 1;} }
+
+  /* ============================================================
+     HEADER / NAVIGATION — restructured: nested dropdowns + search
+     ============================================================ */
+  header.site-header{position:sticky; top:0; z-index:120; background:rgba(243,238,225,0.92); backdrop-filter:blur(14px) saturate(140%); border-bottom:1px solid rgba(107,74,48,0.14);}
+  .nav-row{max-width:var(--max-w); margin:0 auto; padding:1rem var(--edge); display:flex; align-items:center; justify-content:space-between; gap:1.5rem;}
+  .brand{display:flex; align-items:center; gap:0.7rem; text-decoration:none;}
+  .brand-mark{width:36px; height:36px; border-radius:50%; background:conic-gradient(from 210deg, var(--forest), var(--emerald), var(--gold), var(--forest)); display:grid; place-items:center; flex-shrink:0; box-shadow:inset 0 0 0 3px var(--beige);}
+  .brand-mark span{width:11px; height:11px; border-radius:50%; background:var(--beige);}
+  .brand-name{font-family:var(--font-display); font-size:0.98rem; font-weight:600; color:var(--forest-deep); line-height:1.1;}
+  .brand-name small{display:block; font-family:var(--font-caption); font-weight:500; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--brown); margin-top:0.2rem;}
+
+  nav.primary-nav-v2{display:flex; align-items:center; gap:0.3rem;}
+  .nav-item{position:relative;}
+  .nav-trigger{
+    font-family:var(--font-caption); font-size:0.83rem; font-weight:600; letter-spacing:0.02em; color:var(--forest-deep);
+    background:none; border:none; padding:0.6rem 0.85rem; border-radius:999px; display:inline-flex; align-items:center; gap:0.35rem;
+    transition:background 0.25s var(--ease);
+  }
+  .nav-trigger:hover, .nav-trigger[aria-expanded="true"]{background:rgba(22,51,42,0.07);}
+  .nav-trigger svg{width:11px; height:11px; stroke:var(--brown); transition:transform 0.25s var(--ease);}
+  .nav-trigger[aria-expanded="true"] svg{transform:rotate(180deg);}
+  .nav-simple{
+    font-family:var(--font-caption); font-size:0.83rem; font-weight:600; color:var(--forest-deep); text-decoration:none;
+    padding:0.6rem 0.85rem; border-radius:999px; transition:background 0.25s var(--ease);
+  }
+  .nav-simple:hover{background:rgba(22,51,42,0.07);}
+
+  .nav-panel{
+    position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(-6px);
+    width:340px; background:var(--white); border-radius:var(--radius-md); box-shadow:var(--shadow-soft);
+    border:1px solid rgba(107,74,48,0.12); padding:1.4rem;
+    opacity:0; pointer-events:none; transition:opacity 0.25s var(--ease), transform 0.25s var(--ease);
+    z-index:130;
+  }
+  .nav-item.is-open .nav-panel{opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0);}
+  .nav-panel-num{font-family:var(--font-caption); font-size:0.68rem; font-weight:700; letter-spacing:0.1em; color:var(--gold);}
+  .nav-panel h4{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown); font-family:var(--font-caption); font-weight:700; margin-top:0.2rem; padding-bottom:0.8rem; border-bottom:1px solid rgba(107,74,48,0.12); margin-bottom:0.8rem;}
+  .nav-panel ul{display:flex; flex-direction:column; gap:0.3rem;}
+  .nav-panel a{
+    display:flex; align-items:center; justify-content:space-between; gap:0.8rem; text-decoration:none;
+    padding:0.65rem 0.6rem; border-radius:var(--radius-sm); transition:background 0.2s var(--ease);
+  }
+  .nav-panel a:hover{background:var(--beige-warm);}
+  .nav-panel a strong{display:block; font-family:var(--font-display); font-size:0.9rem; color:var(--forest-deep); font-weight:600;}
+  .nav-panel a span{display:block; font-family:var(--font-caption); font-size:0.74rem; color:var(--ink-soft); margin-top:0.15rem;}
+  .nav-panel a svg{width:13px; height:13px; stroke:var(--emerald); flex-shrink:0; opacity:0; transition:opacity 0.2s var(--ease), transform 0.2s var(--ease);}
+  .nav-panel a:hover svg{opacity:1; transform:translateX(2px);}
+
+  .nav-actions{display:flex; align-items:center; gap:0.5rem;}
+  .search-trigger{
+    width:38px; height:38px; border-radius:50%; border:1.5px solid rgba(107,74,48,0.2); background:var(--white);
+    display:grid; place-items:center; transition:border-color 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+  .search-trigger:hover{border-color:var(--gold); transform:translateY(-1px);}
+  .search-trigger svg{width:16px; height:16px; stroke:var(--forest-deep);}
+  .nav-toggle{display:none; background:none; border:none; padding:0.4rem;}
+
+  @media (max-width:1080px){
+    nav.primary-nav-v2, .nav-actions .nav-simple, .nav-actions .btn-ghost{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* Mobile nav drawer */
+  .mobile-drawer{
+    display:none; position:fixed; inset:0; z-index:200; background:rgba(14,33,27,0.5);
+  }
+  .mobile-drawer.is-open{display:block;}
+  .mobile-drawer-panel{
+    position:absolute; top:0; right:0; bottom:0; width:min(360px, 88vw); background:var(--beige);
+    padding:1.6rem; overflow-y:auto; box-shadow:var(--shadow-soft);
+  }
+  .mobile-drawer-close{width:38px; height:38px; border-radius:50%; background:var(--white); border:1px solid rgba(107,74,48,0.2); display:grid; place-items:center; margin-left:auto;}
+  .mobile-drawer-close svg{width:16px; height:16px; stroke:var(--forest-deep);}
+  .mobile-group{margin-top:1.4rem; border-top:1px solid rgba(107,74,48,0.15); padding-top:1rem;}
+  .mobile-group summary{list-style:none; cursor:pointer; font-family:var(--font-caption); font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--brown); display:flex; justify-content:space-between; align-items:center;}
+  .mobile-group summary::-webkit-details-marker{display:none;}
+  .mobile-group ul{margin-top:0.8rem; display:flex; flex-direction:column; gap:0.7rem;}
+  .mobile-group a{text-decoration:none; font-family:var(--font-display); font-size:0.98rem; color:var(--forest-deep); font-weight:500;}
+
+  /* ============================================================
+     SEARCH OVERLAY
+     ============================================================ */
+  .search-overlay{
+    position:fixed; inset:0; z-index:300; background:rgba(14,33,27,0.75); backdrop-filter:blur(3px);
+    display:none; align-items:flex-start; justify-content:center; padding:8vh 1.5rem 2rem;
+  }
+  .search-overlay.is-open{display:flex;}
+  .search-panel{
+    width:100%; max-width:680px; background:var(--beige); border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);
+    padding:clamp(1.6rem,3vw,2.2rem); max-height:80vh; overflow-y:auto;
+  }
+  .search-panel-head{display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;}
+  .search-panel-head h2{font-size:1.3rem;}
+  .search-close{width:36px; height:36px; border-radius:50%; background:var(--white); border:1px solid rgba(107,74,48,0.2); display:grid; place-items:center; flex-shrink:0;}
+  .search-close svg{width:15px; height:15px; stroke:var(--forest-deep);}
+  .search-input-row{position:relative; margin-top:1.4rem;}
+  .search-input-row svg{position:absolute; left:1.1rem; top:50%; transform:translateY(-50%); width:18px; height:18px; stroke:var(--ink-soft);}
+  #archiveSearchInput{
+    width:100%; padding:0.95rem 1.2rem 0.95rem 3rem; border-radius:999px; border:1.5px solid rgba(107,74,48,0.25);
+    background:var(--white); font-family:var(--font-body); font-size:1rem; color:var(--ink);
+  }
+  #archiveSearchInput:focus{outline:none; border-color:var(--gold);}
+  .search-mode-row{display:flex; gap:0.6rem; margin-top:1rem;}
+  .search-mode-btn{
+    font-family:var(--font-caption); font-size:0.8rem; font-weight:600; padding:0.55rem 1.1rem; border-radius:999px;
+    border:1.5px solid rgba(107,74,48,0.2); background:var(--white); color:var(--ink-soft);
+  }
+  .search-mode-btn.is-active{background:var(--forest-deep); color:var(--beige); border-color:var(--forest-deep);}
+  .search-suggestions{display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem;}
+  .search-suggestions button{
+    font-family:var(--font-caption); font-size:0.75rem; padding:0.4rem 0.8rem; border-radius:999px; background:var(--sage-pale);
+    color:var(--forest-deep); border:none;
+  }
+  .search-results{margin-top:1.4rem; display:flex; flex-direction:column; gap:1.2rem;}
+  .search-group h5{font-family:var(--font-caption); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown); margin-bottom:0.5rem;}
+  .search-result{display:block; text-decoration:none; padding:0.75rem 0.85rem; border-radius:var(--radius-sm); transition:background 0.2s var(--ease);}
+  .search-result:hover{background:var(--beige-warm);}
+  .search-result strong{display:block; font-family:var(--font-display); font-size:0.94rem; color:var(--forest-deep); font-weight:600;}
+  .search-result span{display:block; font-family:var(--font-caption); font-size:0.78rem; color:var(--ink-soft); margin-top:0.2rem;}
+  .search-empty{font-family:var(--font-caption); font-size:0.85rem; color:var(--ink-soft); padding:0.6rem 0.2rem;}
+  .search-web-cta{
+    margin-top:1.2rem; padding:1rem 1.1rem; background:var(--beige-warm); border-radius:var(--radius-md);
+    display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
+  }
+  .search-web-cta p{font-family:var(--font-caption); font-size:0.82rem; color:var(--brown);}
+
+  /* ============================================================
+
+  /* Active-state indication for current page in nested nav */
+  .nav-panel a[aria-current="page"]{background:var(--beige-warm);}
+  .nav-panel a[aria-current="page"] strong{color:var(--emerald);}
+  .nav-trigger.is-current-group{color:var(--emerald);}
+  .nav-simple[aria-current="page"]{color:var(--emerald); background:rgba(46,107,84,0.08);}
+
 </style>
 </head>
 <body>
 
-<header>
-<div class="container">
-<nav>
-<a href="index.html" class="logo">Wouro<span>Yobi</span></a>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#location">Location</a></li>
-<li><a href="#story">Story</a></li>
-<li><a href="#future">Future</a></li>
-</ul>
-</nav>
-</div>
-</header>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<section class="hero">
-<div class="container">
-<h1>Our Community</h1>
-<p>Discover Wouro Yobi—a rural community in the Mayo-Darlé Municipality of Cameroon where heritage, leadership and collective action shape a sustainable future.</p>
-<a class="btn" href="#location">Begin the Journey</a>
-</div>
-</section>
-
-<section id="location">
-<div class="container">
-<h2>Where is Wouro Yobi?</h2>
-<div class="grid2">
-<div>
-<iframe
-    loading="lazy"
-    src="https://www.google.com/maps?q=6.505889,11.502250&z=16&output=embed"></iframe>
-</div>
-<div>
-<h3>Geographic Identity</h3>
-<p>Wouro Yobi is located in the Mayo-Darlé Municipality of the Adamawa Region of Cameroon.</p>
-<ul>
-<li><strong>Coordinates:</strong> 6°30'21.2"N, 11°30'08.1"E</li>
-<li><strong>Decimal:</strong> 6.505889, 11.502250</li>
-    <p style="margin-top:20px;">
-    <a class="btn" target="_blank"
-       href="https://www.google.com/maps?q=6.505889,11.502250">
-        📍 Open in Google Maps
+<header class="site-header">
+  <div class="nav-row">
+    <a class="brand" href="index.html" aria-label="Wouro Yobi Living Archive, home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span class="brand-name">Wouro Yobi<small>Living Archive</small></span>
     </a>
-</p>
-<li><strong>Setting:</strong> Rural agricultural landscape</li>
-<li><strong>Character:</strong> Farms, forests, community settlements and traditional leadership.</li>
-</ul>
-<p>This location is more than a point on a map—it is the foundation of the community's identity and development story.</p>
-</div>
-</div>
-</div>
-</section>
 
-<section id="story">
-<div class="container">
-<h2>Our Story</h2>
-<div class="grid2">
-<div class="placeholder">Replace with panoramic aerial photograph</div>
-<div>
-<p>Wouro Yobi has grown through the commitment of its people, guided by traditional leadership and strengthened by a shared vision for education, agriculture, peace and community development.</p>
-<p>Every project documented on this website is part of a larger story: preserving cultural heritage while creating opportunities for future generations.</p>
-</div>
-</div>
-</div>
-</section>
+    <nav class="primary-nav-v2" aria-label="Primary">
+      <div class="nav-item" data-nav-item>
+        <button class="nav-trigger" aria-expanded="false" aria-controls="panel-explore">Explore
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-panel" id="panel-explore" role="menu">
+          <span class="nav-panel-num">01</span>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="identity.html"><span><strong>Our Identity</strong><span>Who the people of Wouro Yobi are.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="life.html"><span><strong>Way of Life</strong><span>Seasons, livestock and daily rhythm.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="future.html"><span><strong>Our Future</strong><span>Education, youth and development.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="memory.html"><span><strong>Our Memory</strong><span>Oral history, elders and the timeline.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
 
-<section>
-<div class="container">
-<h2>Community Timeline</h2>
-<div class="timeline">
-<article><h3>Origins</h3><p>Founding of the community and preservation of cultural identity.</p></article>
-<article><h3>Traditional Leadership</h3><p>Leadership guiding social harmony and development.</p></article>
-<article><h3>Education</h3><p>Investment in learning and expansion of the kindergarten.</p></article>
-<article><h3>Community Development</h3><p>Infrastructure, agriculture and partnerships.</p></article>
-<article><h3>Future Vision</h3><p>Building opportunities for future generations.</p></article>
-</div>
-</div>
-</section>
+      <div class="nav-item" data-nav-item>
+        <button class="nav-trigger is-current-group" aria-expanded="false" aria-controls="panel-archive">Archive
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-panel" id="panel-archive" role="menu">
+          <span class="nav-panel-num">02</span>
+          <h4>Archive</h4>
+          <ul>
+            <li><a href="index.html#knowledge-centre"><span><strong>Knowledge Centre</strong><span>People, places, documents and video.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="community.html" aria-current="page"><span><strong>Places</strong><span>Geography that grounds every story.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="memory.html#objects"><span><strong>Documents</strong><span>Records and evidence, catalogued.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="index.html#discover"><span><strong>Maps</strong><span>Where Wouro Yobi sits, precisely.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="index.html#timeline"><span><strong>Timeline</strong><span>Regional history to the present day.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
 
-<section>
-<div class="container">
-<h2>Community Values</h2>
-<div class="cardgrid">
-<div class="card"><h3>Unity</h3><p>Working together for shared progress.</p></div>
-<div class="card"><h3>Respect</h3><p>Honouring people, culture and traditions.</p></div>
-<div class="card"><h3>Hospitality</h3><p>Welcoming visitors and partners.</p></div>
-<div class="card"><h3>Leadership</h3><p>Serving the community with integrity.</p></div>
-<div class="card"><h3>Education</h3><p>Investing in future generations.</p></div>
-<div class="card"><h3>Sustainability</h3><p>Protecting land and natural resources.</p></div>
-</div>
-</div>
-</section>
+      <div class="nav-item" data-nav-item>
+        <button class="nav-trigger" aria-expanded="false" aria-controls="panel-people">People
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-panel" id="panel-people" role="menu">
+          <span class="nav-panel-num">03</span>
+          <h4>People</h4>
+          <ul>
+            <li><a href="leadership.html"><span><strong>Leaders</strong><span>Traditional and community leadership.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="people.html#elders-heading"><span><strong>Elders</strong><span>Voices that remember.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="people.html#stories-heading"><span><strong>Community Voices</strong><span>Story types waiting for real accounts.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
 
-<section id="future">
-<div class="container">
-<h2>Looking Ahead</h2>
-<p>Wouro Yobi envisions a future where quality education, thriving agriculture, strong community institutions, environmental stewardship and youth leadership continue to shape a resilient and prosperous community.</p>
-</div>
-</section>
+      <div class="nav-item" data-nav-item>
+        <button class="nav-trigger" aria-expanded="false" aria-controls="panel-stories">Stories
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-panel" id="panel-stories" role="menu">
+          <span class="nav-panel-num">04</span>
+          <h4>Stories</h4>
+          <ul>
+            <li><a href="journal.html"><span><strong>Journal</strong><span>Field notes and stories in progress.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="media.html"><span><strong>Media</strong><span>Photographs of people and place.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            <li><a href="journal.html#stories"><span><strong>Events</strong><span>Dated moments as they're documented.</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
 
-<footer>
-<p><strong>Wouro Yobi</strong><br>Building a Community for Future Generations</p>
+      <a class="nav-simple" href="visit.html">Visit</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="search-trigger" id="searchTrigger" aria-haspopup="dialog" aria-controls="searchOverlay" aria-label="Search the Living Archive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <a class="nav-simple" href="about.html">About</a>
+      <a class="btn btn-primary btn-sm" href="#location">Begin the Journey</a>
+      <button class="nav-toggle" id="mobileNavOpen" aria-label="Open menu" aria-haspopup="dialog" aria-controls="mobileDrawer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16332A" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="page-crumb">
+  <div class="wrap">
+    <a href="index.html">Living Archive</a><span aria-hidden="true">›</span>Archive<span aria-hidden="true">›</span><strong>Places</strong>
+  </div>
+</div>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="mobile-drawer-panel">
+    <div style="display:flex; align-items:center;">
+      <span class="brand-name">Wouro Yobi<small>Living Archive</small></span>
+      <button class="mobile-drawer-close" id="mobileNavClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <button class="search-launch" id="mobileSearchLaunch" style="margin-top:1.4rem; box-shadow:none; border:1px solid rgba(107,74,48,0.2);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      <span>Search the archive…</span>
+    </button>
+    <details class="mobile-group" open>
+      <summary>Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="identity.html">Our Identity</a></li>
+        <li><a href="life.html">Way of Life</a></li>
+        <li><a href="future.html">Our Future</a></li>
+        <li><a href="memory.html">Our Memory</a></li>
+      </ul>
+    </details>
+    <details class="mobile-group">
+      <summary>Archive <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="index.html#knowledge-centre">Knowledge Centre</a></li>
+        <li><a href="index.html#discover">Maps</a></li>
+        <li><a href="index.html#timeline">Timeline</a></li>
+      </ul>
+    </details>
+    <details class="mobile-group">
+      <summary>People <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="people.html">Leaders</a></li>
+        <li><a href="people.html#elders-heading">Elders</a></li>
+        <li><a href="people.html#stories-heading">Community Voices</a></li>
+      </ul>
+    </details>
+    <details class="mobile-group">
+      <summary>Stories <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="media.html">Media</a></li>
+      </ul>
+    </details>
+    <div class="mobile-group">
+      <ul>
+        <li><a href="visit.html">Visit Us</a></li>
+        <li><a href="about.html">About the Living Archive</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SEARCH OVERLAY
+     ============================================================ -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchPanelHeading">
+    <div class="search-panel-head">
+      <h2 id="searchPanelHeading">Search the Living Archive</h2>
+      <button class="search-close" id="searchClose" aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      <label for="archiveSearchInput" class="visually-hidden">Search Wouro Yobi, people, places, stories</label>
+      <input type="text" id="archiveSearchInput" placeholder="Search Wouro Yobi, people, places, stories…" autocomplete="off">
+    </div>
+    <div class="search-mode-row" role="group" aria-label="Search scope">
+      <button class="search-mode-btn is-active" data-mode="archive" id="modeArchiveBtn">Search Archive</button>
+      <button class="search-mode-btn" data-mode="web" id="modeWebBtn">Search Wider Web</button>
+    </div>
+    <div class="search-suggestions" id="searchSuggestions">
+      <button type="button">People</button><button type="button">Places</button><button type="button">Memory</button>
+      <button type="button">Agriculture</button><button type="button">Education</button><button type="button">History</button>
+      <button type="button">Journal</button><button type="button">Media</button>
+    </div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <div class="search-web-cta" id="searchWebCta" hidden>
+      <p>Search the wider web for: <strong id="webQueryLabel"></strong></p>
+      <a class="btn btn-primary btn-sm" id="webSearchLink" href="#" target="_blank" rel="noopener noreferrer">Open Web Search</a>
+    </div>
+  </div>
+</div>
+
+
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="top">
+    <div class="hero-bg-shape" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow hero-eyebrow">Place &amp; Geography</p>
+        <h1>Wouro Yobi, <em>the Place</em></h1>
+        <p class="hero-sub">Before it is a subject of study, Wouro Yobi is a place — a settlement in the Mayo-Darlé area of the Adamawa Region, set within a landscape shared with neighbouring communities.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#location">Where It Sits
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#neighbours">Neighbouring Communities</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <figure class="ref ref-panorama" style="min-height:420px;">
+          <img src="images/archive/wouro-yobi-community-01.jpeg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+          <span class="ref-badge">Contextual reference · Community setting</span>
+          <figcaption class="ref-caption">
+            <span class="fname">images/archive/wouro-yobi-community-01.jpeg</span>
+            <span class="fdesc">A general representation of the community environment.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDITORIAL INTRODUCTION
+       ============================================================ -->
+  <section class="editorial" aria-labelledby="editorial-heading">
+    <div class="wrap reveal">
+      <div>
+        <p class="eyebrow">A Place, Not Just a Subject</p>
+        <h2 id="editorial-heading">Geography grounds every other story</h2>
+      </div>
+      <div class="editorial-body">
+        <p><span class="editorial-drop" aria-hidden="true">T</span>his page exists to answer a different question than Our Identity does. Identity asks who the people of Wouro Yobi are. This page asks something more literal: where is Wouro Yobi, what does that setting look like, and who else shares it?</p>
+        <p>The community sits within a highland savanna landscape on the Adamawa Plateau — a setting that shapes daily life, seasonal movement and the community's relationships with its neighbours, long before any of that becomes a matter of culture or history.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHERE IT SITS
+       ============================================================ -->
+  <section id="location" aria-labelledby="location-heading">
+    <div class="wrap where-grid">
+      <div class="reveal">
+        <p class="eyebrow">Administrative Hierarchy</p>
+        <h2 id="location-heading" style="font-size:clamp(1.9rem,3.2vw,2.5rem); margin-top:0.8rem;">Where Wouro Yobi sits</h2>
+        <p style="margin-top:1rem; color:var(--ink-soft); font-size:1rem;">Wouro Yobi belongs to a clear administrative chain — from the nation down to the community itself.</p>
+        <div class="hierarchy">
+          <div class="hierarchy-step"><span class="hierarchy-dot" aria-hidden="true"></span><div><span class="hierarchy-label">Country</span><br><span class="hierarchy-name">Cameroon</span></div></div>
+          <div class="hierarchy-step"><span class="hierarchy-dot" aria-hidden="true"></span><div><span class="hierarchy-label">Region</span><br><span class="hierarchy-name">Adamawa Region</span></div></div>
+          <div class="hierarchy-step"><span class="hierarchy-dot" aria-hidden="true"></span><div><span class="hierarchy-label">Municipality</span><br><span class="hierarchy-name">Mayo-Darlé</span></div></div>
+          <div class="hierarchy-step is-final"><span class="hierarchy-dot" aria-hidden="true"></span><div><span class="hierarchy-label">Community</span><br><span class="hierarchy-name">Wouro Yobi</span></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=6.505889,11.502250&output=embed" title="Map showing the approximate location of Wouro Yobi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-meta">
+            <span><strong>6°30'21.2"N, 11°30'08.1"E</strong><br>6.505889, 11.502250</span>
+          </div>
+        </div>
+        <div class="hero-actions" style="margin-top:1rem;">
+          <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps?q=6.505889,11.502250" target="_blank" rel="noopener noreferrer">Google Maps</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE LANDSCAPE
+       ============================================================ -->
+  <section style="background:var(--sage-pale);" aria-labelledby="landscape-heading">
+    <div class="wrap where-grid">
+      <div class="reveal">
+        <p class="eyebrow">The Adamawa Plateau</p>
+        <h2 id="landscape-heading" style="font-size:clamp(1.9rem,3.2vw,2.5rem); margin-top:0.8rem;">The landscape</h2>
+        <p style="margin-top:1rem; color:var(--ink-soft); font-size:1rem;">The wider Mayo-Darlé area sits on the Adamawa Plateau — a highland band of rolling savanna, cooler air and grassland that shapes agriculture, pastoralism and settlement patterns across the region. Wouro Yobi's own particular terrain, water sources and boundaries are still being documented in detail.</p>
+        <div class="narrative-scope" style="margin-top:1.2rem; padding:0.9rem 1.1rem; border-left:3px solid var(--gold); background:var(--white); border-radius:var(--radius-sm); font-family:var(--font-caption); font-size:0.82rem; color:var(--brown);">This section describes the wider Adamawa Plateau setting. Wouro Yobi-specific geographic detail — exact boundaries, land use, local landmarks — is being gathered separately and will be added as it is confirmed.</div>
+      </div>
+      <figure class="ref ref-wide reveal" style="min-height:280px;">
+        <img src="images/archive/adamawa-context-map.jpeg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+        <span class="ref-badge">Reference · Regional context</span>
+        <figcaption class="ref-caption">
+          <span class="fname">images/archive/adamawa-context-map.jpeg</span>
+          <span class="fdesc">Regional context map, Adamawa Region.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEIGHBOURING COMMUNITIES
+       ============================================================ -->
+  <section id="neighbours" aria-labelledby="neighbours-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">A Shared Environment</p>
+        <h2 id="neighbours-heading">Neighbouring communities</h2>
+        <p>Wouro Yobi is not isolated. The wider Mayo-Darlé area brings different communities into contact through markets, education, farming, pastoral activity and everyday public life.</p>
+      </div>
+      <div class="values-grid reveal reveal-stagger">
+        <div class="value-card" style="--i:0"><div class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-9 8"/></svg></div><h4>Shared Markets</h4><p>Trade brings households into regular contact.</p></div>
+        <div class="value-card" style="--i:1"><div class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V5H6.5A2.5 2.5 0 004 7.5v12z"/></svg></div><h4>Education</h4><p>Schools serve a wider catchment than one community.</p></div>
+        <div class="value-card" style="--i:2"><div class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20c2-6 4-9 8-9s6 3 8 9"/><circle cx="12" cy="7" r="3"/></svg></div><h4>Farming &amp; Pastoral Activity</h4><p>Cooperation between farmers and herders across the area.</p></div>
+        <div class="value-card" style="--i:3"><div class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Dialogue &amp; Peace</h4><p>Mutual respect between neighbouring communities.</p></div>
+      </div>
+      <div class="narrative-scope" style="margin-top:1.6rem; padding:0.9rem 1.1rem; border-left:3px solid var(--gold); background:var(--beige-warm); border-radius:var(--radius-sm); font-family:var(--font-caption); font-size:0.82rem; color:var(--brown);">This archive does not name the ethnic composition of neighbouring communities without a documented, reliable source. Where such detail becomes available and verified, it will be added here.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KNOWLEDGE PANEL — geographic references
+       ============================================================ -->
+  <section style="background:var(--beige-warm);" aria-label="Geographic references">
+    <div class="wrap">
+      <aside class="knowledge-panel reveal" style="max-width:520px;">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Geographic References</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Adamawa_Region" target="_blank" rel="noopener noreferrer">Adamawa Region <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Mayo-Darl%C3%A9" target="_blank" rel="noopener noreferrer">Mayo-Darlé <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" rel="noopener noreferrer">Cameroon <span class="src">Wikipedia</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+          <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">Map Reference <span class="src">OpenStreetMap</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EVIDENCE
+       ============================================================ -->
+  <section class="evidence" aria-labelledby="evidence-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Archive Methodology</p>
+        <h2 id="evidence-heading">This page will keep growing</h2>
+        <p>Future evidence for this page includes:</p>
+      </div>
+      <div class="evidence-grid reveal">
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><strong>Maps</strong><span>Precise boundaries and landmarks.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-11 11"/></svg><strong>Photographs</strong><span>The settlement and surrounding landscape.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M1 12h6M17 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"/></svg><strong>Community Interviews</strong><span>How residents describe their own setting.</span></div>
+        <div class="evidence-cell"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>Timelines</strong><span>Changes to the landscape, documented over time.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RELATED ARCHIVE
+       ============================================================ -->
+  <section aria-labelledby="related-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Continue Exploring</p>
+        <h2 id="related-heading">Related archive</h2>
+      </div>
+      <div class="explore-grid reveal">
+        <a class="explore-card" href="identity.html"><div class="explore-content"><p class="eyebrow">Room 01</p><h3>Our Identity</h3><p>Who the people of Wouro Yobi are.</p></div></a>
+        <a class="explore-card" href="life.html"><div class="explore-content"><p class="eyebrow">Room 02</p><h3>Way of Life</h3><p>Seasons, livestock and daily rhythm.</p></div></a>
+        <a class="explore-card" href="memory.html"><div class="explore-content"><p class="eyebrow">Room 03</p><h3>Our Memory</h3><p>Places remember too.</p></div></a>
+        <a class="explore-card" href="visit.html"><div class="explore-content"><p class="eyebrow">Practical</p><h3>Visit Us</h3><p>How to responsibly plan a visit.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDITORIAL MISSION
+       ============================================================ -->
+  <section class="mission" aria-labelledby="mission-heading">
+    <div class="wrap reveal">
+      <span class="mission-mark" aria-hidden="true">"</span>
+      <blockquote id="mission-heading">
+        Our home exists to document the life, heritage and aspirations of Wouro Yobi from the perspective of its people. We preserve our history, celebrate our culture, record our progress and share our vision for the future — so that future generations, researchers, partners and the wider world can understand who we are and what we are building together.
+      </blockquote>
+      <cite>Editorial Mission — Wouro Yobi Living Archive</cite>
+    </div>
+  </section>
+
+</main>
+
+</main>
+
+<!-- ============================================================
+     14. FOOTER — identical to homepage
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Wouro Yobi Living Archive, home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-name" style="color:var(--white);">Wouro Yobi<small style="color:var(--gold-soft);">Living Archive</small></span>
+        </a>
+        <p>Building a community for future generations — a knowledge platform documenting the history, culture and development of Wouro Yobi.</p>
+        <ul class="footer-values">
+          <li>Community-Led</li><li>Evidence-Based</li><li>Open to Partners</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V6h-3a4 4 0 00-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2a1 1 0 011-1z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>The Archive</h4>
+        <ul>
+          <li><a href="identity.html">Our Identity</a></li>
+          <li><a href="life.html">Way of Life</a></li>
+          <li><a href="future.html">Our Future</a></li>
+          <li><a href="memory.html">Our Memory</a></li>
+          <li><a href="index.html#knowledge-centre">Knowledge Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="people.html">People</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="visit.html">Visit Us</a></li>
+          <li><a href="about.html">About the Living Archive</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>References</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Fula_people" target="_blank" rel="noopener noreferrer">Fula (Fulani) — Wikipedia</a></li>
+          <li><a href="https://minorityrights.org/communities/mbororo-2/" target="_blank" rel="noopener noreferrer">Minority Rights Group</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Adamawa_Region" target="_blank" rel="noopener noreferrer">Adamawa Region — Wikipedia</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" rel="noopener noreferrer">Cameroon — Wikipedia</a></li>
+          <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Wouro Yobi Living Archive. A community-led initiative.</span>
+      <span>Built as a knowledge platform — <a href="#top">back to top</a></span>
+    </div>
+  </div>
 </footer>
 
 <script>
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
-},{threshold:.15});
-document.querySelectorAll('section').forEach(s=>{s.classList.add('hidden');observer.observe(s);});
-</script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  document.querySelectorAll('.reveal-stagger').forEach(group => {
+    Array.from(group.children).forEach((child, i) => {
+      child.style.setProperty('--i', i);
+    });
+  });
+
+
+  /* ============================================================
+     NAV DROPDOWNS — accessible disclosure panels
+     ============================================================ */
+  const navItems = document.querySelectorAll('[data-nav-item]');
+  function closeAllNavItems(except) {
+    navItems.forEach(item => {
+      if (item === except) return;
+      item.classList.remove('is-open');
+      item.querySelector('.nav-trigger').setAttribute('aria-expanded', 'false');
+    });
+  }
+  navItems.forEach(item => {
+    const trigger = item.querySelector('.nav-trigger');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      closeAllNavItems(isOpen ? null : item);
+      item.classList.toggle('is-open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-nav-item]')) closeAllNavItems(null);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllNavItems(null);
+  });
+
+  /* Mobile drawer */
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const mobileNavOpen = document.getElementById('mobileNavOpen');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  if (mobileNavOpen) {
+    mobileNavOpen.addEventListener('click', () => {
+      mobileDrawer.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  function closeMobileDrawer() {
+    mobileDrawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileDrawer);
+  mobileDrawer.addEventListener('click', (e) => { if (e.target === mobileDrawer) closeMobileDrawer(); });
+
+  /* ============================================================
+     SEARCH — lightweight inline index, local-site search + web fallback
+     No external file is created: the archive currently has ~9 pages,
+     so the index stays here inline, consistent with every other
+     self-contained page in this project.
+     ============================================================ */
+  const ARCHIVE_INDEX = [
+    { title: "Wouro Yobi Living Archive", url: "index.html", category: "Archive", text: "The front door to the Living Archive. Every community has a story — this is Wouro Yobi's, situated in Cameroon and the Adamawa Region." },
+    { title: "Our Identity", url: "identity.html", category: "Archive", text: "Who the people of Wouro Yobi are. Leadership, Mbororo heritage, geography, the meaning of the name, community values." },
+    { title: "Way of Life", url: "life.html", category: "Archive", text: "Seasons, livestock, agriculture, family, markets, faith and the daily rhythm of Wouro Yobi. Fulfulde, pastoral knowledge." },
+    { title: "Our Future", url: "future.html", category: "Archive", text: "Education, agriculture, youth leadership, infrastructure, environment. Kindergarten Expansion, in progress." },
+    { title: "Our Memory", url: "memory.html", category: "Memory", text: "Oral history, elders, the living timeline, memory objects, photographs. Mayo-Darlé, Adamawa Region, Cameroon history." },
+    { title: "Mayo-Darlé & Wouro Yobi", url: "memory.html#story", category: "Places", text: "Documentation of Wouro Yobi's relationship with the Mayo-Darlé municipality and the Adamawa Region." },
+    { title: "People", url: "people.html", category: "People", text: "Community leaders, elders, women, young people, educators, farmers and pastoralists." },
+    { title: "His Majesty Maître Aliou Amadou", url: "people.html", category: "People", text: "Traditional leadership of Wouro Yobi, guiding custom, dialogue and community decision-making." },
+    { title: "Ardo Abdoulkadi", url: "people.html", category: "People", text: "President, MBOSCUDA – Mayo-Banyo. Regional Mbororo advocacy and development networks." },
+    { title: "Leadership", url: "leadership.html", category: "People", text: "Traditional leadership, community administration, regional advocacy and development coordination, kept distinct." },
+    { title: "Community", url: "community.html", category: "Places", text: "Where Wouro Yobi sits — Mayo-Darlé, the Adamawa Region, the landscape and neighbouring communities." },
+    { title: "Development", url: "development.html", category: "Archive", text: "What is happening, or already underway, in Wouro Yobi today — documented activity, distinct from future aspirations." },
+    { title: "Journal", url: "journal.html", category: "Stories", text: "Field notes, stories being prepared, and reflections on community life, heritage and development." },
+    { title: "Media", url: "media.html", category: "Media", text: "Photographs of people, places, culture and everyday life in Wouro Yobi." },
+    { title: "Visit Us", url: "visit.html", category: "Archive", text: "Practical information for visiting Wouro Yobi respectfully." },
+    { title: "About the Living Archive", url: "about.html", category: "References", text: "Editorial principles, governance, contact form and how to contribute to the archive." },
+    { title: "Adamawa Region", url: "https://en.wikipedia.org/wiki/Adamawa_Region", category: "References", text: "External reference on the Adamawa Region of Cameroon." },
+    { title: "Cameroon", url: "https://en.wikipedia.org/wiki/Cameroon", category: "References", text: "External reference on Cameroon, sometimes called Africa in Miniature." },
+    { title: "MBOSCUDA", url: "https://mboscuda.org/", category: "References", text: "Mbororo Social and Cultural Development Association, regional advocacy organisation." }
+  ];
+
+  const searchOverlay = document.getElementById('searchOverlay');
+  const searchInput = document.getElementById('archiveSearchInput');
+  const searchResults = document.getElementById('searchResults');
+  const searchTrigger = document.getElementById('searchTrigger');
+  const searchLaunchBtn = document.getElementById('searchLaunchBtn');
+  const mobileSearchLaunch = document.getElementById('mobileSearchLaunch');
+  const searchClose = document.getElementById('searchClose');
+  const modeArchiveBtn = document.getElementById('modeArchiveBtn');
+  const modeWebBtn = document.getElementById('modeWebBtn');
+  const searchWebCta = document.getElementById('searchWebCta');
+  const webQueryLabel = document.getElementById('webQueryLabel');
+  const webSearchLink = document.getElementById('webSearchLink');
+  let searchMode = 'archive';
+  let lastFocused = null;
+
+  function openSearch() {
+    lastFocused = document.activeElement;
+    searchOverlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeMobileDrawer();
+    setTimeout(() => searchInput.focus(), 50);
+    renderSearch('');
+  }
+  function closeSearch() {
+    searchOverlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  [searchTrigger, searchLaunchBtn, mobileSearchLaunch].forEach(btn => {
+    if (btn) btn.addEventListener('click', openSearch);
+  });
+  searchClose.addEventListener('click', closeSearch);
+  searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('is-open')) closeSearch();
+  });
+
+  function setMode(mode) {
+    searchMode = mode;
+    modeArchiveBtn.classList.toggle('is-active', mode === 'archive');
+    modeWebBtn.classList.toggle('is-active', mode === 'web');
+    renderSearch(searchInput.value);
+  }
+  modeArchiveBtn.addEventListener('click', () => setMode('archive'));
+  modeWebBtn.addEventListener('click', () => setMode('web'));
+
+  function renderSearch(query) {
+    const q = query.trim().toLowerCase();
+
+    if (searchMode === 'web') {
+      searchResults.innerHTML = '';
+      if (q) {
+        searchWebCta.hidden = false;
+        webQueryLabel.textContent = '"' + query.trim() + '"';
+        webSearchLink.href = 'https://www.google.com/search?q=' + encodeURIComponent(query.trim() + ' Wouro Yobi Mbororo Cameroon');
+      } else {
+        searchWebCta.hidden = true;
+      }
+      return;
+    }
+
+    searchWebCta.hidden = true;
+    if (!q) { searchResults.innerHTML = ''; return; }
+
+    const scored = ARCHIVE_INDEX.map(item => {
+      const titleMatch = item.title.toLowerCase().includes(q);
+      const textMatch = item.text.toLowerCase().includes(q);
+      let score = 0;
+      if (titleMatch) score += 2;
+      if (textMatch) score += 1;
+      return { item, score };
+    }).filter(r => r.score > 0).sort((a, b) => b.score - a.score);
+
+    if (scored.length === 0) {
+      searchResults.innerHTML = '<p class="search-empty">No matches in the archive yet. Try "Search Wider Web" above.</p>';
+      return;
+    }
+
+    const groups = {};
+    scored.forEach(({ item }) => {
+      if (!groups[item.category]) groups[item.category] = [];
+      groups[item.category].push(item);
+    });
+
+    let html = '';
+    Object.keys(groups).forEach(cat => {
+      html += '<div class="search-group"><h5>' + cat + '</h5>';
+      groups[cat].forEach(item => {
+        const external = /^https?:\/\//.test(item.url);
+        html += '<a class="search-result" href="' + item.url + '"' + (external ? ' target="_blank" rel="noopener noreferrer"' : '') + '>';
+        html += '<strong>' + item.title + '</strong><span>' + item.text.slice(0, 100) + (item.text.length > 100 ? '…' : '') + '</span></a>';
+      });
+      html += '</div>';
+    });
+    searchResults.innerHTML = html;
+  }
+
+  searchInput.addEventListener('input', () => renderSearch(searchInput.value));
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = searchResults.querySelector('.search-result');
+      if (searchMode === 'archive' && first) first.click();
+      if (searchMode === 'web' && !searchWebCta.hidden) webSearchLink.click();
+    }
+  });
+  document.querySelectorAll('.search-suggestions button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      searchInput.value = btn.textContent;
+      setMode('archive');
+      searchInput.focus();
+      renderSearch(btn.textContent);
+    });
+  });
+
+</script>
 </body>
 </html>
