@@ -219,6 +219,29 @@
   .hero-catalogue-loc{margin-top:0.4rem; font-size:0.82rem; color:var(--sage-pale);}
   .hero-catalogue-coords{margin-top:0.6rem; padding-top:0.6rem; border-top:1px dashed rgba(228,232,222,0.25); font-size:0.76rem; letter-spacing:0.03em; color:rgba(228,232,222,0.85);}
 
+  /* ============================================================
+     FIRST GLIMPSE — documentary video introduction
+     ============================================================ */
+  .glimpse{background:var(--beige-warm); border-top:1px solid rgba(107,74,48,0.10);}
+  .glimpse-frame{
+    margin:0; background:var(--forest-deep); border-radius:var(--radius-lg);
+    padding:clamp(0.45rem, 1.2vw, 0.85rem); box-shadow:var(--shadow-soft);
+  }
+  .glimpse-frame video, .glimpse-frame img{
+    width:100%; height:auto; display:block; background:var(--forest-deep);
+    border-radius:calc(var(--radius-lg) - 12px);
+  }
+  .glimpse-credit{
+    margin-top:1.1rem; display:flex; flex-wrap:wrap; align-items:baseline; gap:0.35rem 0.9rem;
+    font-family:var(--font-caption);
+  }
+  .glimpse-credit-name{font-size:0.82rem; font-weight:600; color:var(--brown);}
+  .glimpse-credit-sub{font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft);}
+  @media (max-width:640px){
+    .glimpse-frame{padding:0.35rem; border-radius:var(--radius-md);}
+    .glimpse-frame video, .glimpse-frame img{border-radius:calc(var(--radius-md) - 6px);}
+  }
+
   /* Knowledge Passport — slim strip */
   .passport-bar{background:var(--white); border-bottom:1px solid rgba(107,74,48,0.14);}
   .passport-bar .wrap{padding-block:0.8rem; display:flex; align-items:center; justify-content:space-between; gap:1.2rem; flex-wrap:wrap;}
@@ -666,6 +689,31 @@
           </div>
         </figure>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FIRST GLIMPSE — real documentary video, recorded by Gerogel A
+       ============================================================ -->
+  <section class="glimpse" id="first-glimpse" aria-labelledby="glimpse-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">A First Glimpse</p>
+        <h2 id="glimpse-heading">Enter Wouro Yobi</h2>
+        <p>Before exploring the archive, take a moment to see Wouro Yobi in motion — its landscape, livestock and everyday surroundings.</p>
+      </div>
+      <figure class="glimpse-frame reveal" id="glimpseFrame">
+        <video id="glimpseVideo" controls preload="metadata" playsinline
+               poster="images/archive/wouro-yobi-panorama.jpeg"
+               aria-label="Wouro Yobi Tour — community documentary footage showing the community and its surroundings">
+          <source src="images/life/Wouro%20Yobi%20Tour.mp4" type="video/mp4">
+          <a href="images/life/Wouro%20Yobi%20Tour.mp4">Download the Wouro Yobi Tour video (MP4)</a>
+        </video>
+        <figcaption class="glimpse-credit">
+          <span class="glimpse-credit-name">Recorded by Gerogel A</span>
+          <span class="glimpse-credit-sub">Community documentary footage</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -1187,6 +1235,14 @@
   } else { revealEls.forEach(el => el.classList.add('is-visible')); }
   document.querySelectorAll('.reveal-stagger').forEach(group => {
     Array.from(group.children).forEach((child, i) => child.style.setProperty('--i', i));
+  });
+
+  /* First Glimpse — if the documentary video cannot load, show the panorama instead */
+  document.querySelector('#glimpseVideo source').addEventListener('error', () => {
+    document.getElementById('glimpseFrame').innerHTML =
+      '<img src="images/archive/wouro-yobi-panorama.jpeg" alt="Panoramic landscape representing the Adamawa Plateau">' +
+      '<figcaption class="glimpse-credit"><span class="glimpse-credit-name">Video unavailable</span>' +
+      '<span class="glimpse-credit-sub">Showing the Wouro Yobi panorama instead</span></figcaption>';
   });
 
   /* Reading progress bar */
